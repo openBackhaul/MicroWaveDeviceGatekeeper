@@ -20,4 +20,9 @@
 - [MicroWaveDeviceGatekeeper+config](./MicroWaveDeviceGatekeeper+config.json)
 
 ### Comments
-./.
+The following services shall be covered as a minimum in the first release:  
+
+_MATR:_
+- /mac-fd-1-0:provide-learned-mac-addresses
+
+_AIPS:_
