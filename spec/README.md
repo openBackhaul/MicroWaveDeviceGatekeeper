@@ -26,3 +26,12 @@ _MATR:_
 - /mac-fd-1-0:provide-learned-mac-addresses
 
 _AIPS:_
+- /core-model-1-4:network-control-domain=live/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/air-interface-2-0:air-interface-pac/air-interface-configuration/transmitter-is-on
+
+_Scripts:_
+- /core-model-1-4:control-construct/name=externalLabel/value   {mountpointName}
+- /core-model-1-4:control-construct/logical-termination-point=ltp/name=externalLabel/value   {linkId}
+- /core-model-1-4:control-construct/logical-termination-point=ltp/layer-protocol=layer-protocol/interface-type/interface-configuration/performance-monitoring-is-on   {true}
+
+_LILW:_
+- ?
