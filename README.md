@@ -15,7 +15,7 @@ This is for facilitating precise management of the writing access rights of indi
 Obviously, the MicroWaveDeviceGatekeeper exclusively supports attributes located in the Configurations sections of the technology specific modelings.  
 
 Access is limited to devices that are currently connected to the controller.  
-By purpose, there is no storing of configuration intends for later configuration (no planing, exclusively immediate configuration).
+By purpose, there is no storing of configuration intends for later configuration (no planing, but exclusively immediate configuration).
 
 The MicroWaveDeviceGatekeeper does not support GET method on the same paths it offers PUTting.  
 It is wished that reading is done via the MicroWaveDeviceInventory, because GET operations on its "live" paths are supporting keeping its cache in synch with the device data.  
