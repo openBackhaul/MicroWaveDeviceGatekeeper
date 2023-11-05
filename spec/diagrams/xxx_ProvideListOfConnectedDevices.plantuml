@@ -1,0 +1,19 @@
+@startuml xxx_ProvideListOfConnectedDevices
+skinparam responseMessageBelowArrow true
+
+title RequestForListOfConnectedDevicesCausesRespondingFromRam
+
+participant "external" as requestor
+participant "MWDG://v1/provide-list-of-connected-devices" as provideListOfConnectedDevices
+
+requestor -> provideListOfConnectedDevices: (apiKeyAuth)
+activate provideListOfConnectedDevices
+
+note over provideListOfConnectedDevices
+Answer from device list in RAM
+end note
+
+provideListOfConnectedDevices --> requestor: {mount-name-list}
+deactivate provideListOfConnectedDevices
+
+@enduml
