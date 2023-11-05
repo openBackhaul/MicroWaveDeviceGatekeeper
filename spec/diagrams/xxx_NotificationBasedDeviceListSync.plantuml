@@ -1,4 +1,4 @@
-@startuml 020_NotificationBasedDeviceListSync
+@startuml xxx_NotificationBasedDeviceListSync
 skinparam responseMessageBelowArrow true
 
 title NotifiedConnectionStatusChangeCausesUpdateOfInternalDeviceList
