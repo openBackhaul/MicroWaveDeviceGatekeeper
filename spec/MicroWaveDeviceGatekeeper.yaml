@@ -256,7 +256,7 @@ paths:
                 default:
                   $ref: '#/components/responses/responseForErroredServiceRequests'
         PromptForBequeathingDataCausesRequestForBroadcastingInfoAboutServerReplacement:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-1-001/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-2-001/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             post:
               parameters:
                 - $ref: '#/components/parameters/user'
@@ -379,7 +379,7 @@ paths:
                 default:
                   $ref: '#/components/responses/responseForErroredServiceRequests'
         PromptForBequeathingDataCausesRequestForDeregisteringOfOldRelease:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-1-002/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-2-002/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             post:
               parameters:
                 - $ref: '#/components/parameters/user'
@@ -454,7 +454,7 @@ paths:
                 default:
                   $ref: '#/components/responses/responseForErroredServiceRequests'
         PromptingNewReleaseForUpdatingServerCausesRequestForBroadcastingInfoAboutBackwardCompatibleUpdateOfOperation:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-1-003/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-2-003/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             description: >
               'This callback belongs to the sequence of actions that have to be done during the bequeath-your-data-and-die process, despite the forwarding gets neither managed nor directly initiated by the /v1/bequeath-your-data-and-die request.
               After consuming applications have been redirected to the new release, the new release is triggered (this callback) to request the RegistryOffice for broadcasting information about backward compatible replacements of services.'
@@ -2096,19 +2096,19 @@ paths:
                       minLength: 3
                       description: >
                         'If body provided, name of RegistryOffice application
-                        find [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-ro-2-0-1-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
+                        find [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-ro-2-0-2-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
                     registry-office-application-release-number:
                       type: string
                       pattern: '^([0-9]{1,2})\.([0-9]{1,2})\.([0-9]{1,2})$'
                       description: >
                         'If body provided, release of RegistryOffice application
-                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-ro-2-0-1-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/release-number]'
+                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-ro-2-0-2-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/release-number]'
                     registration-operation:
                       type: string
                       minLength: 6
                       description: >
                         'If body provided, operation for registering
-                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-1-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
+                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-2-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
                     registry-office-protocol:
                       type: string
                       enum:
@@ -2116,7 +2116,7 @@ paths:
                         - 'HTTPS'
                       description: >
                         'If body provided, protocol for addressing the RegistryOffice application
-                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]'
+                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]'
                     registry-office-address:
                       type: object
                       minProperties: 1
@@ -2133,20 +2133,20 @@ paths:
                               pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
                               description: >
                                 'If body provided, IPv4 address of RegistryOffice application
-                                update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]'
+                                update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]'
                         domain-name:
                           type: string
                           pattern: '^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$'
                           description: >
                             'If body provided, domain name of RegistryOffice application
-                            update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]'
+                            update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]'
                     registry-office-port:
                       type: integer
                       minimum: 0
                       maximum: 65535
                       description: >
                         'If body provided, port of RegistryOffice application
-                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port]'
+                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port]'
                     http-address:
                       type: object
                       minProperties: 1
@@ -2288,7 +2288,7 @@ paths:
           $ref: '#/components/responses/responseForErroredServiceRequests'
       callbacks:
         PromptForRegisteringCausesRegistrationRequest:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://{[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]}:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-1-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://{[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]}:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-2-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             post:
               parameters:
                 - $ref: '#/components/parameters/user'
@@ -2479,31 +2479,31 @@ paths:
                   type: string
                   description: >
                     'Name of RegistryOffice application
-                    find [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-ro-2-0-1-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
+                    find [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-ro-2-0-2-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
                 registry-office-application-release-number:
                   type: string
                   pattern: '^([0-9]{1,2})\.([0-9]{1,2})\.([0-9]{1,2})$'
                   description: >
                     'Release of RegistryOffice application
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-ro-2-0-1-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/release-number]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-ro-2-0-2-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/release-number]'
                 relay-server-replacement-operation:
                   type: string
                   minLength: 6
                   description: >
                     'Operation for requesting for broadcasting a new server address
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-1-001/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-2-001/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
                 relay-operation-update-operation:
                   type: string
                   minLength: 6
                   description: >
                     'Operation for requesting for broadcasting a backward compatible replacement of an operation
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-1-003/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-2-003/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
                 deregistration-operation:
                   type: string
                   minLength: 6
                   description: >
                     'Operation for deregistering from the application layer
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-1-002/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-ro-2-0-2-002/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
                 registry-office-protocol:
                   type: string
                   enum:
@@ -2511,7 +2511,7 @@ paths:
                     - 'HTTPS'
                   description: >
                     'Protocol for addressing RegistryOffice application
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]'
                 registry-office-address:
                   type: object
                   minProperties: 1
@@ -2528,20 +2528,20 @@ paths:
                           pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
                           description: >
                             'IPv4 address of RegistryOffice application
-                            update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]'
+                            update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]'
                     domain-name:
                       type: string
                       pattern: '^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$'
                       description: >
                         'Domain name of RegistryOffice application
-                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]'
+                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]'
                 registry-office-port:
                   type: integer
                   minimum: 0
                   maximum: 65535
                   description: >
                     'Port of RegistryOffice application
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port]'
                 old-release-protocol:
                   type: string
                   enum:
@@ -2643,7 +2643,7 @@ paths:
           $ref: '#/components/responses/responseForErroredServiceRequests'
       callbacks:
         PromptForEmbeddingCausesRequestForBequeathingData:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-or-1-0-0-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-or-1-0-0-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-or-1-0-0-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-or-1-0-0-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ro-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-or-1-0-0-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-or-1-0-0-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-or-1-0-0-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-or-1-0-0-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             post:
               parameters:
                 - $ref: '#/components/parameters/user'
@@ -2964,19 +2964,19 @@ paths:
                   type: string
                   description: >
                     'Name of application that shall record the service requests
-                    find [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-eatl-2-0-1-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
+                    find [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-eatl-2-0-2-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
                 service-log-application-release-number:
                   type: string
                   pattern: '^([0-9]{1,2})\.([0-9]{1,2})\.([0-9]{1,2})$'
                   description: >
                     'Release of application that shall record the service requests
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-eatl-2-0-1-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/release-number]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-eatl-2-0-2-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/release-number]'
                 service-log-operation:
                   type: string
                   minLength: 6
                   description: >
                     'Operation for recording the service requests
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-eatl-2-0-1-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-eatl-2-0-2-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
                 service-log-protocol:
                   type: string
                   enum:
@@ -2984,7 +2984,7 @@ paths:
                     - 'HTTPS'
                   description: >
                     'Protocol to be used for addressing the application that shall record the service requests
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]'
                 service-log-address:
                   type: object
                   minProperties: 1
@@ -3001,20 +3001,20 @@ paths:
                           pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
                           description: >
                             'IPv4 address of application that shall record the service requests
-                            update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]'
+                            update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]'
                     domain-name:
                       type: string
                       pattern: '^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$'
                       description: >
                         'Domain name of application that shall record the service requests
-                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]'
+                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]'
                 service-log-port:
                   type: integer
                   minimum: 0
                   maximum: 65535
                   description: >
                     'Port of application that shall record the service requests
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port]'
               example:
                 service-log-application: 'ExecutionAndTraceLog'
                 service-log-application-release-number: '2.0.1'
@@ -3071,7 +3071,7 @@ paths:
           $ref: '#/components/responses/responseForErroredServiceRequests'
       callbacks:
         ServiceRequestCausesLoggingRequest:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-eatl-2-0-1-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-eatl-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-eatl-2-0-2-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             post:
               parameters:
                 - $ref: '#/components/parameters/user'
@@ -3121,13 +3121,13 @@ paths:
                           description: 'Response code sent to [originator] after invoking [operation-name] at [application-name]'
                         timestamp:
                           type: string
-                          description: 'Date and time when [application-name] sent response to [originator]; only to be provided, if [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-eatl-2-0-1-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/detailed-logging-is-on] == true'
+                          description: 'Date and time when [application-name] sent response to [originator]; only to be provided, if [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-eatl-2-0-2-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/detailed-logging-is-on] == true'
                         stringified-body:
                           type: string
-                          description: 'Stringified body of the request addressed from [originator] to [application-name]; only to be provided, if [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-eatl-2-0-1-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/detailed-logging-is-on] == true'
+                          description: 'Stringified body of the request addressed from [originator] to [application-name]; only to be provided, if [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-eatl-2-0-2-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/detailed-logging-is-on] == true'
                         stringified-response:
                           type: string
-                          description: 'Stringified response sent from [application-name] to [originator]; only to be provided, if [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-eatl-2-0-1-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/detailed-logging-is-on] == true'
+                          description: 'Stringified response sent from [application-name] to [originator]; only to be provided, if [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-eatl-2-0-2-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/detailed-logging-is-on] == true'
                       example:
                         x-correlator: '550e8400-e29b-11d4-a716-446655440000'
                         trace-indicator: '1.1'
@@ -3215,19 +3215,19 @@ paths:
                   type: string
                   description: >
                     'Name of application that shall record the OaM requests
-                    find [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-ol-2-0-1-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
+                    find [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-ol-2-0-2-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
                 oam-log-application-release-number:
                   type: string
                   pattern: '^([0-9]{1,2})\.([0-9]{1,2})\.([0-9]{1,2})$'
                   description: >
                     'Release of application that shall record the OaM request
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-ol-2-0-1-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/release-number]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-ol-2-0-2-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/release-number]'
                 oam-log-operation:
                   type: string
                   minLength: 6
                   description: >
                     'Operation for recording the OaM requests
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-ol-2-0-1-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-ol-2-0-2-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
                 oam-log-protocol:
                   type: string
                   enum:
@@ -3235,7 +3235,7 @@ paths:
                     - 'HTTPS'
                   description: >
                     'Protocol to be used for addressing the application that shall record the OaM requests
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]'
                 oam-log-address:
                   type: object
                   minProperties: 1
@@ -3252,20 +3252,20 @@ paths:
                           pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
                           description: >
                             'IPv4 address of application that shall record the OaM requests
-                            update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]'
+                            update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]'
                     domain-name:
                       type: string
                       pattern: '^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$'
                       description: >
                         'Domain name of application that shall record the OaM requests
-                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]'
+                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]'
                 oam-log-port:
                   type: integer
                   minimum: 0
                   maximum: 65535
                   description: >
                     'Port of application that shall record the OaM requests
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port]'
               example:
                 oam-log-application: 'OamLog'
                 oam-log-application-release-number: '2.0.1'
@@ -3322,7 +3322,7 @@ paths:
           $ref: '#/components/responses/responseForErroredServiceRequests'
       callbacks:
         OamRequestCausesLoggingRequest:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-ol-2-0-1-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-ol-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-ol-2-0-2-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             post:
               parameters:
                 - $ref: '#/components/parameters/user'
@@ -3549,19 +3549,19 @@ paths:
                   type: string
                   description: >
                     'Name of application that shall approve the OaM requests
-                    find [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-aa-2-0-1-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
+                    find [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-aa-2-0-2-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
                 oam-approval-application-release-number:
                   type: string
                   pattern: '^([0-9]{1,2})\.([0-9]{1,2})\.([0-9]{1,2})$'
                   description: >
                     'Release of application that shall approve the OaM requests
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-aa-2-0-1-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/release-number]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-aa-2-0-2-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/release-number]'
                 oam-approval-operation:
                   type: string
                   minLength: 6
                   description: >
                     'Operation for approving the OaM requests
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-aa-2-0-1-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-aa-2-0-2-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
                 oam-approval-protocol:
                   type: string
                   enum:
@@ -3569,7 +3569,7 @@ paths:
                     - 'HTTPS'
                   description: >
                     'Protocol to be used for addressing the application that shall approve the OaM requests
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]'
                 oam-approval-address:
                   type: object
                   minProperties: 1
@@ -3586,20 +3586,20 @@ paths:
                           pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
                           description: >
                             'IPv4 address of application that shall approve the OaM requests
-                            update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]'
+                            update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]'
                     domain-name:
                       type: string
                       pattern: '^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$'
                       description: >
                         'Domain name of application that shall approve the OaM requests
-                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]'
+                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]'
                 oam-approval-port:
                   type: integer
                   minimum: 0
                   maximum: 65535
                   description: >
                     'Port of application that shall approve the OaM requests
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port]'
               example:
                 oam-approval-application: 'AdministratorAdministration'
                 oam-approval-application-release-number: '2.0.1'
@@ -3656,7 +3656,7 @@ paths:
           $ref: '#/components/responses/responseForErroredServiceRequests'
       callbacks:
         OamRequestCausesInquiryForAuthentication:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-aa-2-0-1-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-aa-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bs-aa-2-0-2-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             post:
               parameters:
                 - $ref: '#/components/parameters/user'
@@ -3958,10 +3958,10 @@ paths:
                         items:
                           $ref: '#/components/schemas/logicalTerminationPoint'
                         example:
-                          - uuid: 'ro-2-0-1-op-s-bm-000'
+                          - uuid: 'ro-2-0-2-op-s-bm-000'
                             ltp-direction: 'core-model-1-4:TERMINATION_DIRECTION_SOURCE'
                             client-ltp: []
-                            server-ltp: ['ro-2-0-1-http-s-000']
+                            server-ltp: ['ro-2-0-2-http-s-000']
                             layer-protocol:
                               - local-id: '0'
                                 layer-protocol-name: 'operation-server-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_OPERATION_LAYER'
@@ -3970,9 +3970,9 @@ paths:
                                     operation-name: '/v1/register-yourself'
                                   operation-server-interface-configuration:
                                     life-cycle-state: 'operation-server-interface-1-0:LIFE_CYCLE_STATE_TYPE_EXPERIMENTAL'
-                          - uuid: 'ro-2-0-1-http-s-000'
+                          - uuid: 'ro-2-0-2-http-s-000'
                             ltp-direction: 'core-model-1-4:TERMINATION_DIRECTION_SOURCE'
-                            client-ltp: ['ro-2-0-1-op-s-bm-000']
+                            client-ltp: ['ro-2-0-2-op-s-bm-000']
                             server-ltp: []
                             layer-protocol:
                               - local-id: '0'
@@ -3989,9 +3989,9 @@ paths:
                         items:
                           $ref: '#/components/schemas/forwardingDomain'
                         example:
-                          - uuid: 'ro-2-0-1-op-fd-000'
+                          - uuid: 'ro-2-0-2-op-fd-000'
                             forwarding-construct:
-                              - uuid: 'ro-2-0-1-op-fc-bm-000'
+                              - uuid: 'ro-2-0-2-op-fc-bm-000'
                                 name:
                                   - value-name: 'ForwardingKind'
                                     value: 'core-model-1-4:FORWARDING_KIND_TYPE_INVARIANT_PROCESS_SNIPPET'
@@ -4000,11 +4000,11 @@ paths:
                                 fc-port:
                                   - local-id: '000'
                                     port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_MANAGEMENT'
-                                    logical-termination-point: 'ro-2-0-1-op-s-bm-000'
+                                    logical-termination-point: 'ro-2-0-2-op-s-bm-000'
                                   - local-id: '100'
                                     port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_INPUT'
-                                    logical-termination-point: 'ro-2-0-1-op-s-bm-000'
-                              - uuid: 'ro-2-0-1-op-fc-bm-001'
+                                    logical-termination-point: 'ro-2-0-2-op-s-bm-000'
+                              - uuid: 'ro-2-0-2-op-fc-bm-001'
                                 name:
                                   - value-name: 'ForwardingKind'
                                     value: 'core-model-1-4:FORWARDING_KIND_TYPE_INVARIANT_PROCESS_SNIPPET'
@@ -4013,10 +4013,10 @@ paths:
                                 fc-port:
                                   - local-id: '100'
                                     port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_INPUT'
-                                    logical-termination-point: 'ro-2-0-1-op-s-bm-001'
+                                    logical-termination-point: 'ro-2-0-2-op-s-bm-001'
                                   - local-id: '200'
                                     port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_OUTPUT'
-                                    logical-termination-point: 'ro-2-0-1-op-c-bm-ro-2-0-1-000'
+                                    logical-termination-point: 'ro-2-0-2-op-c-bm-ro-2-0-2-000'
           headers:
             x-correlator:
               schema:
@@ -4095,43 +4095,43 @@ paths:
                   type: string
                   description: >
                     'Name of application that shall document the application layer topology
-                    find [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-alt-2-0-1-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
+                    find [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-alt-2-0-2-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
                 topology-application-release-number:
                   type: string
                   pattern: '^([0-9]{1,2})\.([0-9]{1,2})\.([0-9]{1,2})$'
                   description: >
                     'Release of application that shall document the application layer topology
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-alt-2-0-1-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/release-number]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-http-c-alt-2-0-2-000/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/release-number]'
                 topology-operation-ltp-update:
                   type: string
                   minLength: 6
                   description: >
                     'Operation for updating an LTP
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-001/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-001/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
                 topology-operation-ltp-deletion:
                   type: string
                   minLength: 6
                   description: >
                     'Operation for deleting an LTP and its dependents like FC port and Link (if applicable)
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-002/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-002/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
                 topology-operation-fc-update:
                   type: string
                   minLength: 6
                   description: >
                     'Operation for updating a ForwardingConstruct instance
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-003/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-003/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
                 topology-operation-fc-port-update:
                   type: string
                   minLength: 6
                   description: >
                     'Operation for updating an FC port
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-004/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-004/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
                 topology-operation-fc-port-deletion:
                   type: string
                   minLength: 6
                   description: >
                     'Operation for deleting an FC port
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-005/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-005/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
                 topology-application-protocol:
                   type: string
                   enum:
@@ -4139,7 +4139,7 @@ paths:
                     - 'HTTPS'
                   description: >
                     'Protocol to be used for addresing the application that shall document the application layer topology
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]'
                 topology-application-address:
                   type: object
                   minProperties: 1
@@ -4156,20 +4156,20 @@ paths:
                           pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
                           description: >
                             'IPv4 address of application that shall document the application layer topology
-                            update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]'
+                            update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address]'
                     domain-name:
                       type: string
                       pattern: '^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$'
                       description: >
                         'Domain name of application that shall document the application layer topology
-                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]'
+                        update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]'
                 topology-application-port:
                   type: integer
                   minimum: 0
                   maximum: 65535
                   description: >
                     'Port of application that shall document the application layer topology
-                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port]'
+                    update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port]'
               example:
                 topology-application: 'ApplicationLayerTopology'
                 topology-application-release-number: '2.0.1'
@@ -4211,10 +4211,10 @@ paths:
                         items:
                           $ref: '#/components/schemas/logicalTerminationPoint'
                         example:
-                          - uuid: 'ro-2-0-1-op-s-bm-000'
+                          - uuid: 'ro-2-0-2-op-s-bm-000'
                             ltp-direction: 'core-model-1-4:TERMINATION_DIRECTION_SOURCE'
                             client-ltp: []
-                            server-ltp: ['ro-2-0-1-http-s-000']
+                            server-ltp: ['ro-2-0-2-http-s-000']
                             layer-protocol:
                               - local-id: '0'
                                 layer-protocol-name: 'operation-server-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_OPERATION_LAYER'
@@ -4223,9 +4223,9 @@ paths:
                                     operation-name: '/v1/register-yourself'
                                   operation-server-interface-configuration:
                                     life-cycle-state: 'operation-server-interface-1-0:LIFE_CYCLE_STATE_TYPE_EXPERIMENTAL'
-                          - uuid: 'ro-2-0-1-http-s-000'
+                          - uuid: 'ro-2-0-2-http-s-000'
                             ltp-direction: 'core-model-1-4:TERMINATION_DIRECTION_SOURCE'
-                            client-ltp: ['ro-2-0-1-op-s-bm-000']
+                            client-ltp: ['ro-2-0-2-op-s-bm-000']
                             server-ltp: []
                             layer-protocol:
                               - local-id: '0'
@@ -4242,9 +4242,9 @@ paths:
                         items:
                           $ref: '#/components/schemas/forwardingDomain'
                         example:
-                          - uuid: 'ro-2-0-1-op-fd-000'
+                          - uuid: 'ro-2-0-2-op-fd-000'
                             forwarding-construct:
-                              - uuid: 'ro-2-0-1-op-fc-bm-000'
+                              - uuid: 'ro-2-0-2-op-fc-bm-000'
                                 name:
                                   - value-name: 'ForwardingKind'
                                     value: 'core-model-1-4:FORWARDING_KIND_TYPE_INVARIANT_PROCESS_SNIPPET'
@@ -4253,11 +4253,11 @@ paths:
                                 fc-port:
                                   - local-id: '000'
                                     port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_MANAGEMENT'
-                                    logical-termination-point: 'ro-2-0-1-op-s-bm-000'
+                                    logical-termination-point: 'ro-2-0-2-op-s-bm-000'
                                   - local-id: '100'
                                     port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_INPUT'
-                                    logical-termination-point: 'ro-2-0-1-op-s-bm-000'
-                              - uuid: 'ro-2-0-1-op-fc-bm-001'
+                                    logical-termination-point: 'ro-2-0-2-op-s-bm-000'
+                              - uuid: 'ro-2-0-2-op-fc-bm-001'
                                 name:
                                   - value-name: 'ForwardingKind'
                                     value: 'core-model-1-4:FORWARDING_KIND_TYPE_INVARIANT_PROCESS_SNIPPET'
@@ -4266,10 +4266,10 @@ paths:
                                 fc-port:
                                   - local-id: '100'
                                     port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_INPUT'
-                                    logical-termination-point: 'ro-2-0-1-op-s-bm-001'
+                                    logical-termination-point: 'ro-2-0-2-op-s-bm-001'
                                   - local-id: '200'
                                     port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_OUTPUT'
-                                    logical-termination-point: 'ro-2-0-1-op-c-bm-ro-2-0-1-000'
+                                    logical-termination-point: 'ro-2-0-2-op-c-bm-ro-2-0-2-000'
           headers:
             x-correlator:
               schema:
@@ -4314,7 +4314,7 @@ paths:
           $ref: '#/components/responses/responseForErroredServiceRequests'
       callbacks:
         ServiceRequestCausesLtpUpdateRequest:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-001/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-001/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             description: 'To be activated whenever a service request causes the creation or change of an LTP'
             post:
               parameters:
@@ -4330,10 +4330,10 @@ paths:
                     schema:
                       $ref: '#/components/schemas/logicalTerminationPoint'
                       example:
-                        uuid: 'ro-2-0-1-op-s-bm-002'
+                        uuid: 'ro-2-0-2-op-s-bm-002'
                         ltp-direction: 'core-model-1-4:TERMINATION_DIRECTION_SOURCE'
                         client-ltp: []
-                        server-ltp: ['ro-2-0-1-http-s-000']
+                        server-ltp: ['ro-2-0-2-http-s-000']
                         layer-protocol:
                           - local-id: '0'
                             layer-protocol-name: 'operation-server-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_OPERATION_LAYER'
@@ -4386,7 +4386,7 @@ paths:
                 default:
                   $ref: '#/components/responses/responseForErroredServiceRequests'
         ServiceRequestCausesLtpDeletionRequest:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-002/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-002/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             description: 'To be activated whenever a service request causes an LTP being deleted'
             post:
               parameters:
@@ -4407,7 +4407,7 @@ paths:
                         uuid:
                           type: string
                       example:
-                        uuid: 'ro-2-0-1-op-s-bm-002'
+                        uuid: 'ro-2-0-2-op-s-bm-002'
               responses:
                 '204':
                   description: 'LTP and its dependents will be deleted'
@@ -4452,7 +4452,7 @@ paths:
                 default:
                   $ref: '#/components/responses/responseForErroredServiceRequests'
         ServiceRequestCausesFcUpdateRequest:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-003/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-003/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             description: 'To be activated whenever a service request causes the creation or change of an FC port'
             post:
               parameters:
@@ -4502,7 +4502,7 @@ paths:
                               logical-termination-point:
                                 type: string
                       example:
-                        uuid: 'ro-2-0-1-op-fc-bm-003'
+                        uuid: 'ro-2-0-2-op-fc-bm-003'
                         name:
                           - value-name: 'ForwardingKind'
                             value: 'core-model-1-4:FORWARDING_KIND_TYPE_INVARIANT_PROCESS_SNIPPET'
@@ -4511,10 +4511,10 @@ paths:
                         fc-port:
                           - local-id: '000'
                             port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_MANAGEMENT'
-                            logical-termination-point: 'ro-2-0-1-op-s-bm-003'
+                            logical-termination-point: 'ro-2-0-2-op-s-bm-003'
                           - local-id: '200'
                             port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_OUTPUT'
-                            logical-termination-point: 'ro-2-0-1-op-c-bs-ol-2-0-1-000'
+                            logical-termination-point: 'ro-2-0-2-op-c-bs-ol-2-0-2-000'
               responses:
                 '204':
                   description: 'FC will be updated'
@@ -4559,7 +4559,7 @@ paths:
                 default:
                   $ref: '#/components/responses/responseForErroredServiceRequests'
         ServiceRequestCausesFcPortUpdateRequest:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-004/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-004/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             description: 'To be activated whenever a service request causes an FC port being updated'
             post:
               parameters:
@@ -4594,11 +4594,11 @@ paths:
                             logical-termination-point:
                               type: string
                       example:
-                        fc-uuid: 'ro-2-0-1-op-fc-bm-003'
+                        fc-uuid: 'ro-2-0-2-op-fc-bm-003'
                         fc-port:
                           local-id: '000'
                           port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_MANAGEMENT'
-                          logical-termination-point: 'ro-2-0-1-op-s-bm-003'
+                          logical-termination-point: 'ro-2-0-2-op-s-bm-003'
               responses:
                 '204':
                   description: 'FC port will be updated'
@@ -4643,7 +4643,7 @@ paths:
                 default:
                   $ref: '#/components/responses/responseForErroredServiceRequests'
         ServiceRequestCausesFcPortDeletionRequest:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-005/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-005/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             description: 'To be activated whenever a service request causes an FC port being deleted'
             post:
               parameters:
@@ -4667,7 +4667,7 @@ paths:
                         fc-port-local-id:
                           type: string
                       example:
-                        fc-uuid: 'ro-2-0-1-op-fc-bm-003'
+                        fc-uuid: 'ro-2-0-2-op-fc-bm-003'
                         fc-port-local-id: '202'
               responses:
                 '204':
@@ -4713,7 +4713,7 @@ paths:
                 default:
                   $ref: '#/components/responses/responseForErroredServiceRequests'
         OamRequestCausesLtpUpdateRequest:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-001/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-001/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             description: 'To be activated whenever an OaM request causes the creation or change of an LTP'
             post:
               parameters:
@@ -4729,10 +4729,10 @@ paths:
                     schema:
                       $ref: '#/components/schemas/logicalTerminationPoint'
                       example:
-                        uuid: 'ro-2-0-1-op-s-bm-002'
+                        uuid: 'ro-2-0-2-op-s-bm-002'
                         ltp-direction: 'core-model-1-4:TERMINATION_DIRECTION_SOURCE'
                         client-ltp: []
-                        server-ltp: ['ro-2-0-1-http-s-000']
+                        server-ltp: ['ro-2-0-2-http-s-000']
                         layer-protocol:
                           - local-id: '0'
                             layer-protocol-name: 'operation-server-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_OPERATION_LAYER'
@@ -4785,7 +4785,7 @@ paths:
                 default:
                   $ref: '#/components/responses/responseForErroredServiceRequests'
         OamRequestCausesLtpDeletionRequest:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-002/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-002/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             description: 'To be activated whenever an OaM request causes an LTP being deleted'
             post:
               parameters:
@@ -4806,7 +4806,7 @@ paths:
                         uuid:
                           type: string
                       example:
-                        uuid: 'ro-2-0-1-op-s-bm-002'
+                        uuid: 'ro-2-0-2-op-s-bm-002'
               responses:
                 '204':
                   description: 'LTP will be deleted'
@@ -4851,7 +4851,7 @@ paths:
                 default:
                   $ref: '#/components/responses/responseForErroredServiceRequests'
         OamRequestCausesFcUpdateRequest:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-003/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-003/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             description: 'To be activated whenever an OaM request causes the creation or change of an FC port'
             post:
               parameters:
@@ -4901,7 +4901,7 @@ paths:
                               logical-termination-point:
                                 type: string
                       example:
-                        uuid: 'ro-2-0-1-op-fc-bm-003'
+                        uuid: 'ro-2-0-2-op-fc-bm-003'
                         name:
                           - value-name: 'ForwardingKind'
                             value: 'core-model-1-4:FORWARDING_KIND_TYPE_INVARIANT_PROCESS_SNIPPET'
@@ -4910,10 +4910,10 @@ paths:
                         fc-port:
                           - local-id: '000'
                             port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_MANAGEMENT'
-                            logical-termination-point: 'ro-2-0-1-op-s-bm-003'
+                            logical-termination-point: 'ro-2-0-2-op-s-bm-003'
                           - local-id: '200'
                             port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_OUTPUT'
-                            logical-termination-point: 'ro-2-0-1-op-c-bs-ol-2-0-1-000'
+                            logical-termination-point: 'ro-2-0-2-op-c-bs-ol-2-0-2-000'
               responses:
                 '204':
                   description: 'FC port will be updated'
@@ -4958,7 +4958,7 @@ paths:
                 default:
                   $ref: '#/components/responses/responseForErroredServiceRequests'
         OamRequestCausesFcPortUpdateRequest:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-004/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-004/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             description: 'To be activated whenever an OaM request causes an FC port being updated'
             post:
               parameters:
@@ -4997,11 +4997,11 @@ paths:
                             logical-termination-point:
                               type: string
                       example:
-                        fc-uuid: 'ro-2-0-1-op-fc-bm-003'
+                        fc-uuid: 'ro-2-0-2-op-fc-bm-003'
                         fc-port:
                           local-id: '000'
                           port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_MANAGEMENT'
-                          logical-termination-point: 'ro-2-0-1-op-s-bm-003'
+                          logical-termination-point: 'ro-2-0-2-op-s-bm-003'
               responses:
                 '204':
                   description: 'FC port will be updated'
@@ -5046,7 +5046,7 @@ paths:
                 default:
                   $ref: '#/components/responses/responseForErroredServiceRequests'
         OamRequestCausesFcPortDeletionRequest:
-          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-1-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-1-005/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+          url: #[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-protocol]://[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/ip-address/ipv-4-address or /core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-address/domain-name]:[/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-c-alt-2-0-2-000/layer-protocol=0/tcp-client-interface-1-0:tcp-client-interface-pac/tcp-client-interface-configuration/remote-port][/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-bm-alt-2-0-2-005/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
             description: 'To be activated whenever an OaM request causes an FC port being deleted'
             post:
               parameters:
@@ -5070,7 +5070,7 @@ paths:
                         fc-port-local-id:
                           type: string
                       example:
-                        fc-uuid: 'ro-2-0-1-op-fc-is-000'
+                        fc-uuid: 'ro-2-0-2-op-fc-is-000'
                         fc-port-local-id: '202'
               responses:
                 '204':
@@ -5152,7 +5152,7 @@ paths:
                     'Future operation key
                     update [/core-model-1-4:control-construct/logical-termination-point={operation-uuid}/layer-protocol=0/operation-*-interface-1-0:operation-*-interface-pac/operation-*-interface-configuration/operation-key]'
               example:
-                operation-uuid: 'ro-2-0-1-op-s-is-003'
+                operation-uuid: 'ro-2-0-2-op-s-is-003'
                 new-operation-key: 'Operation key not yet provided.'
       responses:
         '204':
@@ -5995,7 +5995,7 @@ paths:
                                             string-value:
                                               type: string
                             example:
-                              - uuid: 'ro-2-0-1-integer-p-000'
+                              - uuid: 'ro-2-0-2-integer-p-000'
                                 profile-name: 'integer-profile-1-0:PROFILE_NAME_TYPE_INTEGER_PROFILE'
                                 integer-profile-1-0:integer-profile-pac:
                                   integer-profile-capability:
@@ -6710,10 +6710,10 @@ paths:
                                               remote-port:
                                                 type: integer
                         example:
-                          - uuid: 'ro-2-0-1-op-c-bm-ro-2-0-1-000'
+                          - uuid: 'ro-2-0-2-op-c-bm-ro-2-0-2-000'
                             ltp-direction: 'core-model-1-4:TERMINATION_DIRECTION_SINK'
                             client-ltp: []
-                            server-ltp: ['ro-2-0-1-http-c-ro-2-0-1-000']
+                            server-ltp: ['ro-2-0-2-http-c-ro-2-0-2-000']
                             layer-protocol:
                               - local-id: '0'
                                 layer-protocol-name: 'operation-client-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_OPERATION_LAYER'
@@ -6724,10 +6724,10 @@ paths:
                                   operation-client-interface-status:
                                     operational-state: 'operation-client-interface-1-0:OPERATIONAL_STATE_TYPE_NOT_YET_DEFINED'
                                     life-cycle-state: 'operation-client-interface-1-0:LIFE_CYCLE_STATE_TYPE_NOT_YET_DEFINED'
-                          - uuid: 'ro-2-0-1-http-c-ro-2-0-1-000'
+                          - uuid: 'ro-2-0-2-http-c-ro-2-0-2-000'
                             ltp-direction: 'core-model-1-4:TERMINATION_DIRECTION_SINK'
-                            client-ltp: ['ro-2-0-1-op-c-bm-ro-2-0-1-000']
-                            server-ltp: ['ro-2-0-1-tcp-c-ro-2-0-1-000']
+                            client-ltp: ['ro-2-0-2-op-c-bm-ro-2-0-2-000']
+                            server-ltp: ['ro-2-0-2-tcp-c-ro-2-0-2-000']
                             layer-protocol:
                               - local-id: '0'
                                 layer-protocol-name: 'http-client-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_HTTP_LAYER'
@@ -6790,9 +6790,9 @@ paths:
                                         logical-termination-point:
                                           type: string
                         example:
-                          - uuid: 'ro-2-0-1-op-fd-000'
+                          - uuid: 'ro-2-0-2-op-fd-000'
                             forwarding-construct:
-                              - uuid: 'ro-2-0-1-op-fc-bm-003'
+                              - uuid: 'ro-2-0-2-op-fc-bm-003'
                                 name:
                                   - value-name: 'ForwardingKind'
                                     value: 'core-model-1-4:FORWARDING_KIND_TYPE_INVARIANT_PROCESS_SNIPPET'
@@ -6801,11 +6801,11 @@ paths:
                                 fc-port:
                                   - local-id: '000'
                                     port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_MANAGEMENT'
-                                    logical-termination-point: 'ro-2-0-1-op-s-bm-003'
+                                    logical-termination-point: 'ro-2-0-2-op-s-bm-003'
                                   - local-id: '200'
                                     port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_OUTPUT'
-                                    logical-termination-point: 'ro-2-0-1-op-c-bs-ol-2-0-1-000'
-                              - uuid: 'ro-2-0-1-op-fc-bm-004'
+                                    logical-termination-point: 'ro-2-0-2-op-c-bs-ol-2-0-2-000'
+                              - uuid: 'ro-2-0-2-op-fc-bm-004'
                                 name:
                                   - value-name: 'ForwardingKind'
                                     value: 'core-model-1-4:FORWARDING_KIND_TYPE_INVARIANT_PROCESS_SNIPPET'
@@ -6814,10 +6814,10 @@ paths:
                                 fc-port:
                                   - local-id: '000'
                                     port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_MANAGEMENT'
-                                    logical-termination-point: 'ro-2-0-1-op-s-bm-005'
+                                    logical-termination-point: 'ro-2-0-2-op-s-bm-005'
                                   - local-id: '200'
                                     port-direction: 'core-model-1-4:PORT_DIRECTION_TYPE_OUTPUT'
-                                    logical-termination-point: 'ro-2-0-1-op-c-bs-aa-2-0-1-000'
+                                    logical-termination-point: 'ro-2-0-2-op-c-bs-aa-2-0-2-000'
         '400':
           $ref: '#/components/responses/responseForErroredOamRequests'
         '401':
@@ -6839,7 +6839,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-([a-z]+)-p-([0-9,a-f]{3})$'
-          example: 'ro-2-0-1-action-p-000'
+          example: 'ro-2-0-2-action-p-000'
     get:
       operationId: getProfileInstance
       summary: 'Returns entire instance of Profile'
@@ -7113,7 +7113,7 @@ paths:
                                     type: string
               example:
                 core-model-1-4:profile:
-                  uuid: 'ro-2-0-1-action-p-000'
+                  uuid: 'ro-2-0-2-action-p-000'
                   profile-name: 'action-profile-1-0:PROFILE_NAME_TYPE_ACTION_PROFILE'
                   action-profile-1-0:action-profile-pac:
                     action-profile-capability:
@@ -7149,7 +7149,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-action-p-([0-9]{3})$'
-          example: 'ro-2-0-1-action-p-000'
+          example: 'ro-2-0-2-action-p-000'
     get:
       operationId: getActionProfileOperationName
       summary: 'Returns the name of the Operation'
@@ -7190,7 +7190,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-action-p-([0-9]{3})$'
-          example: 'ro-2-0-1-action-p-000'
+          example: 'ro-2-0-2-action-p-000'
     get:
       operationId: getActionProfileLabel
       summary: 'Returns the Label of the Action'
@@ -7231,7 +7231,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-action-p-([0-9]{3})$'
-          example: 'ro-2-0-1-action-p-000'
+          example: 'ro-2-0-2-action-p-000'
     get:
       operationId: getActionProfileInputValueListt
       summary: 'Returns the list of input values'
@@ -7283,7 +7283,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-action-p-([0-9]{3})$'
-          example: 'ro-2-0-1-action-p-000'
+          example: 'ro-2-0-2-action-p-000'
     get:
       operationId: getActionProfileDisplayInNewBrowserWindow
       summary: 'Returns whether to be presented in new browser window'
@@ -7324,7 +7324,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-action-p-([0-9]{3})$'
-          example: 'ro-2-0-1-action-p-000'
+          example: 'ro-2-0-2-action-p-000'
     get:
       operationId: getActionProfileConsequentOperationReference
       summary: 'Returns the reference on the consequent operation'
@@ -7400,7 +7400,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-response-p-([0-9]{3})$'
-          example: 'ro-2-0-1-response-p-000'
+          example: 'ro-2-0-2-response-p-000'
     get:
       operationId: getGenericResponseProfileOperationName
       summary: 'Returns the name of the Operation'
@@ -7441,7 +7441,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-response-p-([0-9]{3})$'
-          example: 'ro-2-0-1-response-p-000'
+          example: 'ro-2-0-2-response-p-000'
     get:
       operationId: getGenericResponseProfileFieldName
       summary: 'Returns the name of the Field'
@@ -7491,7 +7491,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-response-p-([0-9]{3})$'
-          example: 'ro-2-0-1-response-p-000'
+          example: 'ro-2-0-2-response-p-000'
     get:
       operationId: getGenericResponseProfileDescription
       summary: 'Returns the Description of the Field'
@@ -7532,7 +7532,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-response-p-([0-9]{3})$'
-          example: 'ro-2-0-1-response-p-000'
+          example: 'ro-2-0-2-response-p-000'
     get:
       operationId: getGenericResponseProfileDatatype
       summary: 'Returns the Datatype of the Field'
@@ -7573,7 +7573,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-response-p-([0-9]{3})$'
-          example: 'ro-2-0-1-response-p-000'
+          example: 'ro-2-0-2-response-p-000'
     get:
       operationId: getGenericResponseProfileValue
       summary: 'Returns the Value of the Field'
@@ -7669,7 +7669,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-file-p-([0-9]{3})$'
-          example: 'ro-2-0-1-file-p-000'
+          example: 'ro-2-0-2-file-p-000'
     get:
       operationId: getFileProfileFileIdentifier
       summary: 'Returns the identifier of the file'
@@ -7710,7 +7710,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-file-p-([0-9]{3})$'
-          example: 'ro-2-0-1-file-p-000'
+          example: 'ro-2-0-2-file-p-000'
     get:
       operationId: getFileProfileFileDescription
       summary: 'Returns the description of the file'
@@ -7751,7 +7751,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-file-p-([0-9]{3})$'
-          example: 'ro-2-0-1-file-p-000'
+          example: 'ro-2-0-2-file-p-000'
     get:
       operationId: getFileProfileFileName
       summary: 'Returns the name of the file'
@@ -7827,7 +7827,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-file-p-([0-9]{3})$'
-          example: 'ro-2-0-1-file-p-000'
+          example: 'ro-2-0-2-file-p-000'
     get:
       operationId: getFileProfileOperation
       summary: 'Returns the allowed operation on the file'
@@ -7913,7 +7913,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-integer-p-([0-9]{3})$'
-          example: 'ro-2-0-1-integer-p-000'
+          example: 'ro-2-0-2-integer-p-000'
     get:
       operationId: getIntegerProfileIntegerName
       summary: 'Returns the name of the Integer'
@@ -7954,7 +7954,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-integer-p-([0-9]{3})$'
-          example: 'ro-2-0-1-integer-p-000'
+          example: 'ro-2-0-2-integer-p-000'
     get:
       operationId: getIntegerProfileUnit
       summary: 'Returns the unit of the Integer'
@@ -7995,7 +7995,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-integer-p-([0-9]{3})$'
-          example: 'ro-2-0-1-integer-p-000'
+          example: 'ro-2-0-2-integer-p-000'
     get:
       operationId: getIntegerProfileMinimum
       summary: 'Returns the minimum value of the Integer'
@@ -8036,7 +8036,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-integer-p-([0-9]{3})$'
-          example: 'ro-2-0-1-integer-p-000'
+          example: 'ro-2-0-2-integer-p-000'
     get:
       operationId: getIntegerProfileMaximum
       summary: 'Returns the maximum value of the Integer'
@@ -8077,7 +8077,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-integer-p-([0-9]{3})$'
-          example: 'ro-2-0-1-integer-p-000'
+          example: 'ro-2-0-2-integer-p-000'
     get:
       operationId: getIntegerProfileIntegerValue
       summary: 'Returns the configured value of the Integer'
@@ -8153,7 +8153,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-string-p-([0-9]{3})$'
-          example: 'ro-2-0-1-string-p-000'
+          example: 'ro-2-0-2-string-p-000'
     get:
       operationId: getStringProfileStringName
       summary: 'Returns the name of the String'
@@ -8194,7 +8194,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-string-p-([0-9]{3})$'
-          example: 'ro-2-0-1-string-p-000'
+          example: 'ro-2-0-2-string-p-000'
     get:
       operationId: getStringProfileEnumeration
       summary: 'Returns the enumeration values of the String'
@@ -8238,7 +8238,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-string-p-([0-9]{3})$'
-          example: 'ro-2-0-1-string-p-000'
+          example: 'ro-2-0-2-string-p-000'
     get:
       operationId: getStringProfilePattern
       summary: 'Returns the pattern of the String'
@@ -8279,7 +8279,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-string-p-([0-9]{3})$'
-          example: 'ro-2-0-1-string-p-000'
+          example: 'ro-2-0-2-string-p-000'
     get:
       operationId: getStringProfileStringValue
       summary: 'Returns the configured value of the String'
@@ -8372,7 +8372,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-op-s-([bi][ms])-([0-9]{3})$'
-          example: 'ro-2-0-1-op-s-bm-000'
+          example: 'ro-2-0-2-op-s-bm-000'
     get:
       operationId: getOperationServerOperationName
       summary: 'Returns operation name'
@@ -8413,7 +8413,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-op-s-([bi][ms])-([0-9]{3})$'
-          example: 'ro-2-0-1-op-s-bm-000'
+          example: 'ro-2-0-2-op-s-bm-000'
     get:
       operationId: getOperationServerLifeCycleState
       summary: 'Returns the configured life cycle state of the operation'
@@ -8502,7 +8502,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-op-s-([bi][ms])-([0-9]{3})$'
-          example: 'ro-2-0-1-op-s-bm-000'
+          example: 'ro-2-0-2-op-s-bm-000'
     get:
       operationId: getOperationServerOperationKey
       summary: 'Returns key for connecting'
@@ -8579,7 +8579,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-http-s-000'
-          example: 'ro-2-0-1-http-s-000'
+          example: 'ro-2-0-2-http-s-000'
     get:
       operationId: getHttpServerApplicationName
       summary: 'Returns application name'
@@ -8620,7 +8620,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-http-s-000'
-          example: 'ro-2-0-1-http-s-000'
+          example: 'ro-2-0-2-http-s-000'
     get:
       operationId: getHttpServerReleaseNumber
       summary: 'Returns release number'
@@ -8661,7 +8661,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-http-s-000'
-          example: 'ro-2-0-1-http-s-000'
+          example: 'ro-2-0-2-http-s-000'
     get:
       operationId: getHttpServerApplicationPurpose
       summary: 'Returns application purpose'
@@ -8702,7 +8702,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-http-s-000'
-          example: 'ro-2-0-1-http-s-000'
+          example: 'ro-2-0-2-http-s-000'
     get:
       operationId: getHttpServerDataUpdatePeriode
       summary: 'Returns update period'
@@ -8748,7 +8748,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-http-s-000'
-          example: 'ro-2-0-1-http-s-000'
+          example: 'ro-2-0-2-http-s-000'
     get:
       operationId: getHttpServerOwnerName
       summary: 'Returns owner name'
@@ -8789,7 +8789,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-http-s-000'
-          example: 'ro-2-0-1-http-s-000'
+          example: 'ro-2-0-2-http-s-000'
     get:
       operationId: getHttpServerOwnerEmailAddress
       summary: 'Returns owner email address'
@@ -8830,7 +8830,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-http-s-000'
-          example: 'ro-2-0-1-http-s-000'
+          example: 'ro-2-0-2-http-s-000'
     get:
       operationId: getHttpServerReleaseList
       summary: 'Returns list of releases'
@@ -8893,7 +8893,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-tcp-s-([0-9]{3})$'
-          example: 'ro-2-0-1-tcp-s-000'
+          example: 'ro-2-0-2-tcp-s-000'
     get:
       operationId: getTcpServerDescription
       summary: 'Returns Description of TcpServer'
@@ -8966,7 +8966,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-tcp-s-([0-9]{3})$'
-          example: 'ro-2-0-1-tcp-s-000'
+          example: 'ro-2-0-2-tcp-s-000'
     get:
       operationId: getTcpServerLocalProtocol
       summary: 'Returns Protocol of TcpServer'
@@ -9047,7 +9047,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-tcp-s-([0-9]{3})$'
-          example: 'ro-2-0-1-tcp-s-000'
+          example: 'ro-2-0-2-tcp-s-000'
     get:
       operationId: getTcpServerLocalAddress
       summary: 'Returns address of the server'
@@ -9141,7 +9141,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-tcp-s-([0-9]{3})$'
-          example: 'ro-2-0-1-tcp-s-000'
+          example: 'ro-2-0-2-tcp-s-000'
     get:
       operationId: getTcpServerLocalPort
       summary: 'Returns TCP port of the server'
@@ -9219,7 +9219,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-op-c-([bi][ms])-([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{3})$'
-          example: 'ro-2-0-1-op-c-bm-or-1-0-0-000'
+          example: 'ro-2-0-2-op-c-bm-or-1-0-0-000'
     get:
       operationId: getOperationClientOperationName
       summary: 'Returns operation name'
@@ -9295,7 +9295,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-op-c-([bi][ms])-([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{3})$'
-          example: 'ro-2-0-1-op-c-bm-or-1-0-0-000'
+          example: 'ro-2-0-2-op-c-bm-or-1-0-0-000'
     get:
       operationId: getOperationClientOperationKey
       summary: 'Returns key used for connecting to server.'
@@ -9371,7 +9371,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-op-c-([bi][ms])-([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{3})$'
-          example: 'ro-2-0-1-op-c-bm-or-1-0-0-000'
+          example: 'ro-2-0-2-op-c-bm-or-1-0-0-000'
     get:
       operationId: getOperationClientOperationalState
       summary: 'Returns operational state of the operation'
@@ -9416,7 +9416,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-op-c-([bi][ms])-([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{3})$'
-          example: 'ro-2-0-1-op-c-bm-or-1-0-0-000'
+          example: 'ro-2-0-2-op-c-bm-or-1-0-0-000'
     get:
       operationId: getOperationClientLifeCycleState
       summary: 'Returns life cycle state of the operation'
@@ -9464,7 +9464,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-op-c-bs-([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{3})$'
-          example: 'ro-2-0-1-op-c-bs-eatl-2-0-1-000'
+          example: 'ro-2-0-2-op-c-bs-eatl-2-0-2-000'
     get:
       operationId: getOperationClientDetailedLoggingIsOn
       summary: 'Returns detailed logging configuration.'
@@ -9540,7 +9540,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-http-c-([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-000$'
-          example: 'ro-2-0-1-http-c-or-1-0-0-000'
+          example: 'ro-2-0-2-http-c-or-1-0-0-000'
     get:
       operationId: getHttpClientApplicationName
       summary: 'Returns name of application to be addressed'
@@ -9616,7 +9616,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-http-c-([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-000$'
-          example: 'ro-2-0-1-http-c-or-1-0-0-000'
+          example: 'ro-2-0-2-http-c-or-1-0-0-000'
     get:
       operationId: getHttpClientReleaseNumber
       summary: 'Returns release number of application to be addressed'
@@ -9693,7 +9693,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-tcp-c-([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-000$'
-          example: 'ro-2-0-1-tcp-c-or-1-0-0-000'
+          example: 'ro-2-0-2-tcp-c-or-1-0-0-000'
     get:
       operationId: getTcpClientRemoteProtocol
       summary: 'Returns protocol for addressing remote side'
@@ -9774,7 +9774,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-tcp-c-([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-000$'
-          example: 'ro-2-0-1-tcp-c-or-1-0-0-000'
+          example: 'ro-2-0-2-tcp-c-or-1-0-0-000'
     get:
       operationId: getTcpClientRemoteAddress
       summary: 'Returns remote address'
@@ -9878,7 +9878,7 @@ paths:
         schema:
           type: string
           pattern: '^([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-tcp-c-([a-z]{2,6})-([0-9]{1,2})-([0-9]{1,2})-([0-9]{1,2})-000$'
-          example: 'ro-2-0-1-tcp-c-or-1-0-0-000'
+          example: 'ro-2-0-2-tcp-c-or-1-0-0-000'
     get:
       operationId: getTcpClientRemotePort
       summary: 'Returns target TCP port at server'
