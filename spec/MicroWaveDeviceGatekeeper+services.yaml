@@ -341,12 +341,12 @@ clients:
   - http-client:
       application-name: NotificationProxy
       release-number: 1.0.1
-      uuid: mwdg-1-0-0-http-c-np-1-0-0-000
+      uuid: mwdg-1-0-0-http-c-np-1-0-1-000
     tcp-client:
       remote-protocol: http
       ip-address: 1.1.4.11
       tcp-port: 4011
-      uuid: mwdg-1-0-0-tcp-c-np-1-0-0-000
+      uuid: mwdg-1-0-0-tcp-c-np-1-0-1-000
     operation-clients:
       own-oam:
         basic:
@@ -356,8 +356,8 @@ clients:
         individual:
           ## subscribing for controller notifications
           - operation-name: /v1/notify-controller-attribute-value-changes
-            uuid: mwdg-1-0-0-op-c-is-np-1-0-0-000
+            uuid: mwdg-1-0-0-op-c-is-np-1-0-1-000
 
           ## unsubscribe from notifications
           - operation-name: /v1/end-subscription
-            uuid: mwdg-1-0-0-op-c-is-np-1-0-0-020
+            uuid: mwdg-1-0-0-op-c-is-np-1-0-1-020
