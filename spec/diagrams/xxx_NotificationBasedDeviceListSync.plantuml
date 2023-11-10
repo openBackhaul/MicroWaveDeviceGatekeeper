@@ -1,0 +1,24 @@
+@startuml xxx_NotificationBasedDeviceListSync
+skinparam responseMessageBelowArrow true
+
+title NotifiedConnectionStatusChangeCausesUpdateOfInternalDeviceList
+
+participant "NP://v1/notify-controller-attribute-value-changes" as subscription
+participant "MWDG://v1/regard-controller-attribute-value-change" as regardNewDevice
+
+subscription -> regardNewDevice: AttributeValueChangedNotification (apiKeyAuth)
+activate regardNewDevice
+
+note over regardNewDevice
+IF attribute-name == 'connection-status' 
+AND IF new-value == 'connected'
+Add mountName to internal device list
+
+IF attribute-name == 'connection-status' 
+AND IF new-value != 'connected'
+Remove mountName from internal device list
+end note
+
+deactivate regardNewDevice
+
+@enduml

@@ -1,0 +1,40 @@
+@startuml 1xy_PutToLiveRessourcePath
+skinparam responseMessageBelowArrow true
+
+title 
+PutToLiveRessourcePathCausesWritingIntoDevice
+(Many Forwardings, as for example:
+PutToLiveAirInterfaceTransmitterIsOnCausesWritingIntoDevice
+PostToLiveRpcForProvidingLearnedMacAdressesCausesInitiatingRpcExecutionOnDevice
+PutToLiveControlConstructExternalLabelCausesWritingIntoDevice
+PutToLiveLtpExternalLabelCausesWritingIntoDevice
+PutToLiveAirInterfacePerformanceMonitoringIsOnCausesWritingIntoDevice
+and many more)
+end title
+
+participant "external" as requestor
+participant "MWDG:/{livePath}" as LivePath
+participant "ODL://{controllerInternalPathToMountPoint}/node={mountName}/yang-ext:mount\n/core-model-1-4:control-construct{livePath shortened by /core-model-1-4:network-control-domain=cache/control-construct={mountName}}" as OdlControlConstructClass
+
+requestor -> LivePath: (apiKeyAuth)
+activate LivePath
+
+note over LivePath
+If mountName not in list of connected devices
+end note
+LivePath --> requestor: {responseCode=404}
+
+note over LivePath
+If mountName in list of connected devices
+end note
+LivePath -> OdlControlConstructClass: (BasicAuth)
+OdlControlConstructClass --> LivePath: (responseCode)
+
+LivePath --> requestor: {responseCode}
+
+deactivate LivePath
+
+@enduml
+
+
+

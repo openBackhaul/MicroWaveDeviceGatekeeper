@@ -1,0 +1,21 @@
+@startuml 010_MwdgSubscribesAtNp
+skinparam responseMessageBelowArrow true
+
+title PromptForEmbeddingCausesSubscribingForNotifications
+
+participant "RO" as ro
+participant "MWDG://v1/embed-yourself" as mwdg
+participant "MWDG://v1/regard-controller-attribute-value-change" as receivers
+participant "NP://v1/notify-controller-attribute-value-changes" as npnew
+
+ro -> mwdg
+activate mwdg
+
+note over mwdg
+subscribe for info about 
+new and disconnected devices
+end note
+mwdg -> npnew: {ownIp, ownPort, ownReceiveOperation} (apiKeyAuth)
+npnew -> receivers: {notifications} (apiKeyAuth)
+
+@enduml

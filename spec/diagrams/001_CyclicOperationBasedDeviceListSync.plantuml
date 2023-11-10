@@ -1,0 +1,29 @@
+@startuml 001_CyclicOperationBasedDeviceListSync
+skinparam responseMessageBelowArrow true
+
+title
+PromptForEmbeddingCausesCyclicLoadingOfDeviceListFromController
+end title
+
+participant "RO" as ro
+participant "MWDG://v1/embed-yourself" as mwdg
+participant "ODL://{controllerInternalPathToMountPoint}?fields=\nnode(node-id;netconf-node-topology:\nconnection-status)" as odlConnectionStatus
+
+ro -> mwdg
+activate mwdg
+
+note over mwdg
+Cyclic operation for 
+updating the internal list of devices starts
+end note
+
+note over mwdg
+Load list of devices from ODL
+Filter for connectionStatus == connected
+end note
+mwdg -> odlConnectionStatus
+odlConnectionStatus --> mwdg: {list of-(mount-name, connection-status)}
+
+deactivate mwdg
+
+@enduml
