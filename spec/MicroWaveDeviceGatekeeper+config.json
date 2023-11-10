@@ -2060,12 +2060,12 @@
         ]
       },
       {
-        "uuid": "mwdg-1-0-0-op-c-is-np-1-0-0-000",
+        "uuid": "mwdg-1-0-0-op-c-is-np-1-0-1-000",
         "ltp-direction": "core-model-1-4:TERMINATION_DIRECTION_SINK",
         "client-ltp": [
         ],
         "server-ltp": [
-          "mwdg-1-0-0-http-c-np-1-0-0-000"
+          "mwdg-1-0-0-http-c-np-1-0-1-000"
         ],
         "layer-protocol": [
           {
@@ -2085,12 +2085,12 @@
         ]
       },
       {
-        "uuid": "mwdg-1-0-0-op-c-is-np-1-0-0-020",
+        "uuid": "mwdg-1-0-0-op-c-is-np-1-0-1-020",
         "ltp-direction": "core-model-1-4:TERMINATION_DIRECTION_SINK",
         "client-ltp": [
         ],
         "server-ltp": [
-          "mwdg-1-0-0-http-c-np-1-0-0-000"
+          "mwdg-1-0-0-http-c-np-1-0-1-000"
         ],
         "layer-protocol": [
           {
@@ -2111,14 +2111,14 @@
       },
 
       {
-        "uuid": "mwdg-1-0-0-http-c-np-1-0-0-000",
+        "uuid": "mwdg-1-0-0-http-c-np-1-0-1-000",
         "ltp-direction": "core-model-1-4:TERMINATION_DIRECTION_SINK",
         "client-ltp": [
-          "mwdg-1-0-0-op-c-is-np-1-0-0-000",
-          "mwdg-1-0-0-op-c-is-np-1-0-0-020"
+          "mwdg-1-0-0-op-c-is-np-1-0-1-000",
+          "mwdg-1-0-0-op-c-is-np-1-0-1-020"
         ],
         "server-ltp": [
-          "mwdg-1-0-0-tcp-c-np-1-0-0-000"
+          "mwdg-1-0-0-tcp-c-np-1-0-1-000"
         ],
         "layer-protocol": [
           {
@@ -2134,10 +2134,10 @@
         ]
       },
       {
-        "uuid": "mwdg-1-0-0-tcp-c-np-1-0-0-000",
+        "uuid": "mwdg-1-0-0-tcp-c-np-1-0-1-000",
         "ltp-direction": "core-model-1-4:TERMINATION_DIRECTION_SINK",
         "client-ltp": [
-          "mwdg-1-0-0-http-c-np-1-0-0-000"
+          "mwdg-1-0-0-http-c-np-1-0-1-000"
         ],
         "server-ltp": [
         ],
@@ -2265,7 +2265,7 @@
               {
                 "local-id": "2000",
                 "port-direction": "core-model-1-4:PORT_DIRECTION_TYPE_OUTPUT",
-                "logical-termination-point": "mwdg-1-0-0-op-c-is-np-1-0-0-000"
+                "logical-termination-point": "mwdg-1-0-0-op-c-is-np-1-0-1-000"
               }
             ]
           },
@@ -2510,7 +2510,7 @@
               {
                 "local-id": "2000",
                 "port-direction": "core-model-1-4:PORT_DIRECTION_TYPE_OUTPUT",
-                "logical-termination-point": "mwdg-1-0-0-op-c-is-np-1-0-0-020"
+                "logical-termination-point": "mwdg-1-0-0-op-c-is-np-1-0-1-020"
               }
             ]
           },
