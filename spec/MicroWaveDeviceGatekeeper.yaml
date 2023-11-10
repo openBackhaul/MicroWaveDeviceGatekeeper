@@ -702,7 +702,6 @@ paths:
               properties:
                 equipment-augment-1-0:external-label:
                   type: string
-                  pattern: '^([0-9]{3})(25)([0-9]{4})$'
                   description: 'Network element ID, respectively mountName'
               example:
                 equipment-augment-1-0:external-label: '513250011'
@@ -839,7 +838,6 @@ paths:
               properties:
                 ltp-augment-1-0:external-label:
                   type: string
-                  pattern: '^([0-9]{3})(55)([0-9]{4})$'
                   description: 'Link ID'
               example:
                 ltp-augment-1-0:external-label: '305551234'
@@ -1616,22 +1614,22 @@ paths:
                           type: string
                           description: >
                             'Reference to the MAC switch, which is holding the MAC address table that is containing this entry.
-                            from {$PostToLiveRpcForProvidingLearnedMacAdressesCausesInitiatingRpcExecutionOnDevice.body#mac-fd-1-0:mac-table-entry-list/affected-mac-fd}'
+                            from {$PostToLiveRpcForProvidingLearnedMacAdressesCausesInitiatingRpcExecutionOnDevice.response.body#mac-fd-1-0:mac-table-entry-list/affected-mac-fd}'
                         mac-address:
                           type: string
                           description: >
                             'MAC address that can be reached on the referenced interface.
-                            from {$PostToLiveRpcForProvidingLearnedMacAdressesCausesInitiatingRpcExecutionOnDevice.body#mac-fd-1-0:mac-table-entry-list/mac-address}'
+                            from {$PostToLiveRpcForProvidingLearnedMacAdressesCausesInitiatingRpcExecutionOnDevice.response.body#mac-fd-1-0:mac-table-entry-list/mac-address}'
                         vlan-id:
                           type: integer
                           description: >
                             'VLAN, in which the MAC address can be reached at the referenced interface. If VLAN bridging would be deactivated, this value should be 0.
-                            from {$PostToLiveRpcForProvidingLearnedMacAdressesCausesInitiatingRpcExecutionOnDevice.body#mac-fd-1-0:mac-table-entry-list/vlan-id}'
+                            from {$PostToLiveRpcForProvidingLearnedMacAdressesCausesInitiatingRpcExecutionOnDevice.response.body#mac-fd-1-0:mac-table-entry-list/vlan-id}'
                         egress-ltp:
                           type: string
                           description: >
                             'MAC interface that connects the MAC address.
-                            from {$PostToLiveRpcForProvidingLearnedMacAdressesCausesInitiatingRpcExecutionOnDevice.body#mac-fd-1-0:mac-table-entry-list/egress-ltp}'
+                            from {$PostToLiveRpcForProvidingLearnedMacAdressesCausesInitiatingRpcExecutionOnDevice.response.body#mac-fd-1-0:mac-table-entry-list/egress-ltp}'
                 example:
                   response-code: 200
                   mac-fd-1-0:mac-table-entry-list:
@@ -2162,7 +2160,7 @@ paths:
                               type: string
                               pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
                               description: >
-                                'If provided, own IPv4 address, which has to be documented (but not be directly used for formulating the callback) 
+                                'If provided, own IPv4 address, which has to be documented (but not be directly used for formulating the callback)
                                 update [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-tcp-s-000/layer-protocol=0/tcp-server-interface-1-0:tcp-server-interface-pac/tcp-server-interface-configuration/local-address/ipv-4-address]'
                         domain-name:
                           type: string
