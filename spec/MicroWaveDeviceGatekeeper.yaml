@@ -933,7 +933,7 @@ paths:
                     example: 'LTP-MWPS-TTP-1-1'
                   description: >
                     'The UUID of the LogicalTerminationPoint that is addressed by the request
-                    from {$request.parameters#uuid}'
+                    from {$request.parameters#uuid}.slice(10) for removing mountName and "+" '
               requestBody:
                 required: true
                 content:
@@ -1079,7 +1079,7 @@ paths:
                     example: 'LTP-MWPS-TTP-1-1'
                   description: >
                     'The UUID of the LogicalTerminationPoint that is addressed by the request
-                    from {$request.parameters#uuid}'
+                    from {$request.parameters#uuid}.slice(10) for removing mountName and "+" '
                 - name: localId
                   in: path
                   required: true
@@ -1233,7 +1233,7 @@ paths:
                     example: 'LTP-MWPS-TTP-1-1'
                   description: >
                     'The UUID of the LogicalTerminationPoint that is addressed by the request
-                    from {$request.parameters#uuid}'
+                    from {$request.parameters#uuid}.slice(10) for removing mountName and "+" '
                 - name: localId
                   in: path
                   required: true
@@ -1388,7 +1388,7 @@ paths:
                     example: 'LTP-MWPS-TTP-1-1'
                   description: >
                     'The UUID of the LogicalTerminationPoint that is addressed by the request
-                    from {$request.parameters#uuid}'
+                    from {$request.parameters#uuid}.slice(10) for removing mountName and "+" '
                 - name: localId
                   in: path
                   required: true
@@ -1543,7 +1543,7 @@ paths:
                     example: 'LTP-MWPS-TTP-1-1'
                   description: >
                     'The UUID of the LogicalTerminationPoint that is addressed by the request
-                    from {$request.parameters#uuid}'
+                    from {$request.parameters#uuid}.slice(10) for removing mountName and "+" '
                 - name: localId
                   in: path
                   required: true
@@ -1865,7 +1865,7 @@ paths:
                     example: 'LTP-MWPS-TTP-1-1'
                   description: >
                     'The UUID of the LogicalTerminationPoint that is addressed by the request
-                    from {$request.parameters#uuid}'
+                    from {$request.parameters#uuid}.slice(10) for removing mountName and "+" '
                 - name: localId
                   in: path
                   required: true
@@ -2020,7 +2020,7 @@ paths:
                     example: 'LTP-MWPS-TTP-1-1'
                   description: >
                     'The UUID of the LogicalTerminationPoint that is addressed by the request
-                    from {$request.parameters#uuid}'
+                    from {$request.parameters#uuid}.slice(10) for removing mountName and "+" '
                 - name: localId
                   in: path
                   required: true
