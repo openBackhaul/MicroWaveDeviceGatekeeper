@@ -198,7 +198,16 @@ paths:
                           type: string
                           description: >
                             'Name of operation that had been addressed for starting getting notifications. Requests have to be sent for the following subscriptions:
-                            from [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-is-np-1-0-1-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]'
+                            from [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-is-np-1-0-1-000/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+                            and
+                            from [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-is-np-1-0-1-010/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+                            and
+                            from [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-is-np-1-0-1-011/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+                            and
+                            from [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-is-np-1-0-1-012/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+                            and
+                            from [/core-model-1-4:control-construct/logical-termination-point=mwdg-1-0-0-op-c-is-np-1-0-1-013/layer-protocol=0/operation-client-interface-1-0:operation-client-interface-pac/operation-client-interface-configuration/operation-name]
+                            in five separate, sequential requests.'
                       example:
                         subscriber-application: 'MicroWaveDeviceGatekeeper'
                         subscriber-release-number: '1.0.0'
