@@ -1331,7 +1331,7 @@
         ]
       },
       {
-        "uuid": "mwdg-1-0-0-http-c-tar-2-0-2-000",
+        "uuid": "mwdg-1-0-0-op-c-bs-eatl-2-0-2-000",
         "ltp-direction": "core-model-1-4:TERMINATION_DIRECTION_SINK",
         "client-ltp": [
         ],

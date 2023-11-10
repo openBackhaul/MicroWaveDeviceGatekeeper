@@ -72,11 +72,11 @@ servers:
         # 260 HybridMicrowaveStructure
         - operation-name: /core-model-1-4:network-control-domain=live/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/hybrid-mw-structure-2-0:hybrid-mw-structure-pac/hybrid-mw-structure-configuration/performance-monitoring-is-on
           uuid: mwdg-1-0-0-op-s-is-269
-                  
+
         # 270 MacInterface
         - operation-name: /core-model-1-4:network-control-domain=live/control-construct={mountName}/mac-fd-1-0:provide-learned-mac-addresses
           uuid: mwdg-1-0-0-op-s-is-270
-        
+
         # 290 PureEthernetStructure
         - operation-name: /core-model-1-4:network-control-domain=live/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/pure-ethernet-structure-2-0:pure-ethernet-structure-pac/pure-ethernet-structure-configuration/performance-monitoring-is-on
           uuid: mwdg-1-0-0-op-s-is-299
@@ -323,11 +323,11 @@ clients:
           ## 260 HybridMicrowaveStructure
           - operation-name: /{controllerInternalPathToMountPoint}/node={mountName}/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol={localId}/hybrid-mw-structure-2-0:hybrid-mw-structure-pac/hybrid-mw-structure-configuration/performance-monitoring-is-on
             uuid: mwdg-1-0-0-op-c-is-odl-4-0-2-269
-                    
+
           ## 270 MacInterface
           - operation-name: /{controllerInternalPathToMountPoint}/node={mountName}/yang-ext:mount/mac-fd-1-0:provide-learned-mac-addresses
             uuid: mwdg-1-0-0-op-c-is-odl-4-0-2-270
-          
+
           ## 290 PureEthernetStructure
           - operation-name: /{controllerInternalPathToMountPoint}/node={mountName}/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol={localId}/pure-ethernet-structure-2-0:pure-ethernet-structure-pac/pure-ethernet-structure-configuration/performance-monitoring-is-on
             uuid: mwdg-1-0-0-op-c-is-odl-4-0-2-299
