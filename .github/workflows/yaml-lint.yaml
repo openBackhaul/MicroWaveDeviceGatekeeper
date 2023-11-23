@@ -14,7 +14,7 @@ jobs:
           config_data: |
             extends: default
             ignore: |
-              /server/
+              server/
             rules:
               line-length: disable
               document-start: disable
