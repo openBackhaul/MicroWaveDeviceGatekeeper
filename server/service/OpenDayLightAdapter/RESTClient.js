@@ -21,7 +21,7 @@ const FileprofileOperation = require('onf-core-model-ap/applicationPattern/onfMo
  * @param {String} httpMethod method of the request if undefined defaults to POST
  * @param {Object} params path and query parameters
  *  @param {String} httpRequestHeader request  for the operation
-* @param {String} user username of the request initiator.
+ * @param {String} user username of the request initiator.
  * @param {String} xCorrelator UUID for the service execution flow that allows to correlate requests and responses.
  * @param {String} traceIndicator Sequence number of the request.
  * @param {String} customerJourney Holds information supporting customer’s journey to which the execution applies.

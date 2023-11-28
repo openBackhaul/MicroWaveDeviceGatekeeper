@@ -1,5 +1,9 @@
 'use strict';
 
+const OpenDayLightAdapter = require('./OpenDayLightAdapter/RESTClient');
+const readDataFromLive = require('./individualServices/ReadDataFromLive')
+const createHttpError = require('http-errors');
+const IndividualServiceUtility = require('./individualServices/IndividualServiceUtility')
 
 /**
  * Initiates process of embedding a new release
@@ -12,8 +16,8 @@
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * no response value expected for this operation
  **/
-exports.bequeathYourDataAndDie = function(body,user,originator,xCorrelator,traceIndicator,customerJourney) {
-  return new Promise(function(resolve, reject) {
+exports.bequeathYourDataAndDie = function (body, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  return new Promise(function (resolve, reject) {
     resolve();
   });
 }
@@ -30,23 +34,23 @@ exports.bequeathYourDataAndDie = function(body,user,originator,xCorrelator,trace
  * mountName String The mountName of the device that is addressed by the request
  * returns inline_response_200_7
  **/
-exports.postMacInterfaceRpcForProvidingLearnedMacAdresses = function(user,originator,xCorrelator,traceIndicator,customerJourney,mountName) {
-  return new Promise(function(resolve, reject) {
+exports.postMacInterfaceRpcForProvidingLearnedMacAdresses = function (user, originator, xCorrelator, traceIndicator, customerJourney, mountName) {
+  return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-  "response-code" : 200,
-  "mac-fd-1-0:mac-table-entry-list" : [ {
-    "affected-mac-fd" : "mac-fd-001",
-    "mac-address" : "11:22:5e:00:53:af",
-    "vlan-id" : 17,
-    "egress-ltp" : "mac-ltp-012"
-  }, {
-    "affected-mac-fd" : "mac-fd-001",
-    "mac-address" : "11:22:33:44:55:66",
-    "vlan-id" : 34,
-    "egress-ltp" : "mac-ltp-012"
-  } ]
-};
+      "response-code": 200,
+      "mac-fd-1-0:mac-table-entry-list": [{
+        "affected-mac-fd": "mac-fd-001",
+        "mac-address": "11:22:5e:00:53:af",
+        "vlan-id": 17,
+        "egress-ltp": "mac-ltp-012"
+      }, {
+        "affected-mac-fd": "mac-fd-001",
+        "mac-address": "11:22:33:44:55:66",
+        "vlan-id": 34,
+        "egress-ltp": "mac-ltp-012"
+      }]
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -66,12 +70,12 @@ exports.postMacInterfaceRpcForProvidingLearnedMacAdresses = function(user,origin
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200
  **/
-exports.provideListOfConnectedDevices = function(user,originator,xCorrelator,traceIndicator,customerJourney) {
-  return new Promise(function(resolve, reject) {
+exports.provideListOfConnectedDevices = function (user, originator, xCorrelator, traceIndicator, customerJourney) {
+  return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-  "mount-name-list" : [ "305251234", "105258888" ]
-};
+      "mount-name-list": ["305251234", "105258888"]
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -95,12 +99,12 @@ exports.provideListOfConnectedDevices = function(user,originator,xCorrelator,tra
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_4
  **/
-exports.putLiveAirInterfacePerformanceMonitoringIsOn = function(body,mountName,uuid,localId,user,originator,xCorrelator,traceIndicator,customerJourney) {
-  return new Promise(function(resolve, reject) {
+exports.putLiveAirInterfacePerformanceMonitoringIsOn = function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-  "response-code" : 204
-};
+      "response-code": 204
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -124,12 +128,12 @@ exports.putLiveAirInterfacePerformanceMonitoringIsOn = function(body,mountName,u
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_3
  **/
-exports.putLiveAirInterfaceTransimitterIsOn = function(body,mountName,uuid,localId,user,originator,xCorrelator,traceIndicator,customerJourney) {
-  return new Promise(function(resolve, reject) {
+exports.putLiveAirInterfaceTransimitterIsOn = function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-  "response-code" : 204
-};
+      "response-code": 204
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -151,20 +155,41 @@ exports.putLiveAirInterfaceTransimitterIsOn = function(body,mountName,uuid,local
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_1
  **/
-exports.putLiveControlConstructExternalLabel = function(body,mountName,user,originator,xCorrelator,traceIndicator,customerJourney) {
-  return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-  "response-code" : 204
-};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });
-}
+exports.putLiveControlConstructExternalLabel = async function (body, mountName, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  let responseCode = "";
+  try {
+    let mountNamevalue = mountName;
+    let requestBody = body;
 
+    let eatlRequestHeaders = {
+      user: user,
+      originator: originator,
+      xCorrelator: xCorrelator,
+      traceIndicator: traceIndicator,
+      customerJourney: customerJourney
+    };
+
+    let base64Auth = await OpenDayLightAdapter.getAuthorizationAsync()
+    if (base64Auth) {
+      let httpRequestHeader = {
+        "Authorization": base64Auth
+      }
+      responseCode = await PutToLiveControlConstructExternalLabelCausesWritingIntoDevice(mountNamevalue, requestBody, httpRequestHeader, eatlRequestHeaders)
+      if (responseCode) {
+        return {
+          "response-code": responseCode
+        };
+      } else {
+        console.log('PutToLiveControlConstructExternalLabelCausesWritingIntoDevice is not sucess');
+      }
+    }
+    else {
+      return new createHttpError.NotFound("File not found");
+    }
+  } catch (error) {
+  }
+
+}
 
 /**
  * Configures EthernetContainer PerformanceMonitoringIsOn in live network
@@ -180,12 +205,12 @@ exports.putLiveControlConstructExternalLabel = function(body,mountName,user,orig
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_5
  **/
-exports.putLiveEthernetContainerPerformanceMonitoringIsOn = function(body,mountName,uuid,localId,user,originator,xCorrelator,traceIndicator,customerJourney) {
-  return new Promise(function(resolve, reject) {
+exports.putLiveEthernetContainerPerformanceMonitoringIsOn = function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-  "response-code" : 204
-};
+      "response-code": 204
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -209,12 +234,12 @@ exports.putLiveEthernetContainerPerformanceMonitoringIsOn = function(body,mountN
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_6
  **/
-exports.putLiveHybridMwStructurePerformanceMonitoringIsOn = function(body,mountName,uuid,localId,user,originator,xCorrelator,traceIndicator,customerJourney) {
-  return new Promise(function(resolve, reject) {
+exports.putLiveHybridMwStructurePerformanceMonitoringIsOn = function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-  "response-code" : 204
-};
+      "response-code": 204
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -237,12 +262,12 @@ exports.putLiveHybridMwStructurePerformanceMonitoringIsOn = function(body,mountN
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_2
  **/
-exports.putLiveLtpExternalLabel = function(body,mountName,uuid,user,originator,xCorrelator,traceIndicator,customerJourney) {
-  return new Promise(function(resolve, reject) {
+exports.putLiveLtpExternalLabel = function (body, mountName, uuid, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-  "response-code" : 204
-};
+      "response-code": 204
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -266,12 +291,12 @@ exports.putLiveLtpExternalLabel = function(body,mountName,uuid,user,originator,x
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_8
  **/
-exports.putLivePureEthernetStructurePerformanceMonitoringIsOn = function(body,mountName,uuid,localId,user,originator,xCorrelator,traceIndicator,customerJourney) {
-  return new Promise(function(resolve, reject) {
+exports.putLivePureEthernetStructurePerformanceMonitoringIsOn = function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-  "response-code" : 204
-};
+      "response-code": 204
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -295,12 +320,12 @@ exports.putLivePureEthernetStructurePerformanceMonitoringIsOn = function(body,mo
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_9
  **/
-exports.putLiveWireInterfacePerformanceMonitoringIsOn = function(body,mountName,uuid,localId,user,originator,xCorrelator,traceIndicator,customerJourney) {
-  return new Promise(function(resolve, reject) {
+exports.putLiveWireInterfacePerformanceMonitoringIsOn = function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  return new Promise(function (resolve, reject) {
     var examples = {};
     examples['application/json'] = {
-  "response-code" : 204
-};
+      "response-code": 204
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -321,9 +346,26 @@ exports.putLiveWireInterfacePerformanceMonitoringIsOn = function(body,mountName,
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * no response value expected for this operation
  **/
-exports.regardControllerAttributeValueChange = function(body,user,originator,xCorrelator,traceIndicator,customerJourney) {
-  return new Promise(function(resolve, reject) {
+exports.regardControllerAttributeValueChange = function (body, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  return new Promise(function (resolve, reject) {
     resolve();
   });
 }
 
+
+
+async function PutToLiveControlConstructExternalLabelCausesWritingIntoDevice(mountName, requestBody, httpRequestHeader, eatlRequestHeaders) {
+  let responseCodeLiveResponse;
+  try {
+    const forwardingName = "PutToLiveControlConstructExternalLabelCausesWritingIntoDevice";
+    const stringName = "controllerInternalPathToMountPoint";
+    let pathParams = [];
+    let stringValue = await IndividualServiceUtility.getStringProfileInstanceValue(stringName);
+    pathParams.push(stringValue, mountName);
+    responseCodeLiveResponse = await readDataFromLive.RequestForProvidingPutDataFromLive(requestBody, httpRequestHeader, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    return responseCodeLiveResponse.responseCode;
+
+  } catch (error) {
+    return new createHttpError.InternalServerError();
+  }
+}
