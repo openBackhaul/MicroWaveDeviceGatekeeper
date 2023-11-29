@@ -9,7 +9,7 @@ const ExecutionAndTraceService = require('onf-core-model-ap/applicationPattern/s
 const createHttpError = require('http-errors');
 const RestRequestBuilder = require('onf-core-model-ap/applicationPattern/rest/client/RequestBuilder');
 const fs = require('fs');
-const administratorList = 'odl-credential';
+const odlCredentialList = 'odl-credential';
 const authorizationValue = 'authorization';
 const FileprofileOperation = require('onf-core-model-ap/applicationPattern/onfModel/models/profile/FileProfile')
 
@@ -27,7 +27,7 @@ const FileprofileOperation = require('onf-core-model-ap/applicationPattern/onfMo
  * @param {String} customerJourney Holds information supporting customer’s journey to which the execution applies.
  */
 
-exports.dispatchEvent = async function (operationClientUuid, httpRequestBody, httpMethod, params, httpRequestHeader, user, xCorrelator, traceIndicator, customerJourney) {
+exports.dispatchEvent = async function (operationClientUuid, httpRequestBody, httpMethod, params, httpRequestHeader, user, xCorrelator, traceIndicator) {
     try {
         let responseObj = {};
         let responseCode;
@@ -76,22 +76,23 @@ exports.dispatchEvent = async function (operationClientUuid, httpRequestBody, ht
  * @param {String} authorization : authorization code of the user , value should be Bse64 Encoding of username and password 
  * @returns {promise} string {approvalStatus}
 **/
+
 exports.getAuthorizationAsync = async function () {
     let isAuthorizationExist = false;
     try {
         let applicationDataFile = await FileprofileOperation.getApplicationDataFileContent()
         if (applicationDataFile !== undefined) {
             let applicationData = JSON.parse(fs.readFileSync(applicationDataFile, 'utf8'));
-            if (applicationData[administratorList]) {
-                let registeredApplicationList = applicationData[administratorList];
-                for (let i = 0; i < registeredApplicationList.length; i++) {
-                    let registeredApplication = registeredApplicationList[i];
-                    let _authorization = registeredApplication[authorizationValue];
+            if (applicationData[odlCredentialList]) {
+                let registeredApplicationList = applicationData[odlCredentialList];
+                if (registeredApplicationList) {
+                    let _authorization = registeredApplicationList[authorizationValue];
                     return _authorization
+
                 }
             }
         }
-        return { isAuthorizationExist }
+        return isAuthorizationExist 
     } catch (error) {
         console.log(error);
 

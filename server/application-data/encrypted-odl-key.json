@@ -1,7 +1,8 @@
 {
-    "odl-credential": [
-        {
-            "authorization": "Basic YWRtaW46YWRtaW4="
-        }
-    ]
-}
+   
+    "odl-credential":
+      {
+          "authorization": " "
+      }
+   
+  }

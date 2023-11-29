@@ -1,7 +1,7 @@
 'use strict';
 
-const OpenDayLightAdapter = require('./OpenDayLightAdapter/RESTClient');
-const readDataFromLive = require('./individualServices/ReadDataFromLive')
+
+const WriteDataToLive = require('./individualServices/WriteDataToLive')
 const createHttpError = require('http-errors');
 const IndividualServiceUtility = require('./individualServices/IndividualServiceUtility')
 
@@ -156,7 +156,7 @@ exports.putLiveAirInterfaceTransimitterIsOn = function (body, mountName, uuid, l
  * returns inline_response_200_1
  **/
 exports.putLiveControlConstructExternalLabel = async function (body, mountName, user, originator, xCorrelator, traceIndicator, customerJourney) {
-  let responseCode = "";
+  let responseCodeLiveResponse = "";
   try {
     let mountNamevalue = mountName;
     let requestBody = body;
@@ -168,25 +168,30 @@ exports.putLiveControlConstructExternalLabel = async function (body, mountName, 
       traceIndicator: traceIndicator,
       customerJourney: customerJourney
     };
+    const forwardingName = "PutToLiveControlConstructExternalLabelCausesWritingIntoDevice";
+    const stringName = "controllerInternalPathToMountPoint";
+    let pathParams = [];
 
-    let base64Auth = await OpenDayLightAdapter.getAuthorizationAsync()
-    if (base64Auth) {
-      let httpRequestHeader = {
-        "Authorization": base64Auth
-      }
-      responseCode = await PutToLiveControlConstructExternalLabelCausesWritingIntoDevice(mountNamevalue, requestBody, httpRequestHeader, eatlRequestHeaders)
-      if (responseCode) {
-        return {
-          "response-code": responseCode
-        };
-      } else {
-        console.log('PutToLiveControlConstructExternalLabelCausesWritingIntoDevice is not sucess');
-      }
-    }
-    else {
+    let stringValue = await IndividualServiceUtility.getStringProfileInstanceValue(stringName);
+    pathParams.push(stringValue, mountNamevalue);
+    responseCodeLiveResponse = await WriteDataToLive.RequestForProvidingPutDataFromLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+
+    if (responseCodeLiveResponse == "File not found") {
       return new createHttpError.NotFound("File not found");
     }
+    else if (responseCodeLiveResponse.responseCode == 204) {
+      return {
+        "response-code": responseCodeLiveResponse.responseCode
+      };
+    } 
+    else {
+      return {
+        "response-code": responseCodeLiveResponse.responseCode,
+        "message": responseCodeLiveResponse.responseMessage
+      };
+    }
   } catch (error) {
+     return new createHttpError.NotFound();
   }
 
 }
@@ -350,22 +355,4 @@ exports.regardControllerAttributeValueChange = function (body, user, originator,
   return new Promise(function (resolve, reject) {
     resolve();
   });
-}
-
-
-
-async function PutToLiveControlConstructExternalLabelCausesWritingIntoDevice(mountName, requestBody, httpRequestHeader, eatlRequestHeaders) {
-  let responseCodeLiveResponse;
-  try {
-    const forwardingName = "PutToLiveControlConstructExternalLabelCausesWritingIntoDevice";
-    const stringName = "controllerInternalPathToMountPoint";
-    let pathParams = [];
-    let stringValue = await IndividualServiceUtility.getStringProfileInstanceValue(stringName);
-    pathParams.push(stringValue, mountName);
-    responseCodeLiveResponse = await readDataFromLive.RequestForProvidingPutDataFromLive(requestBody, httpRequestHeader, forwardingName, pathParams, stringName, eatlRequestHeaders);
-    return responseCodeLiveResponse.responseCode;
-
-  } catch (error) {
-    return new createHttpError.InternalServerError();
-  }
 }

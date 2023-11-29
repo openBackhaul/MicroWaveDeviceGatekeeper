@@ -62,18 +62,15 @@ module.exports.putLiveControlConstructExternalLabel = function putLiveControlCon
   let startTime = process.hrtime();
   let responseCode = responseCodeEnum.code.OK;
   let responseBodyToDocument = {};
+  let openApiPath = req.openapi.openApiRoute;
   IndividualServices.putLiveControlConstructExternalLabel(body, mountName, user, originator, xCorrelator, traceIndicator, customerJourney)
   .then(async function (responseBody) {
-    let mountName = req.url.match(/(?<=construct=)(\w)+/g);
-    let requrl =req.url.replace(mountName,"{mountName}" );
     responseBodyToDocument = responseBody;
-    let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, requrl);
+    let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, openApiPath);
     restResponseBuilder.buildResponse(res, responseCode, responseBody, responseHeader);
   })
   .catch(async function (responseBody) {
-    let mountName = req.url.match(/(?<=construct=)(\w)+/g);
-    let requrl =req.url.replace(mountName,"{mountName}" );
-    let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, requrl);
+    let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, openApiPath);
     let sentResp = restResponseBuilder.buildResponse(res, undefined, responseBody, responseHeader);
     responseCode = sentResp.code;
     responseBodyToDocument = sentResp.body;
