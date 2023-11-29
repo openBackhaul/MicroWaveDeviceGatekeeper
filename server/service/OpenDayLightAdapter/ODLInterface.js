@@ -20,7 +20,13 @@ exports.writeToLive = async function (requestBody, forwardingName, pathParams, s
 
     } catch (error) {
         console.log(`${forwardingName} is not success with ${error}`);
-        return new createHttpError.InternalServerError();
+        if (error == "Authorization not found") {
+            throw new createHttpError.NotFound();
+        }
+        else {
+            return new createHttpError.InternalServerError();
+        }
+
     }
 
     return responseCode;
@@ -79,9 +85,14 @@ async function forwardRequest(operationClientAndFieldParams, pathParamList, requ
         } else {
             throw "Authorization not found";
         }
-        
+
     } catch (error) {
         console.log(`forwardRequest is not success with ${error}`);
-        return new createHttpError.InternalServerError();
+        if (error == "Authorization not found") {
+            throw new createHttpError.NotFound();
+        }
+        else {
+            return new createHttpError.InternalServerError();
+        }
     }
 }

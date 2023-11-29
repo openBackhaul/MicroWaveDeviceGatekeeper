@@ -181,11 +181,15 @@ exports.putLiveControlConstructExternalLabel = async function (body, mountName, 
       };
     }
     else {
-      return new createHttpError.NotFound("File not found");
+      return {
+        "response-code": " "
+      };
     }
 
   } catch (error) {
-    console.log(error)
+    if (error == "Authorization not found") {
+      throw new createHttpError.NotFound();
+    }
   }
 
 }
