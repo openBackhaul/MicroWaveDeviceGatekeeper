@@ -32,31 +32,3 @@ exports.getStringProfileInstanceValue = async function(expectedStringName) {
         return new createHttpError.InternalServerError();
     }
 }
-
-/**
- * This function formulates the query and path parameters from operationName and fields.
- * @param {String} operationName name of the operation to fetch path parameters key .
- * @param {List} pathParamList path parameters value list.
- * @param {String} fields query parameters.
- * @return {Object} params that contains query and path parameters.
- */
-exports.getPathParameter = async function(operationName, pathParamList) {
-    try {
-        let pathParams = new Map();
-        let params = {};
-
-        if (pathParamList && (pathParamList.length !== 0)) {
-            let pathParamMatches = operationName.match(/\{(.*?)\}/g);
-            for (let i = 0; i < pathParamList.length; i++) {
-                pathParams.set(pathParamMatches[i], pathParamList[i]);
-            }
-            params.path = pathParams;
-        }
-
-        return params;
-
-    } catch (error) {
-        console.log(`getPathParameter is not success with ${error}`);
-        return new createHttpError.InternalServerError();
-    }
-}

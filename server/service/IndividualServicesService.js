@@ -1,9 +1,10 @@
 'use strict';
 
 
-const odlInterface = require('./OpenDayLightAdapter/ODLInterface')
-const createHttpError = require('http-errors');
+const ODLOperations = require('./OpenDayLightClient/ODLOperations')
 const IndividualServiceUtility = require('./individualServices/IndividualServiceUtility')
+const responseCodeEnum = require('onf-core-model-ap/applicationPattern/rest/server/ResponseCode');
+const createHttpError = require('http-errors');
 
 /**
  * Initiates process of embedding a new release
@@ -156,11 +157,13 @@ exports.putLiveAirInterfaceTransimitterIsOn = function (body, mountName, uuid, l
  * returns inline_response_200_1
  **/
 exports.putLiveControlConstructExternalLabel = async function (body, mountName, user, originator, xCorrelator, traceIndicator, customerJourney) {
-  let responseCodeLiveResponse = "";
+  let response = {};
+  let mountNamevalue = mountName;
+  let requestBody = body;
   try {
-    let mountNamevalue = mountName;
-    let requestBody = body;
-
+    /****************************************************************************************
+     * Setting up request header object for making eatl request
+     ****************************************************************************************/
     let eatlRequestHeaders = {
       user: user,
       originator: originator,
@@ -168,30 +171,33 @@ exports.putLiveControlConstructExternalLabel = async function (body, mountName, 
       traceIndicator: traceIndicator,
       customerJourney: customerJourney
     };
+
+    /****************************************************************************************
+     * Prepare attributes to intiate ODL request
+     ****************************************************************************************/
+
     const forwardingName = "PutToLiveControlConstructExternalLabelCausesWritingIntoDevice";
     const stringName = "controllerInternalPathToMountPoint";
-    let pathParams = [];
-
     let stringValue = await IndividualServiceUtility.getStringProfileInstanceValue(stringName);
+
+    let pathParams = [];
     pathParams.push(stringValue, mountNamevalue);
-    responseCodeLiveResponse = await odlInterface.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+
+    /****************************************************************************************
+     * Perform ODL request and formulate final response
+     ****************************************************************************************/
+
+    let responseCodeLiveResponse = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
     if (responseCodeLiveResponse.responseCode) {
-      return {
-        "response-code": responseCodeLiveResponse.responseCode
-      };
+      response["response-code"] = responseCodeLiveResponse.responseCode;
+    } else {
+      response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
-    else {
-      return {
-        "response-code": " "
-      };
-    }
-
+    return response;
   } catch (error) {
-    if (error == "Authorization not found") {
-      throw new createHttpError.NotFound();
-    }
+    console.log(error);
+    return response;
   }
-
 }
 
 /**

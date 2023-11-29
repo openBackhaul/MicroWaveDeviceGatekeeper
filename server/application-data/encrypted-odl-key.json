@@ -1,8 +1,3 @@
 {
-   
-    "odl-credential":
-      {
-          "authorization": " "
-      }
-   
-  }
+    "odl-basic-auth-code": "XXXXXX"
+}
