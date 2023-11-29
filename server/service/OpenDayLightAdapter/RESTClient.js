@@ -33,6 +33,14 @@ exports.dispatchEvent = async function (operationClientUuid, httpRequestBody, ht
         let responseCode;
         let operationName = await OperationClientInterface.getOperationNameAsync(
             operationClientUuid);
+        if (params) {
+            pathParams = params.path;
+            if (pathParams) {
+                pathParams.forEach((value, param) => {
+                    operationName = operationName.replace(param, value)
+                });
+            }
+        }
         let httpClientUuid = await LogicalTerminationPoint.getServerLtpListAsync(operationClientUuid);
         let serverApplicationName = await HttpClientInterface.getApplicationNameAsync(httpClientUuid[0]);
         let serverApplicationReleaseNumber = await HttpClientInterface.getReleaseNumberAsync(httpClientUuid[0]);
@@ -92,7 +100,7 @@ exports.getAuthorizationAsync = async function () {
                 }
             }
         }
-        return isAuthorizationExist 
+        return isAuthorizationExist
     } catch (error) {
         console.log(error);
 

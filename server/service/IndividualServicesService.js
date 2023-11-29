@@ -179,19 +179,18 @@ exports.putLiveControlConstructExternalLabel = async function (body, mountName, 
     if (responseCodeLiveResponse == "File not found") {
       return new createHttpError.NotFound("File not found");
     }
-    else if (responseCodeLiveResponse.responseCode == 204) {
+    else if (responseCodeLiveResponse.responseCode) {
       return {
         "response-code": responseCodeLiveResponse.responseCode
       };
-    } 
+    }
     else {
       return {
-        "response-code": responseCodeLiveResponse.responseCode,
-        "message": responseCodeLiveResponse.responseMessage
+        "response-code": " "
       };
     }
   } catch (error) {
-     return new createHttpError.NotFound();
+    console.log(error)
   }
 
 }
