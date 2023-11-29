@@ -1,7 +1,7 @@
 'use strict';
 
 
-const WriteDataToLive = require('./individualServices/WriteDataToLive')
+const odlInterface = require('./OpenDayLightAdapter/ODLInterface')
 const createHttpError = require('http-errors');
 const IndividualServiceUtility = require('./individualServices/IndividualServiceUtility')
 
@@ -174,7 +174,7 @@ exports.putLiveControlConstructExternalLabel = async function (body, mountName, 
 
     let stringValue = await IndividualServiceUtility.getStringProfileInstanceValue(stringName);
     pathParams.push(stringValue, mountNamevalue);
-    responseCodeLiveResponse = await WriteDataToLive.RequestForProvidingPutDataFromLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    responseCodeLiveResponse = await odlInterface.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
 
     if (responseCodeLiveResponse == "File not found") {
       return new createHttpError.NotFound("File not found");
