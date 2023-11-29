@@ -31,6 +31,7 @@ exports.dispatchEvent = async function (operationClientUuid, httpRequestBody, ht
     try {
         let responseObj = {};
         let responseCode;
+        let pathParams;
         let operationName = await OperationClientInterface.getOperationNameAsync(
             operationClientUuid);
         if (params) {

@@ -175,20 +175,15 @@ exports.putLiveControlConstructExternalLabel = async function (body, mountName, 
     let stringValue = await IndividualServiceUtility.getStringProfileInstanceValue(stringName);
     pathParams.push(stringValue, mountNamevalue);
     responseCodeLiveResponse = await odlInterface.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
-
-    if (responseCodeLiveResponse == "File not found") {
-      return new createHttpError.NotFound("File not found");
-    }
-    else if (responseCodeLiveResponse.responseCode) {
+    if (responseCodeLiveResponse.responseCode) {
       return {
         "response-code": responseCodeLiveResponse.responseCode
       };
     }
     else {
-      return {
-        "response-code": " "
-      };
+      return new createHttpError.NotFound("File not found");
     }
+
   } catch (error) {
     console.log(error)
   }

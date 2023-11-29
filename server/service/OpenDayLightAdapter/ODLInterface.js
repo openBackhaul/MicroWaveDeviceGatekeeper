@@ -1,12 +1,11 @@
 const createHttpError = require('http-errors');
 const IndividualServiceUtility = require('../individualServices/IndividualServiceUtility')
-const OpenDayLightAdapter = require('./RESTClient');
 const onfAttributes = require('onf-core-model-ap/applicationPattern/onfModel/constants/OnfAttributes');
 const OperationClientInterface = require('onf-core-model-ap/applicationPattern/onfModel/models/layerProtocols/OperationClientInterface');
 const ForwardingDomain = require('onf-core-model-ap/applicationPattern/onfModel/models/ForwardingDomain');
 const ForwardingConstruct = require('onf-core-model-ap/applicationPattern/onfModel/models/ForwardingConstruct');
 const eventDispatcher = require('./RESTClient');
-const createHttpError = require('http-errors');
+
 
 exports.writeToLive = async function (requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders) {
     let responseCode;
@@ -60,7 +59,7 @@ async function forwardRequest(operationClientAndFieldParams, pathParamList, requ
         let operationName = operationClientAndFieldParams.operationName;
         let operationClientUuid = operationClientAndFieldParams.operationClientUuid;
         let params = await IndividualServiceUtility.getPathParameter(operationName, pathParamList);
-        let base64Auth = await OpenDayLightAdapter.getAuthorizationAsync()
+        let base64Auth = await eventDispatcher.getAuthorizationAsync()
         if (base64Auth) {
             let httpRequestHeader = {
                 "Authorization": base64Auth

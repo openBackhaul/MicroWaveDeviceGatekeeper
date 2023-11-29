@@ -1,7 +1,8 @@
 'use strict';
 const createHttpError = require('http-errors');
 const onfAttributes = require('onf-core-model-ap/applicationPattern/onfModel/constants/OnfAttributes');
-const createHttpError = require('http-errors');
+const ProfileCollection = require('onf-core-model-ap/applicationPattern/onfModel/models/ProfileCollection');
+ 
 /**
  * This function fetches the string value from the string profile based on the expected string name.
  * @param {String} expectedStringName string name of the string profile.
