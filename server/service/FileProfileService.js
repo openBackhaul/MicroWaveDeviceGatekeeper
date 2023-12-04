@@ -34,10 +34,10 @@ exports.getFileProfileFileIdentifier = async function (url) {
  * url String 
  * returns inline_response_200_18
  **/
-exports.getFileProfileFilePath = async function (url) {
+exports.getFileProfileFileName = async function (url) {
   var value = await fileOperation.readFromDatabaseAsync(url);
   return {
-    "file-profile-1-0:file-path": value
+    "file-profile-1-0:file-name": value
   };
 }
 
@@ -87,7 +87,7 @@ exports.getFileProfileUserName = async function (url) {
  * url String 
  * no response value expected for this operation
  **/
-exports.putFileProfileFilePath = async function (url, body) {
+exports.putFileProfileFileName = async function (url, body) {
   await fileOperation.writeToDatabaseAsync(url, body, false);
 }
 

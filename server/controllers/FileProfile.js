@@ -33,9 +33,9 @@ module.exports.getFileProfileFileIdentifier = async function getFileProfileFileI
   oamLogService.recordOamRequest(req.url, req.body, responseCode, req.headers.authorization, req.method);
 };
 
-module.exports.getFileProfileFilePath = async function getFileProfileFilePath(req, res, next, uuid) {
+module.exports.getFileProfileFileName = async function getFileProfileFileName(req, res, next, uuid) {
   let responseCode = responseCodeEnum.code.OK;
-  await FileProfile.getFileProfileFilePath(req.url)
+  await FileProfile.getFileProfileFileName(req.url)
     .then(function (response) {
       responseBuilder.buildResponse(res, responseCode, response);
     })
@@ -85,9 +85,9 @@ module.exports.getFileProfileUserName = async function getFileProfileUserName(re
   oamLogService.recordOamRequest(req.url, req.body, responseCode, req.headers.authorization, req.method);
 };
 
-module.exports.putFileProfileFilePath = async function putFileProfileFilePath(req, res, next, body, uuid) {
+module.exports.putFileProfileFileName = async function putFileProfileFileName(req, res, next, body, uuid) {
   let responseCode = responseCodeEnum.code.NO_CONTENT;
-  await FileProfile.putFileProfileFilePath(req.url, body)
+  await FileProfile.putFileProfileFileName(req.url, body)
     .then(function (response) {
       responseBuilder.buildResponse(res, responseCode, response);
     })
