@@ -1,12 +1,17 @@
 'use strict';
 
-var BasicServices = require('onf-core-model-ap-bs/basicServices/BasicServicesService');
-var responseBuilder = require('onf-core-model-ap/applicationPattern/rest/server/ResponseBuilder');
-var responseCodeEnum = require('onf-core-model-ap/applicationPattern/rest/server/ResponseCode');
-var restResponseHeader = require('onf-core-model-ap/applicationPattern/rest/server/ResponseHeader');
-var ExecutionAndTraceService = require('onf-core-model-ap/applicationPattern/services/ExecutionAndTraceService');
+const BasicServices = require('onf-core-model-ap-bs/basicServices/BasicServicesService');
+const responseBuilder = require('onf-core-model-ap/applicationPattern/rest/server/ResponseBuilder');
+const responseCodeEnum = require('onf-core-model-ap/applicationPattern/rest/server/ResponseCode');
+const restResponseHeader = require('onf-core-model-ap/applicationPattern/rest/server/ResponseHeader');
+const ExecutionAndTraceService = require('onf-core-model-ap/applicationPattern/services/ExecutionAndTraceService');
+const { getDeviceListSyncPeriodIntegerValue, getOperationNameForControllerInternalPathToMountPoint, getStringNameForControllerInternalPathToMountPoint, getStringNameForPromptForEmbeddingCausesCyclicLoadingOfDeviceListFromController, getOdlIpPort } = require("../service/basicServices/cyclicProcess")
+const { getLtpInfo, buildRequstBody } = require('../service/basicServices/notificationProxy')
+const { getAuthorizationCodeAsync } = require('../service/OpenDayLightClient/ODLAuthentication')
+const { BuildAndTriggerRestRequest } = require('../service/OpenDayLightClient/ODLClient')
 
 const NEW_RELEASE_FORWARDING_NAME = 'PromptForBequeathingDataCausesTransferOfListOfAlreadyRegisteredApplications';
+global.networkTopologyList = []
 
 module.exports.embedYourself = async function embedYourself(req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
@@ -17,6 +22,15 @@ module.exports.embedYourself = async function embedYourself(req, res, next, body
       responseBodyToDocument = responseBody;
       let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
       responseBuilder.buildResponse(res, responseCode, responseBody, responseHeader);
+
+      let deviceListSyncPeriodIntegerValue = await getDeviceListSyncPeriodIntegerValue()
+      cyclicProcess()
+      setInterval(async () => {
+        cyclicProcess()
+      }, deviceListSyncPeriodIntegerValue * 3600000);
+
+      notificationProxy(req.headers)
+
     })
     .catch(async function (responseBody) {
       let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -319,3 +333,78 @@ module.exports.updateOperationKey = async function updateOperationKey(req, res, 
     });
   ExecutionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, responseCode, req.body, responseBodyToDocument);
 };
+
+/**
+ * cyclic process to update the list of mounted device and its status from the controller
+ */
+async function cyclicProcess() {
+  return new Promise(async function (resolve, reject) {
+    try {
+      let forwardingName = "PromptForEmbeddingCausesCyclicLoadingOfDeviceListFromController"
+      let operationNameForControllerInternalPathToMountPoint = await getOperationNameForControllerInternalPathToMountPoint(forwardingName)
+      let stringNameForControllerInternalPathToMountPoint = await getStringNameForControllerInternalPathToMountPoint(operationNameForControllerInternalPathToMountPoint["operation-name"])
+      let stringNameForPromptForEmbeddingCausesCyclicLoadingOfDeviceListFromController = await getStringNameForPromptForEmbeddingCausesCyclicLoadingOfDeviceListFromController(forwardingName)
+      //let odlIpPort = await getOdlIpPort(operationNameForControllerInternalPathToMountPoint["op-c-uuid"])
+
+      let pathParams = "/" + stringNameForControllerInternalPathToMountPoint + "?fields=" + stringNameForPromptForEmbeddingCausesCyclicLoadingOfDeviceListFromController
+
+      let base64Auth = await getAuthorizationCodeAsync();
+      if (base64Auth) {
+        let httpRequestHeader = {
+          "Authorization": base64Auth
+        }
+        let operationClientUuid = operationNameForControllerInternalPathToMountPoint["op-c-uuid"]
+        let responseFromOdlController = await BuildAndTriggerRestRequest(
+          operationClientUuid,
+          pathParams,
+          "GET",
+          httpRequestHeader,
+          ""
+        )
+
+        if (responseFromOdlController.status === 200) {
+          global.networkTopologyList = responseFromOdlController.data["network-topology:topology"][0]["node"]
+          resolve()
+        }else{
+          throw "failed"
+        }
+      } else {
+        throw "Authorization not found";
+      }
+    } catch (error) {
+      reject(error)
+    }
+  })
+}
+
+async function notificationProxy(requestHeader) {
+  return new Promise(async function (resolve, reject) {
+    try {
+      let forwardingName = "PromptForEmbeddingCausesSubscribingForNotifications"
+      let ltpInfo = await getLtpInfo(forwardingName)
+      let requestBody = await buildRequstBody()
+      let httpRequestHeader = {
+        "user": requestHeader.user,
+        "originator": requestHeader.originator,
+        "x-correlator": requestHeader["x-correlator"],
+        "trace-indicator": requestHeader["trace-indicator"],
+        "operation-key": ltpInfo["operation-key"],
+        "customer-journey": requestHeader["customer-journey"],
+      }
+      let response = await BuildAndTriggerRestRequest(
+        ltpInfo["op-c-uuid"],
+        ltpInfo["operation-name"],
+        "POST",
+        httpRequestHeader,
+        requestBody
+      )
+      if (response.status == 204) {
+        resolve()
+      } else {
+        throw "failed";
+      }
+    } catch (error) {
+      reject(error)
+    }
+  })
+}

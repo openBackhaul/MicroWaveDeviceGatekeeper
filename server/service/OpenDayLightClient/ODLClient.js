@@ -129,7 +129,7 @@ async function sendRequestToODL(operationClientUuid, httpRequestBody, httpMethod
  * @param {object} requestBody request body for the REST call
  * @returns {Promise<Object>} returns the http response received
  */
-async function BuildAndTriggerRestRequest(operationClientUuid, operationName, method, requestHeader, requestBody) {
+let BuildAndTriggerRestRequest = exports.BuildAndTriggerRestRequest = async function (operationClientUuid, operationName, method, requestHeader, requestBody) {
     try {        
         let clientConnectionInfo = await OperationClientInterface.getTcpClientConnectionInfoAsync(operationClientUuid);
         let url = clientConnectionInfo + operationName;
