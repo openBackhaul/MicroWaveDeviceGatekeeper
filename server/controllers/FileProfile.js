@@ -59,32 +59,6 @@ module.exports.getFileProfileOperation = async function getFileProfileOperation(
   oamLogService.recordOamRequest(req.url, req.body, responseCode, req.headers.authorization, req.method);
 };
 
-module.exports.getFileProfilePassword = async function getFileProfilePassword(req, res, next, uuid) {
-  let responseCode = responseCodeEnum.code.OK;
-  await FileProfile.getFileProfilePassword(req.url)
-    .then(function (response) {
-      responseBuilder.buildResponse(res, responseCode, response);
-    })
-    .catch(function (response) {
-      let sentResp = responseBuilder.buildResponse(res, undefined, response);
-      responseCode = sentResp.code;
-    });
-  oamLogService.recordOamRequest(req.url, req.body, responseCode, req.headers.authorization, req.method);
-};
-
-module.exports.getFileProfileUserName = async function getFileProfileUserName(req, res, next, uuid) {
-  let responseCode = responseCodeEnum.code.OK;
-  await FileProfile.getFileProfileUserName(req.url)
-    .then(function (response) {
-      responseBuilder.buildResponse(res, responseCode, response);
-    })
-    .catch(function (response) {
-      let sentResp = responseBuilder.buildResponse(res, undefined, response);
-      responseCode = sentResp.code;
-    });
-  oamLogService.recordOamRequest(req.url, req.body, responseCode, req.headers.authorization, req.method);
-};
-
 module.exports.putFileProfileFileName = async function putFileProfileFileName(req, res, next, body, uuid) {
   let responseCode = responseCodeEnum.code.NO_CONTENT;
   await FileProfile.putFileProfileFileName(req.url, body)
@@ -111,28 +85,3 @@ module.exports.putFileProfileOperation = async function putFileProfileOperation(
   oamLogService.recordOamRequest(req.url, req.body, responseCode, req.headers.authorization, req.method);
 };
 
-module.exports.putFileProfilePassword = async function putFileProfilePassword(req, res, next, body, uuid) {
-  let responseCode = responseCodeEnum.code.NO_CONTENT;
-  await FileProfile.putFileProfilePassword(req.url, body)
-    .then(function (response) {
-      responseBuilder.buildResponse(res, responseCode, response);
-    })
-    .catch(function (response) {
-      let sentResp = responseBuilder.buildResponse(res, undefined, response);
-      responseCode = sentResp.code;
-    });
-  oamLogService.recordOamRequest(req.url, req.body, responseCode, req.headers.authorization, req.method);
-};
-
-module.exports.putFileProfileUserName = async function putFileProfileUserName(req, res, next, body, uuid) {
-  let responseCode = responseCodeEnum.code.NO_CONTENT;
-  await FileProfile.putFileProfileUserName(req.url, body)
-    .then(function (response) {
-      responseBuilder.buildResponse(res, responseCode, response);
-    })
-    .catch(function (response) {
-      let sentResp = responseBuilder.buildResponse(res, undefined, response);
-      responseCode = sentResp.code;
-    });
-  oamLogService.recordOamRequest(req.url, req.body, responseCode, req.headers.authorization, req.method);
-};
