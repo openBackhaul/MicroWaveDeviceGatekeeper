@@ -65,26 +65,25 @@ exports.postMacInterfaceRpcForProvidingLearnedMacAdresses = async function (moun
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseCodeLiveResponse = await ODLOperations.postToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
-    console.log(responseCodeLiveResponse.responseData)
-    let responseCode = responseCodeLiveResponse.responseCode
+    let responseFromODL = await ODLOperations.postToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    let responseCode = responseFromODL.responseCode
     if (responseCode) {
       response["response-code"] = responseCode;
-      let res = responseCodeLiveResponse.responseData;
-      let responseData = [];
-      if (res && responseCode.toString().startsWith("2")) {
-        responseData = res["mac-fd-1-0:output"]['mac-table-entry-list']
-        for (const key in responseData) {
-          for (const prop in responseData[key]) {
+      let responseData = responseFromODL.responseData;
+      let responseDataFromODL = [];
+      if (responseData && responseCode.toString().startsWith("2")) {
+        responseDataFromODL = responseData["mac-fd-1-0:output"]['mac-table-entry-list']
+        for (const key in responseDataFromODL) {
+          for (const prop in responseDataFromODL[key]) {
             if (prop == "vlan-id") {
-              const parsed = parseInt(responseData[key][prop]);
-              responseData[key][prop] = isNaN(parsed) ? responseData[key][prop] : parsed;
+              const parsed = parseInt(responseDataFromODL[key][prop]);
+              responseDataFromODL[key][prop] = isNaN(parsed) ? responseDataFromODL[key][prop] : parsed;
             }
           }
         }
       }
 
-      response["mac-fd-1-0:mac-table-entry-list"] = responseData
+      response["mac-fd-1-0:mac-table-entry-list"] = responseDataFromODL;
     } else {
       response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
@@ -174,9 +173,9 @@ exports.putLiveAirInterfacePerformanceMonitoringIsOn = async function (body, mou
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseCodeLiveResponse = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
-    if (responseCodeLiveResponse.responseCode) {
-      response["response-code"] = responseCodeLiveResponse.responseCode;
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
       response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
@@ -241,9 +240,9 @@ exports.putLiveAirInterfaceTransimitterIsOn = async function (body, mountName, u
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseCodeLiveResponse = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
-    if (responseCodeLiveResponse.responseCode) {
-      response["response-code"] = responseCodeLiveResponse.responseCode;
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
       response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
@@ -301,9 +300,9 @@ exports.putLiveControlConstructExternalLabel = async function (body, mountName, 
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseCodeLiveResponse = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
-    if (responseCodeLiveResponse.responseCode) {
-      response["response-code"] = responseCodeLiveResponse.responseCode;
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
       response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
@@ -367,9 +366,9 @@ exports.putLiveEthernetContainerPerformanceMonitoringIsOn = async function (body
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseCodeLiveResponse = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
-    if (responseCodeLiveResponse.responseCode) {
-      response["response-code"] = responseCodeLiveResponse.responseCode;
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
       response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
@@ -434,9 +433,9 @@ exports.putLiveHybridMwStructurePerformanceMonitoringIsOn = async function (body
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseCodeLiveResponse = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
-    if (responseCodeLiveResponse.responseCode) {
-      response["response-code"] = responseCodeLiveResponse.responseCode;
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
       response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
@@ -500,9 +499,9 @@ exports.putLiveLtpExternalLabel = async function (body, mountName, uuid, user, o
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseCodeLiveResponse = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
-    if (responseCodeLiveResponse.responseCode) {
-      response["response-code"] = responseCodeLiveResponse.responseCode;
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
       response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
@@ -567,9 +566,9 @@ exports.putLivePureEthernetStructurePerformanceMonitoringIsOn = async function (
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseCodeLiveResponse = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
-    if (responseCodeLiveResponse.responseCode) {
-      response["response-code"] = responseCodeLiveResponse.responseCode;
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
       response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
@@ -634,9 +633,9 @@ exports.putLiveWireInterfacePerformanceMonitoringIsOn = async function (body, mo
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseCodeLiveResponse = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
-    if (responseCodeLiveResponse.responseCode) {
-      response["response-code"] = responseCodeLiveResponse.responseCode;
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
       response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
