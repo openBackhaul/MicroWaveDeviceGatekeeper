@@ -20,23 +20,24 @@ module.exports.embedYourself = async function embedYourself(req, res, next, body
   await BasicServices.embedYourself(body, user, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (responseBody) {
       responseBodyToDocument = responseBody;
-      let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
-      responseBuilder.buildResponse(res, responseCode, responseBody, responseHeader);
 
       let deviceListSyncPeriodIntegerValue = await getDeviceListSyncPeriodIntegerValue()
-      cyclicProcess()
+      await cyclicProcess()
       setInterval(async () => {
-        cyclicProcess()
+        await cyclicProcess()
       }, deviceListSyncPeriodIntegerValue * 3600000);
 
-      notificationProxy(req.headers)
+      await notificationProxy(req.headers)
 
+      let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
+      responseBuilder.buildResponse(res, responseCode, responseBody, responseHeader);
     })
     .catch(async function (responseBody) {
       let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
       let sentResp = responseBuilder.buildResponse(res, undefined, responseBody, responseHeader);
       responseCode = sentResp.code;
       responseBodyToDocument = sentResp.body;
+      console.log(responseBodyToDocument, "==", responseCode)
     });
   ExecutionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, responseCode, req.body, responseBodyToDocument);
 };
@@ -344,7 +345,6 @@ async function cyclicProcess() {
       let operationNameForControllerInternalPathToMountPoint = await getOperationNameForControllerInternalPathToMountPoint(forwardingName)
       let stringNameForControllerInternalPathToMountPoint = await getStringNameForControllerInternalPathToMountPoint(operationNameForControllerInternalPathToMountPoint["operation-name"])
       let stringNameForPromptForEmbeddingCausesCyclicLoadingOfDeviceListFromController = await getStringNameForPromptForEmbeddingCausesCyclicLoadingOfDeviceListFromController(forwardingName)
-      //let odlIpPort = await getOdlIpPort(operationNameForControllerInternalPathToMountPoint["op-c-uuid"])
 
       let pathParams = "/" + stringNameForControllerInternalPathToMountPoint + "?fields=" + stringNameForPromptForEmbeddingCausesCyclicLoadingOfDeviceListFromController
 
@@ -366,7 +366,7 @@ async function cyclicProcess() {
           global.networkTopologyList = responseFromOdlController.data["network-topology:topology"][0]["node"]
           resolve()
         }else{
-          throw "failed"
+          throw responseFromOdlController.status
         }
       } else {
         throw "Authorization not found";

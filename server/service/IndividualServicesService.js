@@ -73,14 +73,20 @@ exports.postMacInterfaceRpcForProvidingLearnedMacAdresses = function (user, orig
  **/
 exports.provideListOfConnectedDevices = function (user, originator, xCorrelator, traceIndicator, customerJourney) {
   return new Promise(function (resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-      "mount-name-list": ["305251234", "105258888"]
-    };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
+    try {
+      let nodeIdList = []
+      global.networkTopologyList.forEach(networkTopologyListItem => {
+        if (networkTopologyListItem["netconf-node-topology:connection-status"] == "connected") {
+          nodeIdList.push(networkTopologyListItem["node-id"])
+        }
+      })
+      let mountNameList = {
+        "mount-name-list" : nodeIdList
+      }
+
+      resolve(mountNameList)
+    } catch (error) {
+      reject(error)
     }
   });
 }

@@ -28,14 +28,23 @@ module.exports.postMacInterfaceRpcForProvidingLearnedMacAdresses = function post
     });
 };
 
-module.exports.provideListOfConnectedDevices = function provideListOfConnectedDevices (req, res, next, user, originator, xCorrelator, traceIndicator, customerJourney) {
+module.exports.provideListOfConnectedDevices = function provideListOfConnectedDevices(req, res, next, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  let startTime = process.hrtime();
+  let responseCode = responseCodeEnum.code.OK;
+  let responseBodyToDocument = {};
   IndividualServices.provideListOfConnectedDevices(user, originator, xCorrelator, traceIndicator, customerJourney)
-    .then(function (response) {
-      utils.writeJson(res, response);
+    .then(async function (responseBody) {
+      responseBodyToDocument = responseBody;
+      let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
+      restResponseBuilder.buildResponse(res, responseCode, responseBody, responseHeader);
     })
-    .catch(function (response) {
-      utils.writeJson(res, response);
+    .catch(async function (responseBody) {
+      let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
+      let sentResp = restResponseBuilder.buildResponse(res, undefined, responseBody, responseHeader);
+      responseCode = sentResp.code;
+      responseBodyToDocument = sentResp.body;
     });
+  executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, responseCode, req.body, responseBodyToDocument);
 };
 
 module.exports.putLiveAirInterfacePerformanceMonitoringIsOn = function putLiveAirInterfacePerformanceMonitoringIsOn (req, res, next, body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {

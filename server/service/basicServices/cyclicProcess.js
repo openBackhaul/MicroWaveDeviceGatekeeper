@@ -75,10 +75,3 @@ exports.getStringNameForPromptForEmbeddingCausesCyclicLoadingOfDeviceListFromCon
     if(stringProfileConfigurationName != "undefined" && stringProfileConfigurationName != null)
         return stringProfileConfigurationName
 }
-
-exports.getOdlIpPort = async function(operationClientUUID){
-    let tcpClientInfo = await OperationClientInterface.getTcpClientConnectionInfoAsync(operationClientUUID)
-    
-    if(tcpClientInfo != "undefined" && tcpClientInfo != null)
-        return tcpClientInfo
-}
