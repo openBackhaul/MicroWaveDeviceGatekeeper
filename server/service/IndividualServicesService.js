@@ -35,29 +35,66 @@ exports.bequeathYourDataAndDie = function (body, user, originator, xCorrelator, 
  * mountName String The mountName of the device that is addressed by the request
  * returns inline_response_200_7
  **/
-exports.postMacInterfaceRpcForProvidingLearnedMacAdresses = function (user, originator, xCorrelator, traceIndicator, customerJourney, mountName) {
-  return new Promise(function (resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-      "response-code": 200,
-      "mac-fd-1-0:mac-table-entry-list": [{
-        "affected-mac-fd": "mac-fd-001",
-        "mac-address": "11:22:5e:00:53:af",
-        "vlan-id": 17,
-        "egress-ltp": "mac-ltp-012"
-      }, {
-        "affected-mac-fd": "mac-fd-001",
-        "mac-address": "11:22:33:44:55:66",
-        "vlan-id": 34,
-        "egress-ltp": "mac-ltp-012"
-      }]
+exports.postMacInterfaceRpcForProvidingLearnedMacAdresses = async function (mountName, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  let response = {};
+  let mountNamevalue = mountName;
+  try {
+    /****************************************************************************************
+     * Setting up request header object for making eatl request
+     ****************************************************************************************/
+    let eatlRequestHeaders = {
+      user: user,
+      originator: originator,
+      xCorrelator: xCorrelator,
+      traceIndicator: traceIndicator,
+      customerJourney: customerJourney
     };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+    let requestBody = {}
+    /****************************************************************************************
+     * Prepare attributes to intiate ODL request
+     ****************************************************************************************/
+
+    const forwardingName = "PostToLiveRpcForProvidingLearnedMacAdressesCausesInitiatingRpcExecutionOnDevice";
+    const stringName = "controllerInternalPathToMountPointForRpcs";
+    let stringValue = await IndividualServiceUtility.getStringProfileInstanceValue(stringName);
+
+    let pathParams = [];
+    pathParams.push(stringValue, mountNamevalue);
+
+    /****************************************************************************************
+     * Perform ODL request and formulate final response
+     ****************************************************************************************/
+
+    let responseFromODL = await ODLOperations.postToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    let responseCode = responseFromODL.responseCode
+    if (responseCode) {
+      response["response-code"] = responseCode;
+      let responseData = responseFromODL.responseData;
+      let responseDataFromODL = [];
+      if (responseData && responseCode.toString().startsWith("2")) {
+        responseDataFromODL = responseData["mac-fd-1-0:output"]['mac-table-entry-list']
+        for (const key in responseDataFromODL) {
+          for (const prop in responseDataFromODL[key]) {
+            if (prop == "vlan-id") {
+              const parsed = parseInt(responseDataFromODL[key][prop]);
+              responseDataFromODL[key][prop] = isNaN(parsed) ? responseDataFromODL[key][prop] : parsed;
+            }
+          }
+        }
+      }
+
+      response["mac-fd-1-0:mac-table-entry-list"] = responseDataFromODL;
     } else {
-      resolve();
+      response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
-  });
+    return response;
+  } catch (error) {
+    if (error.message == 'Not Found') {
+      throw new createHttpError.NotFound();
+    }
+    console.log(error);
+    return response;
+  }
 }
 
 
@@ -106,18 +143,56 @@ exports.provideListOfConnectedDevices = function (user, originator, xCorrelator,
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_4
  **/
-exports.putLiveAirInterfacePerformanceMonitoringIsOn = function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
-  return new Promise(function (resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-      "response-code": 204
+exports.putLiveAirInterfacePerformanceMonitoringIsOn = async function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  let response = {};
+  let mountNamevalue = mountName;
+  let requestBody = body;
+  let ltpUuid = uuid;
+  if (ltpUuid.includes('+')) {
+    ltpUuid = ltpUuid.split('+')[1]
+  }
+  let ltpLocalId = localId;
+  try {
+    /****************************************************************************************
+     * Setting up request header object for making eatl request
+     ****************************************************************************************/
+    let eatlRequestHeaders = {
+      user: user,
+      originator: originator,
+      xCorrelator: xCorrelator,
+      traceIndicator: traceIndicator,
+      customerJourney: customerJourney
     };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+
+    /****************************************************************************************
+     * Prepare attributes to intiate ODL request
+     ****************************************************************************************/
+
+    const forwardingName = "PutToLiveAirInterfacePerformanceMonitoringIsOnCausesWritingIntoDevice";
+    const stringName = "controllerInternalPathToMountPoint";
+    let stringValue = await IndividualServiceUtility.getStringProfileInstanceValue(stringName);
+
+    let pathParams = [];
+    pathParams.push(stringValue, mountNamevalue, ltpUuid, ltpLocalId);
+
+    /****************************************************************************************
+     * Perform ODL request and formulate final response
+     ****************************************************************************************/
+
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
-      resolve();
+      response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
-  });
+    return response;
+  } catch (error) {
+    if (error.message == 'Not Found') {
+      throw new createHttpError.NotFound();
+    }
+    console.log(error);
+    return response;
+  }
 }
 
 
@@ -135,18 +210,56 @@ exports.putLiveAirInterfacePerformanceMonitoringIsOn = function (body, mountName
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_3
  **/
-exports.putLiveAirInterfaceTransimitterIsOn = function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
-  return new Promise(function (resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-      "response-code": 204
+exports.putLiveAirInterfaceTransimitterIsOn = async function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  let response = {};
+  let mountNamevalue = mountName;
+  let requestBody = body;
+  let ltpUuid = uuid;
+  if (ltpUuid.includes('+')) {
+    ltpUuid = ltpUuid.split('+')[1]
+  }
+  let ltpLocalId = localId;
+  try {
+    /****************************************************************************************
+     * Setting up request header object for making eatl request
+     ****************************************************************************************/
+    let eatlRequestHeaders = {
+      user: user,
+      originator: originator,
+      xCorrelator: xCorrelator,
+      traceIndicator: traceIndicator,
+      customerJourney: customerJourney
     };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+
+    /****************************************************************************************
+     * Prepare attributes to intiate ODL request
+     ****************************************************************************************/
+
+    const forwardingName = "PutToLiveAirInterfaceTransmitterIsOnCausesWritingIntoDevice";
+    const stringName = "controllerInternalPathToMountPoint";
+    let stringValue = await IndividualServiceUtility.getStringProfileInstanceValue(stringName);
+
+    let pathParams = [];
+    pathParams.push(stringValue, mountNamevalue, ltpUuid, ltpLocalId);
+
+    /****************************************************************************************
+     * Perform ODL request and formulate final response
+     ****************************************************************************************/
+
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
-      resolve();
+      response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
-  });
+    return response;
+  } catch (error) {
+    if (error.message == 'Not Found') {
+      throw new createHttpError.NotFound();
+    }
+    console.log(error);
+    return response;
+  }
 }
 
 
@@ -193,14 +306,17 @@ exports.putLiveControlConstructExternalLabel = async function (body, mountName, 
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseCodeLiveResponse = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
-    if (responseCodeLiveResponse.responseCode) {
-      response["response-code"] = responseCodeLiveResponse.responseCode;
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
       response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
     return response;
   } catch (error) {
+    if (error.message == 'Not Found') {
+      throw new createHttpError.NotFound();
+    }
     console.log(error);
     return response;
   }
@@ -220,18 +336,56 @@ exports.putLiveControlConstructExternalLabel = async function (body, mountName, 
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_5
  **/
-exports.putLiveEthernetContainerPerformanceMonitoringIsOn = function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
-  return new Promise(function (resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-      "response-code": 204
+exports.putLiveEthernetContainerPerformanceMonitoringIsOn = async function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  let response = {};
+  let mountNamevalue = mountName;
+  let requestBody = body;
+  let ltpUuid = uuid;
+  if (ltpUuid.includes('+')) {
+    ltpUuid = ltpUuid.split('+')[1]
+  }
+  let ltpLocalId = localId;
+  try {
+    /****************************************************************************************
+     * Setting up request header object for making eatl request
+     ****************************************************************************************/
+    let eatlRequestHeaders = {
+      user: user,
+      originator: originator,
+      xCorrelator: xCorrelator,
+      traceIndicator: traceIndicator,
+      customerJourney: customerJourney
     };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+
+    /****************************************************************************************
+     * Prepare attributes to intiate ODL request
+     ****************************************************************************************/
+
+    const forwardingName = "PutToLiveEthernetContainerPerformanceMonitoringIsOnCausesWritingIntoDevice";
+    const stringName = "controllerInternalPathToMountPoint";
+    let stringValue = await IndividualServiceUtility.getStringProfileInstanceValue(stringName);
+
+    let pathParams = [];
+    pathParams.push(stringValue, mountNamevalue, ltpUuid, ltpLocalId);
+
+    /****************************************************************************************
+     * Perform ODL request and formulate final response
+     ****************************************************************************************/
+
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
-      resolve();
+      response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
-  });
+    return response;
+  } catch (error) {
+    if (error.message == 'Not Found') {
+      throw new createHttpError.NotFound();
+    }
+    console.log(error);
+    return response;
+  }
 }
 
 
@@ -249,18 +403,56 @@ exports.putLiveEthernetContainerPerformanceMonitoringIsOn = function (body, moun
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_6
  **/
-exports.putLiveHybridMwStructurePerformanceMonitoringIsOn = function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
-  return new Promise(function (resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-      "response-code": 204
+exports.putLiveHybridMwStructurePerformanceMonitoringIsOn = async function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  let response = {};
+  let mountNamevalue = mountName;
+  let requestBody = body;
+  let ltpUuid = uuid;
+  if (ltpUuid.includes('+')) {
+    ltpUuid = ltpUuid.split('+')[1]
+  }
+  let ltpLocalId = localId;
+  try {
+    /****************************************************************************************
+     * Setting up request header object for making eatl request
+     ****************************************************************************************/
+    let eatlRequestHeaders = {
+      user: user,
+      originator: originator,
+      xCorrelator: xCorrelator,
+      traceIndicator: traceIndicator,
+      customerJourney: customerJourney
     };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+
+    /****************************************************************************************
+     * Prepare attributes to intiate ODL request
+     ****************************************************************************************/
+
+    const forwardingName = "PutToLiveHybridMwStructurePerformanceMonitoringIsOnCausesWritingIntoDevice";
+    const stringName = "controllerInternalPathToMountPoint";
+    let stringValue = await IndividualServiceUtility.getStringProfileInstanceValue(stringName);
+
+    let pathParams = [];
+    pathParams.push(stringValue, mountNamevalue, ltpUuid, ltpLocalId);
+
+    /****************************************************************************************
+     * Perform ODL request and formulate final response
+     ****************************************************************************************/
+
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
-      resolve();
+      response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
-  });
+    return response;
+  } catch (error) {
+    if (error.message == 'Not Found') {
+      throw new createHttpError.NotFound();
+    }
+    console.log(error);
+    return response;
+  }
 }
 
 
@@ -277,18 +469,56 @@ exports.putLiveHybridMwStructurePerformanceMonitoringIsOn = function (body, moun
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_2
  **/
-exports.putLiveLtpExternalLabel = function (body, mountName, uuid, user, originator, xCorrelator, traceIndicator, customerJourney) {
-  return new Promise(function (resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-      "response-code": 204
+exports.putLiveLtpExternalLabel = async function (body, mountName, uuid, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  let response = {};
+  let mountNamevalue = mountName;
+  let requestBody = body;
+  let ltpUuid = uuid;
+  if (ltpUuid.includes('+')) {
+    ltpUuid = ltpUuid.split('+')[1]
+  }
+
+  try {
+    /****************************************************************************************
+     * Setting up request header object for making eatl request
+     ****************************************************************************************/
+    let eatlRequestHeaders = {
+      user: user,
+      originator: originator,
+      xCorrelator: xCorrelator,
+      traceIndicator: traceIndicator,
+      customerJourney: customerJourney
     };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+
+    /****************************************************************************************
+     * Prepare attributes to intiate ODL request
+     ****************************************************************************************/
+
+    const forwardingName = "PutToLiveLtpExternalLabelCausesWritingIntoDevice";
+    const stringName = "controllerInternalPathToMountPoint";
+    let stringValue = await IndividualServiceUtility.getStringProfileInstanceValue(stringName);
+
+    let pathParams = [];
+    pathParams.push(stringValue, mountNamevalue, ltpUuid);
+
+    /****************************************************************************************
+     * Perform ODL request and formulate final response
+     ****************************************************************************************/
+
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
-      resolve();
+      response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
-  });
+    return response;
+  } catch (error) {
+    if (error.message == 'Not Found') {
+      throw new createHttpError.NotFound();
+    }
+    console.log(error);
+    return response;
+  }
 }
 
 
@@ -306,18 +536,56 @@ exports.putLiveLtpExternalLabel = function (body, mountName, uuid, user, origina
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_8
  **/
-exports.putLivePureEthernetStructurePerformanceMonitoringIsOn = function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
-  return new Promise(function (resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-      "response-code": 204
+exports.putLivePureEthernetStructurePerformanceMonitoringIsOn = async function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  let response = {};
+  let mountNamevalue = mountName;
+  let requestBody = body;
+  let ltpUuid = uuid;
+  if (ltpUuid.includes('+')) {
+    ltpUuid = ltpUuid.split('+')[1]
+  }
+  let ltpLocalid = localId
+  try {
+    /****************************************************************************************
+     * Setting up request header object for making eatl request
+     ****************************************************************************************/
+    let eatlRequestHeaders = {
+      user: user,
+      originator: originator,
+      xCorrelator: xCorrelator,
+      traceIndicator: traceIndicator,
+      customerJourney: customerJourney
     };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+
+    /****************************************************************************************
+     * Prepare attributes to intiate ODL request
+     ****************************************************************************************/
+
+    const forwardingName = "PutToLivePureEthernetStructurePerformanceMonitoringIsOnCausesWritingIntoDevice";
+    const stringName = "controllerInternalPathToMountPoint";
+    let stringValue = await IndividualServiceUtility.getStringProfileInstanceValue(stringName);
+
+    let pathParams = [];
+    pathParams.push(stringValue, mountNamevalue, ltpUuid, ltpLocalid);
+
+    /****************************************************************************************
+     * Perform ODL request and formulate final response
+     ****************************************************************************************/
+
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
-      resolve();
+      response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
-  });
+    return response;
+  } catch (error) {
+    if (error.message == 'Not Found') {
+      throw new createHttpError.NotFound();
+    }
+    console.log(error);
+    return response;
+  }
 }
 
 
@@ -335,18 +603,56 @@ exports.putLivePureEthernetStructurePerformanceMonitoringIsOn = function (body, 
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_9
  **/
-exports.putLiveWireInterfacePerformanceMonitoringIsOn = function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
-  return new Promise(function (resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-      "response-code": 204
+exports.putLiveWireInterfacePerformanceMonitoringIsOn = async function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  let response = {};
+  let mountNamevalue = mountName;
+  let requestBody = body;
+  let ltpUuid = uuid;
+  if (ltpUuid.includes('+')) {
+    ltpUuid = ltpUuid.split('+')[1]
+  }
+  let ltpLocalid = localId
+  try {
+    /****************************************************************************************
+     * Setting up request header object for making eatl request
+     ****************************************************************************************/
+    let eatlRequestHeaders = {
+      user: user,
+      originator: originator,
+      xCorrelator: xCorrelator,
+      traceIndicator: traceIndicator,
+      customerJourney: customerJourney
     };
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
+
+    /****************************************************************************************
+     * Prepare attributes to intiate ODL request
+     ****************************************************************************************/
+
+    const forwardingName = "PutToLiveWireInterfacePerformanceMonitoringIsOnCausesWritingIntoDevice";
+    const stringName = "controllerInternalPathToMountPoint";
+    let stringValue = await IndividualServiceUtility.getStringProfileInstanceValue(stringName);
+
+    let pathParams = [];
+    pathParams.push(stringValue, mountNamevalue, ltpUuid, ltpLocalid);
+
+    /****************************************************************************************
+     * Perform ODL request and formulate final response
+     ****************************************************************************************/
+
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    if (responseFromODL.responseCode) {
+      response["response-code"] = responseFromODL.responseCode;
     } else {
-      resolve();
+      response["response-code"] = responseCodeEnum.code.INTERNAL_SERVER_ERROR;
     }
-  });
+    return response;
+  } catch (error) {
+    if (error.message == 'Not Found') {
+      throw new createHttpError.NotFound();
+    }
+    console.log(error);
+    return response;
+  }
 }
 
 
