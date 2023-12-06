@@ -5,6 +5,8 @@ const ODLOperations = require('./OpenDayLightClient/ODLOperations')
 const IndividualServiceUtility = require('./individualServices/IndividualServiceUtility')
 const responseCodeEnum = require('onf-core-model-ap/applicationPattern/rest/server/ResponseCode');
 const createHttpError = require('http-errors');
+const softwareUpgrade = require('./individualServices/SoftwareUpgrade');
+const HttpServerInterface = require('onf-core-model-ap/applicationPattern/onfModel/models/layerProtocols/HttpServerInterface');
 
 /**
  * Initiates process of embedding a new release
@@ -18,8 +20,20 @@ const createHttpError = require('http-errors');
  * no response value expected for this operation
  **/
 exports.bequeathYourDataAndDie = function (body, user, originator, xCorrelator, traceIndicator, customerJourney) {
-  return new Promise(function (resolve, reject) {
-    resolve();
+  return new Promise(async function (resolve, reject) {
+    try {
+      let newApplicationDetails = body;
+      let currentReleaseNumber = await HttpServerInterface.getReleaseNumberAsync();
+      let newReleaseNumber = body["new-application-release"];
+
+      if (newReleaseNumber !== currentReleaseNumber) {
+        softwareUpgrade.upgradeSoftwareVersion(user, xCorrelator, traceIndicator, customerJourney, newApplicationDetails)
+          .catch(err => console.log(`upgradeSoftwareVersion failed with error: ${err}`));
+      }
+      resolve();
+    } catch (error) {
+      reject(error);
+    }
   });
 }
 
