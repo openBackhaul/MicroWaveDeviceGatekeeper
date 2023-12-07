@@ -13,7 +13,7 @@ module.exports.embedYourself = async function embedYourself(req, res, next, body
   let startTime = process.hrtime();
   let responseCode = responseCodeEnum.code.NO_CONTENT;
   let responseBodyToDocument;
-  await BasicServices.embedYourself(user, xCorrelator, traceIndicator, customerJourney, req.url)
+  await BasicServices.embedYourself(body, user, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (responseBody) {
       applicationSpecificBasicServices.embedYourself(user, xCorrelator, traceIndicator, customerJourney, req.url);
       responseBodyToDocument = responseBody;
