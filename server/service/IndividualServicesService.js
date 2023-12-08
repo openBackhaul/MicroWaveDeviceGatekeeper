@@ -51,6 +51,7 @@ exports.bequeathYourDataAndDie = function (body, user, originator, xCorrelator, 
 exports.postMacInterfaceRpcForProvidingLearnedMacAdresses = async function (mountName, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let response = {};
   let mountNamevalue = mountName;
+  let fieldsFilter;
   try {
     /****************************************************************************************
      * Setting up request header object for making eatl request
@@ -78,7 +79,7 @@ exports.postMacInterfaceRpcForProvidingLearnedMacAdresses = async function (moun
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseFromODL = await ODLOperations.postToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    let responseFromODL = await ODLOperations.postToLive(requestBody, forwardingName, pathParams, fieldsFilter, eatlRequestHeaders);
     let responseCode = responseFromODL.responseCode
     if (responseCode) {
       response["response-code"] = responseCode;
@@ -159,6 +160,7 @@ exports.provideListOfConnectedDevices = function (user, originator, xCorrelator,
 exports.putLiveAirInterfacePerformanceMonitoringIsOn = async function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let response = {};
   let mountNamevalue = mountName;
+  let fieldsFilter;
   let requestBody = body;
   let ltpUuid = uuid;
   if (ltpUuid.includes('+')) {
@@ -192,7 +194,7 @@ exports.putLiveAirInterfacePerformanceMonitoringIsOn = async function (body, mou
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, fieldsFilter, eatlRequestHeaders);
     if (responseFromODL.responseCode) {
       response["response-code"] = responseFromODL.responseCode;
     } else {
@@ -226,6 +228,7 @@ exports.putLiveAirInterfacePerformanceMonitoringIsOn = async function (body, mou
 exports.putLiveAirInterfaceTransimitterIsOn = async function (body, mountName, uuid, localId, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let response = {};
   let mountNamevalue = mountName;
+  let fieldsFilter;
   let requestBody = body;
   let ltpUuid = uuid;
   if (ltpUuid.includes('+')) {
@@ -259,7 +262,7 @@ exports.putLiveAirInterfaceTransimitterIsOn = async function (body, mountName, u
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, fieldsFilter, eatlRequestHeaders);
     if (responseFromODL.responseCode) {
       response["response-code"] = responseFromODL.responseCode;
     } else {
@@ -292,6 +295,7 @@ exports.putLiveControlConstructExternalLabel = async function (body, mountName, 
   let response = {};
   let mountNamevalue = mountName;
   let requestBody = body;
+  let fieldsFilter;
   try {
     /****************************************************************************************
      * Setting up request header object for making eatl request
@@ -319,7 +323,7 @@ exports.putLiveControlConstructExternalLabel = async function (body, mountName, 
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, fieldsFilter, eatlRequestHeaders);
     if (responseFromODL.responseCode) {
       response["response-code"] = responseFromODL.responseCode;
     } else {
@@ -358,6 +362,7 @@ exports.putLiveEthernetContainerPerformanceMonitoringIsOn = async function (body
     ltpUuid = ltpUuid.split('+')[1]
   }
   let ltpLocalId = localId;
+  let fieldsFilter;
   try {
     /****************************************************************************************
      * Setting up request header object for making eatl request
@@ -385,7 +390,7 @@ exports.putLiveEthernetContainerPerformanceMonitoringIsOn = async function (body
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, fieldsFilter, eatlRequestHeaders);
     if (responseFromODL.responseCode) {
       response["response-code"] = responseFromODL.responseCode;
     } else {
@@ -425,6 +430,7 @@ exports.putLiveHybridMwStructurePerformanceMonitoringIsOn = async function (body
     ltpUuid = ltpUuid.split('+')[1]
   }
   let ltpLocalId = localId;
+  let fieldsFilter;
   try {
     /****************************************************************************************
      * Setting up request header object for making eatl request
@@ -452,7 +458,7 @@ exports.putLiveHybridMwStructurePerformanceMonitoringIsOn = async function (body
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, fieldsFilter, eatlRequestHeaders);
     if (responseFromODL.responseCode) {
       response["response-code"] = responseFromODL.responseCode;
     } else {
@@ -490,7 +496,7 @@ exports.putLiveLtpExternalLabel = async function (body, mountName, uuid, user, o
   if (ltpUuid.includes('+')) {
     ltpUuid = ltpUuid.split('+')[1]
   }
-
+  let fieldsFilter;
   try {
     /****************************************************************************************
      * Setting up request header object for making eatl request
@@ -518,7 +524,7 @@ exports.putLiveLtpExternalLabel = async function (body, mountName, uuid, user, o
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, fieldsFilter, eatlRequestHeaders);
     if (responseFromODL.responseCode) {
       response["response-code"] = responseFromODL.responseCode;
     } else {
@@ -557,7 +563,8 @@ exports.putLivePureEthernetStructurePerformanceMonitoringIsOn = async function (
   if (ltpUuid.includes('+')) {
     ltpUuid = ltpUuid.split('+')[1]
   }
-  let ltpLocalid = localId
+  let ltpLocalid = localId;
+  let fieldsFilter;
   try {
     /****************************************************************************************
      * Setting up request header object for making eatl request
@@ -585,7 +592,7 @@ exports.putLivePureEthernetStructurePerformanceMonitoringIsOn = async function (
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, fieldsFilter, eatlRequestHeaders);
     if (responseFromODL.responseCode) {
       response["response-code"] = responseFromODL.responseCode;
     } else {
@@ -624,7 +631,8 @@ exports.putLiveWireInterfacePerformanceMonitoringIsOn = async function (body, mo
   if (ltpUuid.includes('+')) {
     ltpUuid = ltpUuid.split('+')[1]
   }
-  let ltpLocalid = localId
+  let ltpLocalid = localId;
+  let fieldsFilter;
   try {
     /****************************************************************************************
      * Setting up request header object for making eatl request
@@ -652,7 +660,7 @@ exports.putLiveWireInterfacePerformanceMonitoringIsOn = async function (body, mo
      * Perform ODL request and formulate final response
      ****************************************************************************************/
 
-    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, stringName, eatlRequestHeaders);
+    let responseFromODL = await ODLOperations.writeToLive(requestBody, forwardingName, pathParams, fieldsFilter, eatlRequestHeaders);
     if (responseFromODL.responseCode) {
       response["response-code"] = responseFromODL.responseCode;
     } else {
