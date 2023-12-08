@@ -217,11 +217,21 @@ module.exports.putLiveWireInterfacePerformanceMonitoringIsOn = function putLiveW
 };
 
 module.exports.regardControllerAttributeValueChange = function regardControllerAttributeValueChange(req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
+  let startTime = process.hrtime();
+  let responseCode = responseCodeEnum.code.NO_CONTENT;
+  let responseBodyToDocument = {};
+  let openApiPath = req.openapi.openApiRoute;
   IndividualServices.regardControllerAttributeValueChange(body, user, originator, xCorrelator, traceIndicator, customerJourney)
-    .then(function (response) {
-      utils.writeJson(res, response);
+    .then(async function (responseBody) {
+      responseBodyToDocument = responseBody;
+      let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, openApiPath);
+      restResponseBuilder.buildResponse(res, responseCode, responseBody, responseHeader);
     })
-    .catch(function (response) {
-      utils.writeJson(res, response);
+    .catch(async function (responseBody) {
+      let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, openApiPath);
+      let sentResp = restResponseBuilder.buildResponse(res, undefined, responseBody, responseHeader);
+      responseCode = sentResp.code;
+      responseBodyToDocument = sentResp.body;
     });
+  executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, responseCode, req.body, responseBodyToDocument);
 };
