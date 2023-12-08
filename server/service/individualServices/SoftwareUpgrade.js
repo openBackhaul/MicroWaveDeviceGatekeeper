@@ -3,13 +3,15 @@
  * @module SoftwareUpgrade
  **/
 
+const operationClientInterface = require('onf-core-model-ap/applicationPattern/onfModel/models/layerProtocols/OperationClientInterface');
 const httpServerInterface = require('onf-core-model-ap/applicationPattern/onfModel/models/layerProtocols/HttpServerInterface');
 const ForwardingDomain = require('onf-core-model-ap/applicationPattern/onfModel/models/ForwardingDomain');
 const onfAttributeFormatter = require('onf-core-model-ap/applicationPattern/onfModel/utility/OnfAttributeFormatter');
 const onfAttributes = require('onf-core-model-ap/applicationPattern/onfModel/constants/OnfAttributes');
 const FcPort = require('onf-core-model-ap/applicationPattern/onfModel/models/FcPort');
 const eventDispatcher = require('onf-core-model-ap/applicationPattern/rest/client/eventDispatcher');
-const { getLtpInfo } = require('../basicServices/notificationProxy')
+const logicalTerminationPoint = require('onf-core-model-ap/applicationPattern/onfModel/models/LogicalTerminationPoint');
+const ForwardingConstruct = require('onf-core-model-ap/applicationPattern/onfModel/models/ForwardingConstruct');
 var traceIncrementer = 1;
 
 /**
@@ -22,19 +24,8 @@ var traceIncrementer = 1;
    @returns {Promise} Promise is resolved if the operation succeeded else the Promise is rejected 
 * **/
 exports.upgradeSoftwareVersion = async function (user, xCorrelator, traceIndicator, customerJourney, newApplicationDetails) {
-  await endSubscriptionForControllerAttributeValueChanges(user, xCorrelator, traceIndicator, customerJourney, newApplicationDetails)
+  await PromptForBequeathingDataCausesUnsubscribingFromControllerNotificationsAtNP(user, xCorrelator, traceIndicator, customerJourney);
   await replaceOldReleaseWithNewRelease(user, xCorrelator, traceIndicator, customerJourney, newApplicationDetails);
-}
-
-/**
- * This method performs operation to end subscription for controller-attribute-value-change
- * @param {String} user User identifier from the system starting the service call
- * @param {String} xCorrelator UUID for the service execution flow that allows to correlate requests and responses
- * @param {String} traceIndicator Sequence of request numbers along the flow
- * @param {String} customerJourney Holds information supporting customer’s journey to which the execution applies
- */
-async function endSubscriptionForControllerAttributeValueChanges(user, xCorrelator, traceIndicator, customerJourney, newApplicationDetails){
-  await PromptForBequeathingDataCausesUnsubscribingFromControllerNotificationsAtNP(user, xCorrelator, traceIndicator, customerJourney, newApplicationDetails)
 }
 
 /**
@@ -45,46 +36,59 @@ async function endSubscriptionForControllerAttributeValueChanges(user, xCorrelat
  * @param {String} customerJourney Holds information supporting customer’s journey to which the execution applies
  * @returns {boolean} return true if the operation is success or else return false
  */
-async function PromptForBequeathingDataCausesUnsubscribingFromControllerNotificationsAtNP(user, xCorrelator, traceIndicator, customerJourney, newApplicationDetails){
+async function PromptForBequeathingDataCausesUnsubscribingFromControllerNotificationsAtNP(user, xCorrelator, traceIndicator, customerJourney){
   return new Promise(async function (resolve, reject) {
     try {
-      let result = true;
-      let forwardingKindNameOfTheBequeathOperation = "PromptForBequeathingDataCausesUnsubscribingFromControllerNotificationsAtNP";
-      /***********************************************************************************
-       * Preparing requestBody 
-       ************************************************************************************/
-      let subscriberApplication = await httpServerInterface.getApplicationNameAsync();
-      let subscriberReleaseNumber = await httpServerInterface.getReleaseNumberAsync();
-      
-      let forwardingName = "PromptForEmbeddingCausesSubscribingForNotifications"
-      let ltpInfo = await getLtpInfo(forwardingName)
-      let subscription = ltpInfo["operation-name"]
-      /***********************************************************************************
-       * PromptForEmbeddingCausesSubscribingForNotifications
-       *   /v1/notify-controller-attribute-value-changes
-       ************************************************************************************/
-      let requestBody = {};
-      requestBody.subscriberApplication = subscriberApplication
-      requestBody.subscriberReleaseNumber = subscriberReleaseNumber
-      requestBody.subscription = subscription
-      requestBody = onfAttributeFormatter.modifyJsonObjectKeysToKebabCase(requestBody);
-      result = await forwardRequest(
-        forwardingKindNameOfTheBequeathOperation,
-        requestBody,
-        user,
-        xCorrelator,
-        traceIndicator + "." + traceIncrementer++,
-        customerJourney
-      );
-      if (!result) {
-        throw forwardingKindNameOfTheBequeathOperation + "forwarding is not success for the input" + JSON.stringify(requestBody);
-      }
-      
-      resolve(result)
+        let result = true;
+        let forwardingKindNameOfTheBequeathOperation = "PromptForBequeathingDataCausesUnsubscribingFromControllerNotificationsAtNP";
+        let forwardingKindNameOfTheODLNotificationListener= "PromptForEmbeddingCausesSubscribingForNotifications";
+        
+        let operationClientUuidOfTheODLNotificationListener = await resolveHttpClientLtpUuidFromForwardingName(forwardingKindNameOfTheODLNotificationListener);
+        let listOfOperationToBeUnsubscribed = [];
+        let oDLNotificationListenerOperationName = await operationClientInterface.getOperationNameAsync(operationClientUuidOfTheODLNotificationListener);
+        listOfOperationToBeUnsubscribed.push(oDLNotificationListenerOperationName);
+        /***********************************************************************************
+         * Preparing requestBody 
+         ************************************************************************************/
+        try {
+            for (let i = 0; i < listOfOperationToBeUnsubscribed.length; i++) {
+
+                let applicationName = await httpServerInterface.getApplicationNameAsync();
+                let releaseNumber = await httpServerInterface.getReleaseNumberAsync();
+                let subscriptionName = listOfOperationToBeUnsubscribed[i];
+
+                /***********************************************************************************
+                 * PromptForBequeathingDataCausesEndingSubscriptionsToOldRelease
+                 *   /v1/end-subscription
+                 ************************************************************************************/
+                let requestBody = {};
+                requestBody.subscriberApplication = applicationName;
+                requestBody.subscriberReleaseNumber = releaseNumber;
+                requestBody.subscription = subscriptionName;
+                requestBody = onfAttributeFormatter.modifyJsonObjectKeysToKebabCase(requestBody);
+                result = await forwardRequest(
+                    forwardingKindNameOfTheBequeathOperation,
+                    requestBody,
+                    user,
+                    xCorrelator,
+                    traceIndicator + "." + traceIncrementer++,
+                    customerJourney
+                );
+                if (!result) { //prathiba
+                    throw forwardingKindNameOfTheBequeathOperation + "forwarding is not success for the input" + JSON.stringify(requestBody);
+                }
+            }
+
+        } catch (error) {
+            console.log(error);
+            throw "operation is not success";
+        }
+
+        resolve(result);
     } catch (error) {
-      reject(error);
+        reject(error);
     }
-  })
+});
 }
 
 /**
@@ -257,4 +261,27 @@ function getFcPortOutputLogicalTerminationPointList(forwardingConstructInstance)
     }
   }
   return fcPortOutputLogicalTerminationPointList;
+}
+
+
+/**
+ * function to get the output fc-port LTP uuid of the provided forwarding name
+ * @param {string} forwardingName of the forwardingConstruct
+ * @returns {String} operation client uuid
+ */
+async function resolveHttpClientLtpUuidFromForwardingName(forwardingName) {
+  let ForwardConstructName = await ForwardingDomain.getForwardingConstructForTheForwardingNameAsync(forwardingName);
+  if (ForwardConstructName === undefined) {
+    return null;
+  }
+  let operationClientUuid;
+  let ForwardConstructUuid = ForwardConstructName[onfAttributes.GLOBAL_CLASS.UUID];
+  let ListofUuid = await ForwardingConstruct.getFcPortListAsync(ForwardConstructUuid);
+  for (let i = 0; i < ListofUuid.length; i++) {
+    let PortDirection = ListofUuid[i][[onfAttributes.FC_PORT.PORT_DIRECTION]];
+    if (PortDirection === FcPort.portDirectionEnum.OUTPUT) {
+      operationClientUuid = ListofUuid[i][onfAttributes.CONTROL_CONSTRUCT.LOGICAL_TERMINATION_POINT];
+    }
+  }
+  return operationClientUuid;
 }
