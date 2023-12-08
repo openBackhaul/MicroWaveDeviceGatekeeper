@@ -669,19 +669,23 @@ exports.putLiveWireInterfacePerformanceMonitoringIsOn = async function (body, mo
  **/
 exports.regardControllerAttributeValueChange = function (body, user, originator, xCorrelator, traceIndicator, customerJourney) {
   return new Promise(function (resolve, reject) {
-    let notificationProxy = body['notification-proxy-1-0:attribute-value-changed-notification']
-    let resource = notificationProxy['resource']
-    let attributeName = notificationProxy['attribute-name']
-    let connectionStatus = notificationProxy['new-value']
-    let mountName = resource.match(/(?<=logical-termination-point=)(\w)+/g);
-    if (attributeName == "connection-status") {
-      global.networkTopologyList.forEach(networkTopologyListItem => {
-        if (networkTopologyListItem['node-id'] == mountName[0]) {
-          networkTopologyListItem['netconf-node-topology:connection-status'] = connectionStatus
+    try {
+      let notificationProxy = body['notification-proxy-1-0:attribute-value-changed-notification'];
+      let resource = notificationProxy['resource'];
+      let attributeName = notificationProxy['attribute-name'];
+      let connectionStatus = notificationProxy['new-value'];
+      let mountName = resource.match(/(?<=logical-termination-point=)(\w)+/g);
+      if (attributeName == "connection-status") {
+        global.networkTopologyList.forEach(networkTopologyListItem => {
+          if (networkTopologyListItem['node-id'] == mountName[0]) {
+            networkTopologyListItem['netconf-node-topology:connection-status'] = connectionStatus;
 
-        }
-      })
+          }
+        })
+      }
+      resolve();
+    } catch (error) {
+      reject();
     }
-    resolve()
   });
 }

@@ -218,7 +218,7 @@ module.exports.putLiveWireInterfacePerformanceMonitoringIsOn = function putLiveW
 
 module.exports.regardControllerAttributeValueChange = function regardControllerAttributeValueChange(req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
-  let responseCode = responseCodeEnum.code.OK;
+  let responseCode = responseCodeEnum.code.NO_CONTENT;
   let responseBodyToDocument = {};
   let openApiPath = req.openapi.openApiRoute;
   IndividualServices.regardControllerAttributeValueChange(body, user, originator, xCorrelator, traceIndicator, customerJourney)
