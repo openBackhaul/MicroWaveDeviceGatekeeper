@@ -1,6 +1,7 @@
 'use strict';
 
 var BasicServices = require('onf-core-model-ap-bs/basicServices/BasicServicesService');
+var applicationSpecificBasicServices = require('../service/BasicServicesService');
 var responseBuilder = require('onf-core-model-ap/applicationPattern/rest/server/ResponseBuilder');
 var responseCodeEnum = require('onf-core-model-ap/applicationPattern/rest/server/ResponseCode');
 var restResponseHeader = require('onf-core-model-ap/applicationPattern/rest/server/ResponseHeader');
@@ -14,6 +15,7 @@ module.exports.embedYourself = async function embedYourself(req, res, next, body
   let responseBodyToDocument;
   await BasicServices.embedYourself(body, user, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (responseBody) {
+      applicationSpecificBasicServices.embedYourself(user, xCorrelator, traceIndicator, customerJourney, req.url);
       responseBodyToDocument = responseBody;
       let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
       responseBuilder.buildResponse(res, responseCode, responseBody, responseHeader);
