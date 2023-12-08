@@ -24,6 +24,11 @@ exports.prepareAndSendRequestToODL = async function(operationClientAndFieldParam
     try {
         let operationName = operationClientAndFieldParams.operationName;
         let operationClientUuid = operationClientAndFieldParams.operationClientUuid;
+        let fields = operationClientAndFieldParams.fields
+        let fieldsFilter = ""
+        if(fields){
+            fieldsFilter = "?fields="+fields
+        }
         let params = await RESTUtility.getPathParameter(operationName, pathParamList);
         let base64Auth = await ODLAuthorization.getAuthorizationCodeAsync();
         if (base64Auth) {
@@ -35,11 +40,12 @@ exports.prepareAndSendRequestToODL = async function(operationClientAndFieldParam
                 requestBody,
                 httpMethod,
                 params,
+                fieldsFilter,
                 httpRequestHeader,
                 eatlRequestHeaders.user,
                 eatlRequestHeaders.xCorrelator,
                 eatlRequestHeaders.traceIndicator,
-                eatlRequestHeaders.customerJourney,
+                eatlRequestHeaders.customerJourney
             );
             return responseData;
         } else {
@@ -69,7 +75,7 @@ exports.prepareAndSendRequestToODL = async function(operationClientAndFieldParam
  * @param {String} traceIndicator Sequence number of the request.
  * @param {String} customerJourney Holds information supporting customer’s journey to which the execution applies.
  */
-async function sendRequestToODL(operationClientUuid, httpRequestBody, httpMethod, params, httpRequestHeader, user, xCorrelator, traceIndicator) {
+async function sendRequestToODL(operationClientUuid, httpRequestBody, httpMethod, params, fieldsFilter = "", httpRequestHeader, user, xCorrelator, traceIndicator) {
     try {
         let responseObj = {};
         let responseCode;
@@ -90,7 +96,7 @@ async function sendRequestToODL(operationClientUuid, httpRequestBody, httpMethod
         let originator = await HttpServerInterface.getApplicationNameAsync();
         let response = await BuildAndTriggerRestRequest(
             operationClientUuid,
-            operationName,
+            operationName + fieldsFilter,
             httpMethod,
             httpRequestHeader,
             httpRequestBody,
