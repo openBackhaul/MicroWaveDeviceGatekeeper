@@ -33,3 +33,4 @@ http.createServer(app).listen(serverPort, function () {
 global.databasePath = './database/load.json';
 global.networkTopologyList = [];
 
+appCommons.performApplicationRegistration();
