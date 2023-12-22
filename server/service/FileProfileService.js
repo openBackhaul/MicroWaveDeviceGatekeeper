@@ -34,10 +34,10 @@ exports.getFileProfileFileIdentifier = async function (url) {
  * url String 
  * returns inline_response_200_18
  **/
-exports.getFileProfileFilePath = async function (url) {
+exports.getFileProfileFileName = async function (url) {
   var value = await fileOperation.readFromDatabaseAsync(url);
   return {
-    "file-profile-1-0:file-path": value
+    "file-profile-1-0:file-name": value
   };
 }
 
@@ -54,31 +54,6 @@ exports.getFileProfileOperation = async function (url) {
   };
 }
 
-/**
- * Returns the password for acccessing the file
- *
- * url String 
- * returns inline_response_200_20
- **/
-exports.getFileProfilePassword = async function (url) {
-  const value = await fileOperation.readFromDatabaseAsync(url);
-  return {
-    "file-profile-1-0:password": value
-  };
-}
-
-/**
- * Returns the user name for acccessing the file
- *
- * url String 
- * returns inline_response_200_19
- **/
-exports.getFileProfileUserName = async function (url) {
-  const value = await fileOperation.readFromDatabaseAsync(url);
-  return {
-    "file-profile-1-0:user-name": value
-  };
-}
 
 /**
  * Configures path of the file
@@ -87,7 +62,7 @@ exports.getFileProfileUserName = async function (url) {
  * url String 
  * no response value expected for this operation
  **/
-exports.putFileProfileFilePath = async function (url, body) {
+exports.putFileProfileFileName = async function (url, body) {
   await fileOperation.writeToDatabaseAsync(url, body, false);
 }
 
@@ -99,27 +74,5 @@ exports.putFileProfileFilePath = async function (url, body) {
  * no response value expected for this operation
  **/
 exports.putFileProfileOperation = async function (url, body) {
-  await fileOperation.writeToDatabaseAsync(url, body, false);
-}
-
-/**
- * Configures the password for acccessing the file
- *
- * body Fileprofileconfiguration_password_body 
- * url String 
- * no response value expected for this operation
- **/
-exports.putFileProfilePassword = async function (url, body) {
-  await fileOperation.writeToDatabaseAsync(url, body, false);
-}
-
-/**
- * Configures the user name for acccessing the file
- *
- * body Fileprofileconfiguration_username_body 
- * url String 
- * no response value expected for this operation
- **/
-exports.putFileProfileUserName = async function (url, body) {
   await fileOperation.writeToDatabaseAsync(url, body, false);
 }
