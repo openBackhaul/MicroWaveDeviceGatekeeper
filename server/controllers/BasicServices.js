@@ -7,8 +7,6 @@ var responseCodeEnum = require('onf-core-model-ap/applicationPattern/rest/server
 var restResponseHeader = require('onf-core-model-ap/applicationPattern/rest/server/ResponseHeader');
 var ExecutionAndTraceService = require('onf-core-model-ap/applicationPattern/services/ExecutionAndTraceService');
 
-const NEW_RELEASE_FORWARDING_NAME = 'PromptForBequeathingDataCausesTransferOfListOfAlreadyRegisteredApplications';
-
 module.exports.embedYourself = async function embedYourself(req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
   let responseCode = responseCodeEnum.code.NO_CONTENT;
@@ -128,7 +126,7 @@ module.exports.inquireOamRequestApprovals = async function inquireOamRequestAppr
   let startTime = process.hrtime();
   let responseCode = responseCodeEnum.code.NO_CONTENT;
   let responseBodyToDocument;
-  await BasicServices.inquireOamRequestApprovals(body, user, xCorrelator, traceIndicator, customerJourney, req.url, NEW_RELEASE_FORWARDING_NAME)
+  await BasicServices.inquireOamRequestApprovals(body, user, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (responseBody) {
       responseBodyToDocument = responseBody;
       let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -166,7 +164,7 @@ module.exports.redirectOamRequestInformation = async function redirectOamRequest
   let startTime = process.hrtime();
   let responseCode = responseCodeEnum.code.NO_CONTENT;
   let responseBodyToDocument;
-  await BasicServices.redirectOamRequestInformation(body, user, xCorrelator, traceIndicator, customerJourney, req.url, NEW_RELEASE_FORWARDING_NAME)
+  await BasicServices.redirectOamRequestInformation(body, user, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (responseBody) {
       responseBodyToDocument = responseBody;
       let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -185,7 +183,7 @@ module.exports.redirectServiceRequestInformation = async function redirectServic
   let startTime = process.hrtime();
   let responseCode = responseCodeEnum.code.NO_CONTENT;
   let responseBodyToDocument;
-  await BasicServices.redirectServiceRequestInformation(body, user, xCorrelator, traceIndicator, customerJourney, req.url, NEW_RELEASE_FORWARDING_NAME)
+  await BasicServices.redirectServiceRequestInformation(body, user, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (responseBody) {
       responseBodyToDocument = responseBody;
       let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -204,7 +202,7 @@ module.exports.redirectTopologyChangeInformation = async function redirectTopolo
   let startTime = process.hrtime();
   let responseCode = responseCodeEnum.code.OK;
   let responseBodyToDocument = {};
-  await BasicServices.redirectTopologyChangeInformation(body, user, xCorrelator, traceIndicator, customerJourney, req.url, NEW_RELEASE_FORWARDING_NAME)
+  await BasicServices.redirectTopologyChangeInformation(body, user, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (responseBody) {
       responseBodyToDocument = responseBody;
       let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -269,7 +267,7 @@ module.exports.updateClient = async function updateClient(req, res, next, body, 
   let startTime = process.hrtime();
   let responseCode = responseCodeEnum.code.NO_CONTENT;
   let responseBodyToDocument;
-  await BasicServices.updateClient(body, user, xCorrelator, traceIndicator, customerJourney, req.url, NEW_RELEASE_FORWARDING_NAME)
+  await BasicServices.updateClient(body, user, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (responseBody) {
       responseBodyToDocument = responseBody;
       let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -288,7 +286,7 @@ module.exports.updateOperationClient = async function updateOperationClient(req,
   let startTime = process.hrtime();
   let responseCode = responseCodeEnum.code.NO_CONTENT;
   let responseBodyToDocument;
-  await BasicServices.updateOperationClient(body, user, xCorrelator, traceIndicator, customerJourney, req.url, NEW_RELEASE_FORWARDING_NAME)
+  await BasicServices.updateOperationClient(body, user, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (responseBody) {
       responseBodyToDocument = responseBody;
       let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
