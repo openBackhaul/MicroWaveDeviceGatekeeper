@@ -1,23 +1,42 @@
 forwardings:
 
   - forwarding-name: PromptForRegisteringCausesRegistrationRequest
-    uuid: mwdg-1-0-1-op-fc-bm-000
+    uuid: mwdg-1-0-2-op-fc-bm-999
     forwarding-type: InvariantProcessSnippet
     management-requests:
       operation-client-update:
         - server-name: /v1/register-yourself
-          uuid: mwdg-1-0-1-op-s-bm-000
+          uuid: mwdg-1-0-2-op-s-bm-000
       fc-port-update:
         - server-name: /v1/register-yourself
-          uuid: mwdg-1-0-1-op-s-bm-000
+          uuid: mwdg-1-0-2-op-s-bm-000
       fc-port-deletion:
       operation-client-deletion:
     initiating-requests:
       - server-name: /v1/register-yourself
-        uuid: mwdg-1-0-1-op-s-bm-000
+        uuid: mwdg-1-0-2-op-s-bm-000
     consequent-requests:
-      - client-name: RegistryOffice://v1/register-application
-        uuid: mwdg-1-0-1-op-c-bm-ro-2-1-2-000
+      - client-name: RegistryOffice://v2/register-application
+        uuid: mwdg-1-0-2-op-c-bm-ro-2-1-2-000
+
+  - forwarding-name: PromptForRegisteringCausesRegistrationRequest2
+    uuid: mwdg-1-0-2-op-fc-bm-000
+    forwarding-type: InvariantProcessSnippet
+    management-requests:
+      operation-client-update:
+        - server-name: /v1/register-yourself
+          uuid: mwdg-1-0-2-op-s-bm-000
+      fc-port-update:
+        - server-name: /v1/register-yourself
+          uuid: mwdg-1-0-2-op-s-bm-000
+      fc-port-deletion:
+      operation-client-deletion:
+    initiating-requests:
+      - server-name: /v1/register-yourself
+        uuid: mwdg-1-0-2-op-s-bm-000
+    consequent-requests:
+      - client-name: RegistryOffice://v2/register-application
+        uuid: mwdg-1-0-2-op-c-bm-ro-2-1-2-000
 
   - forwarding-name: PromptForEmbeddingCausesRequestForBequeathingData
     uuid: mwdg-1-0-1-op-fc-bm-001
@@ -100,6 +119,14 @@ forwardings:
         uuid: mwdg-1-0-1-op-s-bm-010
       - server-name: /v1/update-operation-client
         uuid: mwdg-1-0-1-op-s-bm-011
+      - server-name: /v1/inquire-basic-auth-approvals
+        uuid: mwdg-1-0-2-op-s-bm-012
+      - server-name: /v1/dispose-remainders-of-deregistered-application
+        uuid: mwdg-1-0-2-op-s-bm-013
+      - server-name: /v1/inform-about-preceding-release
+        uuid: mwdg-1-0-2-op-s-bm-014
+      - server-name: /v1/update-client-of-subsequent-release
+        uuid: mwdg-1-0-2-op-s-bm-015
       - server-name: /v1/bequeath-your-data-and-die
         uuid: mwdg-1-0-1-op-s-im-000
       - server-name: /v1/start-application-in-generic-representation
@@ -172,9 +199,30 @@ forwardings:
       operation-client-deletion:
     initiating-requests:
     consequent-requests:
-      - client-name: AdministratorAdministration://v1/approve-oam-request
+      - client-name: AccessAdministration://v1/approve-oam-request
         uuid: mwdg-1-0-1-op-c-bs-aa-2-1-2-000
 
+  - forwarding-name: BasicAuthRequestCausesInquiryForAuthentication
+    uuid: mwdg-1-0-2-op-fc-bm-005
+    forwarding-type: InvariantProcessSnippet
+    management-requests:
+      operation-client-update:
+        - server-name: /v1/inquire-basic-auth-approvals
+          uuid: mwdg-1-0-2-op-s-bm-012
+        - server-name: /v1/inquire-oam-request-approvals
+          uuid: mwdg-1-0-2-op-s-bm-005
+      fc-port-update:
+        - server-name: /v1/inquire-basic-auth-approvals
+          uuid: mwdg-1-0-2-op-s-bm-012
+        - server-name: /v1/inquire-oam-request-approvals
+          uuid: mwdg-1-0-2-op-s-bm-005
+      fc-port-deletion:
+      operation-client-deletion:
+    initiating-requests:
+      # [all oam requests]
+    consequent-requests:
+      - client-name: AccessAdministration://v1/approve-basic-auth-request
+        uuid: mwdg-1-0-2-op-c-bs-aa-2-1-2-000
 
   - forwarding-name: PromptForBequeathingDataCausesUnsubscribingFromControllerNotificationsAtNP
     uuid: mwdg-1-0-1-op-fc-im-115
@@ -278,6 +326,10 @@ forwardings:
         uuid: mwdg-1-0-1-op-s-bm-009
       - server-name: /v1/update-operation-client
         uuid: mwdg-1-0-1-op-s-bm-011
+      - server-name: /v1/inquire-basic-auth-approvals
+        uuid: mwdg-1-0-2-op-s-bm-012
+      - server-name: /v1/update-client-of-subsequent-release
+        uuid: mwdg-1-0-2-op-s-bm-015
       - server-name: /v1/bequeath-your-data-and-die
         uuid: mwdg-1-0-1-op-s-im-000
     consequent-requests:
@@ -285,23 +337,24 @@ forwardings:
         uuid: mwdg-1-0-1-op-c-bm-alt-2-1-2-001
 
   - forwarding-name: ServiceRequestCausesLtpDeletionRequest
-    uuid: mwdg-1-0-1-op-fc-bm-007
+    uuid: mwdg-1-0-2-op-fc-bm-007
     forwarding-type: InvariantProcessSnippet
     management-requests:
       operation-client-update:
         - server-name: /v1/redirect-topology-change-information
-          uuid: mwdg-1-0-1-op-s-bm-009
+          uuid: mwdg-1-0-2-op-s-bm-009
       fc-port-update:
         - server-name: /v1/redirect-topology-change-information
-          uuid: mwdg-1-0-1-op-s-bm-009
+          uuid: mwdg-1-0-2-op-s-bm-009
       fc-port-deletion:
       operation-client-deletion:
     initiating-requests:
-      - server-name: /v1/end-subscription
-        uuid: mwdg-1-0-1-op-s-bm-004
+      - server-name: /v1/dispose-remainders-of-deregistered-application
+        uuid: mwdg-1-0-2-op-s-bm-013
+      ## TODO: All INDIVIDUAL service requests, which are deleting an LTP, to be complemented
     consequent-requests:
       - client-name: ApplicationLayerTopology://v1/delete-ltp-and-dependents
-        uuid: mwdg-1-0-1-op-c-bm-alt-2-1-2-002
+        uuid: mwdg-1-0-2-op-c-bm-alt-2-1-2-002
 
   - forwarding-name: ServiceRequestCausesFcUpdateRequest
     uuid: mwdg-1-0-1-op-fc-bm-008
