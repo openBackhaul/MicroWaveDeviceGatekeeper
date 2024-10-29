@@ -17,7 +17,7 @@ forwardings:
         uuid: mwdg-1-0-1-op-s-bm-000
     consequent-requests:
       - client-name: RegistryOffice://v1/register-application
-        uuid: mwdg-1-0-1-op-c-bm-ro-2-0-2-000
+        uuid: mwdg-1-0-1-op-c-bm-ro-2-1-2-000
 
   - forwarding-name: PromptForEmbeddingCausesRequestForBequeathingData
     uuid: mwdg-1-0-1-op-fc-bm-001
@@ -32,8 +32,7 @@ forwardings:
         uuid: mwdg-1-0-1-op-s-bm-001
     consequent-requests:
       - client-name: OldRelease://v1/bequeath-your-data-and-die
-        uuid: mwdg-1-0-1-op-c-bm-or-1-0-0-000
-
+        uuid: mwdg-1-0-1-op-c-bm-or-1-0-1-000
 
   - forwarding-name: PromptForEmbeddingCausesCyclicLoadingOfDeviceListFromController
     uuid: mwdg-1-0-1-op-fc-im-001
@@ -139,7 +138,7 @@ forwardings:
         uuid: mwdg-1-0-1-op-s-is-359
     consequent-requests:
       - client-name: ExecutionAndTraceLog://v1/record-service-request
-        uuid: mwdg-1-0-1-op-c-bs-eatl-2-0-2-000
+        uuid: mwdg-1-0-1-op-c-bs-eatl-2-1-2-000
 
 
   - forwarding-name: OamRequestCausesLoggingRequest
@@ -157,7 +156,7 @@ forwardings:
     initiating-requests:
     consequent-requests:
       - client-name: OamLog://v1/record-oam-request
-        uuid: mwdg-1-0-1-op-c-bs-ol-2-0-2-000
+        uuid: mwdg-1-0-1-op-c-bs-ol-2-1-2-000
 
   - forwarding-name: OamRequestCausesInquiryForAuthentication
     uuid: mwdg-1-0-1-op-fc-bm-004
@@ -174,7 +173,7 @@ forwardings:
     initiating-requests:
     consequent-requests:
       - client-name: AdministratorAdministration://v1/approve-oam-request
-        uuid: mwdg-1-0-1-op-c-bs-aa-2-0-2-000
+        uuid: mwdg-1-0-1-op-c-bs-aa-2-1-2-000
 
 
   - forwarding-name: PromptForBequeathingDataCausesUnsubscribingFromControllerNotificationsAtNP
@@ -209,7 +208,7 @@ forwardings:
         uuid: mwdg-1-0-1-op-s-im-000
     consequent-requests:
       - client-name: RegistryOffice://v1/relay-server-replacement
-        uuid: mwdg-1-0-1-op-c-bm-ro-2-0-2-001
+        uuid: mwdg-1-0-1-op-c-bm-ro-2-1-2-001
 
   - forwarding-name: PromptForBequeathingDataCausesRequestForDeregisteringOfOldRelease
     uuid: mwdg-1-0-1-op-fc-bm-106
@@ -228,7 +227,7 @@ forwardings:
         uuid: mwdg-1-0-1-op-s-im-000
     consequent-requests:
       - client-name: RegistryOffice://v1/deregister-application
-        uuid: mwdg-1-0-1-op-c-bm-ro-2-0-2-002
+        uuid: mwdg-1-0-1-op-c-bm-ro-2-1-2-002
 
   - forwarding-name: PromptingNewReleaseForUpdatingServerCausesRequestForBroadcastingInfoAboutBackwardCompatibleUpdateOfOperation
     uuid: mwdg-1-0-1-op-fc-bm-107
@@ -247,7 +246,7 @@ forwardings:
         uuid: mwdg-1-0-1-op-s-bm-007
     consequent-requests:
       - client-name: RegistryOffice://v1/relay-operation-update
-        uuid: mwdg-1-0-1-op-c-bm-ro-2-0-2-003
+        uuid: mwdg-1-0-1-op-c-bm-ro-2-1-2-003
 
 
   - forwarding-name: ServiceRequestCausesLtpUpdateRequest
@@ -283,7 +282,7 @@ forwardings:
         uuid: mwdg-1-0-1-op-s-im-000
     consequent-requests:
       - client-name: ApplicationLayerTopology://v1/update-ltp
-        uuid: mwdg-1-0-1-op-c-bm-alt-2-0-2-001
+        uuid: mwdg-1-0-1-op-c-bm-alt-2-1-2-001
 
   - forwarding-name: ServiceRequestCausesLtpDeletionRequest
     uuid: mwdg-1-0-1-op-fc-bm-007
@@ -302,7 +301,7 @@ forwardings:
         uuid: mwdg-1-0-1-op-s-bm-004
     consequent-requests:
       - client-name: ApplicationLayerTopology://v1/delete-ltp-and-dependents
-        uuid: mwdg-1-0-1-op-c-bm-alt-2-0-2-002
+        uuid: mwdg-1-0-1-op-c-bm-alt-2-1-2-002
 
   - forwarding-name: ServiceRequestCausesFcUpdateRequest
     uuid: mwdg-1-0-1-op-fc-bm-008
@@ -319,7 +318,7 @@ forwardings:
     initiating-requests:
     consequent-requests:
       - client-name: ApplicationLayerTopology://v1/update-fc
-        uuid: mwdg-1-0-1-op-c-bm-alt-2-0-2-003
+        uuid: mwdg-1-0-1-op-c-bm-alt-2-1-2-003
 
   - forwarding-name: ServiceRequestCausesFcPortUpdateRequest
     uuid: mwdg-1-0-1-op-fc-bm-009
@@ -336,7 +335,7 @@ forwardings:
     initiating-requests:
     consequent-requests:
       - client-name: ApplicationLayerTopology://v1/update-fc-port
-        uuid: mwdg-1-0-1-op-c-bm-alt-2-0-2-004
+        uuid: mwdg-1-0-1-op-c-bm-alt-2-1-2-004
 
   - forwarding-name: ServiceRequestCausesFcPortDeletionRequest
     uuid: mwdg-1-0-1-op-fc-bm-010
@@ -355,7 +354,7 @@ forwardings:
         uuid: mwdg-1-0-1-op-s-bm-004
     consequent-requests:
       - client-name: ApplicationLayerTopology://v1/delete-fc-port
-        uuid: mwdg-1-0-1-op-c-bm-alt-2-0-2-005
+        uuid: mwdg-1-0-1-op-c-bm-alt-2-1-2-005
 
   - forwarding-name: OamRequestCausesLtpUpdateRequest
     uuid: mwdg-1-0-1-op-fc-bm-011
@@ -372,7 +371,7 @@ forwardings:
     initiating-requests:
     consequent-requests:
       - client-name: ApplicationLayerTopology://v1/update-ltp
-        uuid: mwdg-1-0-1-op-c-bm-alt-2-0-2-001
+        uuid: mwdg-1-0-1-op-c-bm-alt-2-1-2-001
 
   - forwarding-name: OamRequestCausesLtpDeletionRequest
     uuid: mwdg-1-0-1-op-fc-bm-012
@@ -389,7 +388,7 @@ forwardings:
     initiating-requests:
     consequent-requests:
       - client-name: ApplicationLayerTopology://v1/delete-ltp-and-dependents
-        uuid: mwdg-1-0-1-op-c-bm-alt-2-0-2-002
+        uuid: mwdg-1-0-1-op-c-bm-alt-2-1-2-002
 
   - forwarding-name: OamRequestCausesFcUpdateRequest
     uuid: mwdg-1-0-1-op-fc-bm-013
@@ -406,7 +405,7 @@ forwardings:
     initiating-requests:
     consequent-requests:
       - client-name: ApplicationLayerTopology://v1/update-fc
-        uuid: mwdg-1-0-1-op-c-bm-alt-2-0-2-003
+        uuid: mwdg-1-0-1-op-c-bm-alt-2-1-2-003
 
   - forwarding-name: OamRequestCausesFcPortUpdateRequest
     uuid: mwdg-1-0-1-op-fc-bm-014
@@ -423,7 +422,7 @@ forwardings:
     initiating-requests:
     consequent-requests:
       - client-name: ApplicationLayerTopology://v1/update-fc-port
-        uuid: mwdg-1-0-1-op-c-bm-alt-2-0-2-004
+        uuid: mwdg-1-0-1-op-c-bm-alt-2-1-2-004
 
   - forwarding-name: OamRequestCausesFcPortDeletionRequest
     uuid: mwdg-1-0-1-op-fc-bm-015
@@ -440,7 +439,7 @@ forwardings:
     initiating-requests:
     consequent-requests:
       - client-name: ApplicationLayerTopology://v1/delete-fc-port
-        uuid: mwdg-1-0-1-op-c-bm-alt-2-0-2-005
+        uuid: mwdg-1-0-1-op-c-bm-alt-2-1-2-005
 
 
   - forwarding-name: PutToLiveControlConstructExternalLabelCausesWritingIntoDevice
