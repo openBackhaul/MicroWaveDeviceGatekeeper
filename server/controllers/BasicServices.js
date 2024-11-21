@@ -2,9 +2,8 @@
 
 var BasicServices = require('onf-core-model-ap-bs/basicServices/BasicServicesService');
 var applicationSpecificBasicServices = require('../service/BasicServicesService');
-var responseBuilder = require('onf-core-model-ap/applicationPattern/rest/server/ResponseBuilder');
-var responseCodeEnum = require('onf-core-model-ap/applicationPattern/rest/server/ResponseCode');
-var restResponseHeader = require('onf-core-model-ap/applicationPattern/rest/server/ResponseHeader');
+var RestResponseHeader = require('onf-core-model-ap/applicationPattern/rest/server/ResponseHeader');
+var RestResponseBuilder = require('onf-core-model-ap/applicationPattern/rest/server/ResponseBuilder');
 var ExecutionAndTraceService = require('onf-core-model-ap/applicationPattern/services/ExecutionAndTraceService');
 
 module.exports.embedYourself = async function embedYourself(req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
