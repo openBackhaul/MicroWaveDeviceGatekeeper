@@ -8,7 +8,7 @@ var RestResponseHeader = require('onf-core-model-ap/applicationPattern/rest/serv
 var ExecutionAndTraceService = require('onf-core-model-ap/applicationPattern/services/ExecutionAndTraceService');
 
 
-const NEW_RELEASE_FORWARDING_NAME = 'PromptForBequeathingDataCausesTransferOfListOfApplications';
+const NEW_RELEASE_FORWARDING_NAME = 'PromptForBequeathingDataCausesRequestForBroadcastingInfoAboutServerReplacement';
 const OLD_RELEASE_FORWARDING_NAME = 'PromptForEmbeddingInitiatesEmbeddingProcess.RequestForBequeathingData';
 
 module.exports.embedYourself = async function embedYourself(req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
