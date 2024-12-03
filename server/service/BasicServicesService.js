@@ -52,7 +52,7 @@ async function subscribeToControllerNotification(user, xCorrelator, traceIndicat
     let subscribingForNotificationRequestBody = {};
     subscribingForNotificationRequestBody.subscribingApplicationName = await HttpServerInterface.getApplicationNameAsync();
     subscribingForNotificationRequestBody.subscribingApplicationRelease = await HttpServerInterface.getReleaseNumberAsync();
-    subscribingForNotificationRequestBody.notificationsReceivingOperation = await operationServerInterface.getOperationNameAsync("mwdg-1-0-1-op-s-is-000");
+    subscribingForNotificationRequestBody.notificationsReceivingOperation = await operationServerInterface.getOperationNameAsync("mwdg-1-0-2-op-s-is-000");
     subscribingForNotificationRequestBody.subscribingApplicationAddress = await tcpServerInterface.getLocalAddressForForwarding();
     subscribingForNotificationRequestBody.subscribingApplicationPort = await tcpServerInterface.getLocalPort();
     subscribingForNotificationRequestBody.subscribingApplicationProtocol = await tcpServerInterface.getLocalProtocol();
