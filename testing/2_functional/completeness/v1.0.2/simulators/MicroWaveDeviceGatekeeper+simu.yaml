@@ -1,0 +1,525 @@
+﻿openapi: 3.0.0
+info:
+  title: MicroWaveDeviceGatekeeper+simu
+  version: 1.0.2
+
+paths:
+########################################################################################################################
+#   Service Layer - Individual Part
+########################################################################################################################
+  /v1/regard-controller-attribute-value-change:
+    post:
+      operationId: regardControllerAttributeValueChange
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - notification-proxy-1-0:attribute-value-changed-notification
+              properties:
+                notification-proxy-1-0:attribute-value-changed-notification:
+                  type: object
+                  required:
+                    - counter
+                    - timestamp
+                    - resource
+                    - attribute-name
+                    - new-value
+                  properties:
+                    counter:
+                      type: integer
+                    timestamp:
+                      type: string
+                    resource:
+                      type: string
+                    attribute-name:
+                      type: string
+                    new-value:
+                      type: string
+              example:
+                notification-proxy-1-0:attribute-value-changed-notification:
+                  counter: 32
+                  timestamp: '2023-07-11T08:21:50+01:00'
+                  resource: '/core-model-1-4:network-control-domain=live/control-construct=odl-1/logical-termination-point=513250009/layer-protocol=0/mount-point-1-0:mount-point-pac/mount-point-status'
+                  attribute-name: 'connection-status'
+                  new-value: 'connecting'
+      responses:
+        '204':
+          description: 'Notification received'
+
+  /v1/provide-list-of-connected-devices:
+    post:
+      operationId: provideListOfConnectedDevices
+      responses:
+        '200':
+          description: 'List of connected devices provided'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - mount-name-list
+                properties:
+                  mount-name-list:
+                    type: array
+                    items:
+                      type: string
+                example:
+                  mount-name-list:
+                    - '305251234'
+                    - '105258888'
+
+  /core-model-1-4:network-control-domain=live/control-construct=305250001/equipment-augment-1-0:control-construct-pac/external-label:
+    put:
+      operationId: putLiveControlConstructExternalLabel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - equipment-augment-1-0:external-label
+              properties:
+                equipment-augment-1-0:external-label:
+                  type: string
+              example:
+                equipment-augment-1-0:external-label: '513250011'
+      responses:
+        '200':
+          description: 'External label has been written into ControlConstruct of live network'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - response-code
+                properties:
+                  response-code:
+                    type: integer
+                example:
+                  response-code: 204
+
+  /core-model-1-4:network-control-domain=live/control-construct=305250001/logical-termination-point=ltp1/ltp-augment-1-0:ltp-augment-pac/external-label:
+    put:
+      operationId: putLiveLtpExternalLabel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - ltp-augment-1-0:external-label
+              properties:
+                ltp-augment-1-0:external-label:
+                  type: string
+              example:
+                ltp-augment-1-0:external-label: '305551234'
+      responses:
+        '200':
+          description: 'External label has been written into LTP of live network'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - response-code
+                properties:
+                  response-code:
+                    type: integer
+                example:
+                  response-code: 204
+
+  /core-model-1-4:network-control-domain=live/control-construct=305250001/logical-termination-point=airInt1/layer-protocol=1/air-interface-2-0:air-interface-pac/air-interface-configuration/transmitter-is-on:
+    put:
+      operationId: putLiveAirInterfaceTransimitterIsOn
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - air-interface-2-0:transmitter-is-on
+              properties:
+                air-interface-2-0:transmitter-is-on:
+                  type: boolean
+              example:
+                air-interface-2-0:transmitter-is-on: true
+      responses:
+        '200':
+          description: 'AirInterface TransmitterIsOn has been configured in live network'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - response-code
+                properties:
+                  response-code:
+                    type: integer
+                example:
+                  response-code: 204
+  /core-model-1-4:network-control-domain=live/control-construct=305250001/logical-termination-point=airInt1/layer-protocol=1/air-interface-2-0:air-interface-pac/air-interface-configuration/performance-monitoring-is-on:
+    put:
+      operationId: putLiveAirInterfacePerformanceMonitoringIsOn
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - air-interface-2-0:performance-monitoring-is-on
+              properties:
+                air-interface-2-0:performance-monitoring-is-on:
+                  type: boolean
+              example:
+                air-interface-2-0:performance-monitoring-is-on: true
+      responses:
+        '200':
+          description: 'AirInterface PerformanceMonitoringIsOn has been configured in live network'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - response-code
+                properties:
+                  response-code:
+                    type: integer
+                example:
+                  response-code: 204
+
+  /core-model-1-4:network-control-domain=live/control-construct=305250001/logical-termination-point=ethCont1/layer-protocol=1/ethernet-container-2-0:ethernet-container-pac/ethernet-container-configuration/performance-monitoring-is-on:
+    put:
+      operationId: putLiveEthernetContainerPerformanceMonitoringIsOn
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - ethernet-container-2-0:performance-monitoring-is-on
+              properties:
+                ethernet-container-2-0:performance-monitoring-is-on:
+                  type: boolean
+              example:
+                ethernet-container-2-0:performance-monitoring-is-on: true
+      responses:
+        '200':
+          description: 'EthernetContainer PerformanceMonitoringIsOn has been configured in live network'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - response-code
+                properties:
+                  response-code:
+                    type: integer
+                example:
+                  response-code: 204
+
+  /core-model-1-4:network-control-domain=live/control-construct=305250001/logical-termination-point=hmStr1/layer-protocol=1/hybrid-mw-structure-2-0:hybrid-mw-structure-pac/hybrid-mw-structure-configuration/performance-monitoring-is-on:
+    put:
+      operationId: putLiveHybridMwStructurePerformanceMonitoringIsOn
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - hybrid-mw-structure-2-0:performance-monitoring-is-on
+              properties:
+                hybrid-mw-structure-2-0:performance-monitoring-is-on:
+                  type: boolean
+              example:
+                hybrid-mw-structure-2-0:performance-monitoring-is-on: true
+      responses:
+        '200':
+          description: 'HybridMwStructure PerformanceMonitoringIsOn has been configured in live network'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - response-code
+                properties:
+                  response-code:
+                    type: integer
+                example:
+                  response-code: 204
+
+  /core-model-1-4:network-control-domain=live/control-construct=305250001/mac-fd-1-0:provide-learned-mac-addresses:
+    post:
+      operationId: postMacInterfaceRpcForProvidingLearnedMacAdresses
+      responses:
+        '200':
+          description: 'LearnedMacAdresses provided from live network'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - response-code
+                properties:
+                  response-code:
+                    type: integer
+                  mac-fd-1-0:output:
+                    type: object
+                    properties:
+                      mac-fd-1-0:mac-table-entry-list:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            affected-mac-fd:
+                              type: string
+                            mac-address:
+                              type: string
+                            vlan-id:
+                              type: integer
+                            egress-ltp:
+                              type: string
+                example:
+                  response-code: 200
+                  mac-fd-1-0:output:
+                    mac-fd-1-0:mac-table-entry-list:
+                      - affected-mac-fd: 'mac-fd-001'
+                        mac-address: '11:22:5e:00:53:af'
+                        vlan-id: 17
+                        egress-ltp: 'mac-ltp-012'
+                      - affected-mac-fd: 'mac-fd-001'
+                        mac-address: '11:22:33:44:55:66'
+                        vlan-id: 34
+                        egress-ltp: 'mac-ltp-012'
+
+  /core-model-1-4:network-control-domain=live/control-construct=305250001/logical-termination-point=peStr1/layer-protocol=1/pure-ethernet-structure-2-0:pure-ethernet-structure-pac/pure-ethernet-structure-configuration/performance-monitoring-is-on:
+    put:
+      operationId: putLivePureEthernetStructurePerformanceMonitoringIsOn
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - pure-ethernet-structure-2-0:performance-monitoring-is-on
+              properties:
+                pure-ethernet-structure-2-0:performance-monitoring-is-on:
+                  type: boolean
+              example:
+                pure-ethernet-structure-2-0:performance-monitoring-is-on: true
+      responses:
+        '200':
+          description: 'PureEthernetStructure PerformanceMonitoringIsOn has been configured in live network'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - response-code
+                properties:
+                  response-code:
+                    type: integer
+                example:
+                  response-code: 204
+
+  /core-model-1-4:network-control-domain=live/control-construct=305250001/logical-termination-point=wireInt1/layer-protocol=1/wire-interface-2-0:wire-interface-pac/wire-interface-configuration/performance-monitoring-is-on:
+    put:
+      operationId: putLiveWireInterfacePerformanceMonitoringIsOn
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - wire-interface-2-0:performance-monitoring-is-on
+              properties:
+                wire-interface-2-0:performance-monitoring-is-on:
+                  type: boolean
+              example:
+                wire-interface-2-0:performance-monitoring-is-on: true
+      responses:
+        '200':
+          description: 'WireInterface PerformanceMonitoringIsOn has been configured in live network'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - response-code
+                properties:
+                  response-code:
+                    type: integer
+                example:
+                  response-code: 204
+
+########################################################################################################################
+#   Common Components
+########################################################################################################################
+components:
+  parameters:
+    user:
+      name: user
+      in: header
+      required: true
+      schema:
+        type: string
+        example: 'User Name'
+      description: 'User identifier from the system starting the service call'
+    originator:
+      name: originator
+      in: header
+      required: true
+      schema:
+        type: string
+        minLength: 3
+        example: 'Resolver'
+      description: >
+        'Identification for the system consuming the API, as defined in
+         [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
+    x-correlator:
+      name: x-correlator
+      in: header
+      required: true
+      schema:
+        type: string
+        pattern: '^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$'
+        description: 'Empty string accepted from external applications.'
+        example: '550e8400-e29b-11d4-a716-446655440000'
+      description: 'UUID for the service execution flow that allows to correlate requests and responses'
+    trace-indicator:
+      name: trace-indicator
+      in: header
+      required: true
+      schema:
+        type: string
+        pattern: '^([0-9]+)(\.([0-9]+))*$'
+        description: 'Empty string accepted from external applications.'
+        example: '1.3.1'
+      description: 'Sequence of request numbers along the flow'
+    customer-journey:
+      name: customer-journey
+      in: header
+      required: true
+      schema:
+        type: string
+        example: 'Unknown value'
+      description: 'Holds information supporting customer’s journey to which the execution applies'
+    mountName:
+      name: mountName
+      in: path
+      required: true
+      schema:
+        type: string
+        example: '222250001'
+      description: 'The mountName of the device that is addressed by the request'
+    uuid:
+      name: uuid
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LTP-MWPS-TTP-1-1'
+      description: 'Instance identifier that is unique within the device'
+    uuid1:
+      name: uuid1
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LTP-MWPS-TTP-1-1'
+      description: 'Another instance identifier that is unique within the device'
+    localId:
+      name: localId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LP-MWPS-TTP-1-1'
+      description: 'Instance identifier that is unique within its list'
+  responses:
+    responseForErroredServiceRequests:
+      description: 'Response in case of errored service requests'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/errorDescription'
+      headers:
+        x-correlator:
+          schema:
+            type: string
+            pattern: '^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$'
+            example: '550e8400-e29b-11d4-a716-446655440000'
+          description: 'UUID for the service execution flow that allows to correlate requests and responses. Its value must be identical at the response compared with its corresponding request'
+        exec-time:
+          schema:
+            type: integer
+            example: 1100
+          description: 'Value written by the service provider, reporting the total elapsed time for the execution, including all the additional processing needed to retrieve the data from the backend service. Expressed in milliseconds'
+        backend-time:
+          schema:
+            type: integer
+            example: 850
+          description: 'Value written by the service provider, reporting the elapsed time for data retrieval from the backend (service invocation, database access…). Expressed in milliseconds'
+    responseForErroredOamRequests:
+      description: 'Response in case of errored OaM requests'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/errorDescription'
+  headers:
+    x-correlator:
+      schema:
+        type: string
+        example: '550e8400-e29b-11d4-a716-446655440000'
+      description: 'UUID for the service execution flow that allows to correlate requests and responses. Its value must be identical at the response compared with its corresponding request'
+    exec-time:
+      schema:
+        type: integer
+        example: 1100
+      description: 'Value written by the service provider, reporting the total elapsed time for the execution, including all the additional processing needed to retrieve the data from the backend service. Expressed in milliseconds'
+    backend-time:
+      schema:
+        type: integer
+        example: 850
+      description: 'Value written by the service provider, reporting the elapsed time for data retrieval from the backend (service invocation, database access…). Expressed in milliseconds'
+    life-cycle-state:
+      schema:
+        type: string
+        enum:
+          - 'EXPERIMENTAL'
+          - 'OPERATIONAL'
+          - 'DEPRECATED'
+          - 'OBSOLETE'
+          - 'UNKNOWN'
+          - 'NOT_YET_DEFINED'
+        example: 'EXPERIMENTAL'
+  schemas:
+    errorDescription:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: operation-key
+    basicAuth:
+      type: http
+      scheme: basic

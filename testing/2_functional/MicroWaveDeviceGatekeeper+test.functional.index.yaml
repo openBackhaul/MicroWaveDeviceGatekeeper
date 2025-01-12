@@ -1,0 +1,14 @@
+testing-stage: 'Functional Testing'
+responsible-person-list:
+  - name: 'Thorsten Heinze'
+    role: 'Application Owner'
+    email-address: 'thorsten.heinze@telefonica.com'
+release-list:
+  - specification-tag: 'v1.0.2_spec'
+    testcase-list:
+      - testcase-name: 'completeness.v1.0.2'
+        type-of-testcase: 'Postman Testcase Collection'
+        postman-export-file: './completeness/v1.0.2/testcases/MicroWaveDeviceGatekeeper+test.completeness.json'
+        data-file: './completeness/v1.0.2/testcases/MicroWaveDeviceGatekeeper+data.completeness.json'
+        simulator-file-list:
+          - './completeness/v1.0.2/simulators/MicroWaveDeviceGatekeeper+simu.completeness.yaml'

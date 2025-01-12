@@ -1,0 +1,92 @@
+[
+	{
+		"mode": "debug",
+		"serverList": [
+			{
+				"serverName": "dummy",
+				"dummyUri": "ping.openBackhaul.com"
+			},
+			{
+				"serverName": "MicroWaveDeviceGatekeeper",
+				"server": "http://127.0.0.1:4014",
+				"pathToControlConstruct": "/core-model-1-4:network-control-domain=live/control-construct={mountName}",
+				"authorizationCode": "",
+				"operationKey": "Operation key not yet provided.",
+				"userName": "Thorsten Heinze",
+				"originator": "MicroWaveDeviceGatekeeper+test.completeness",
+				"xCorrelator": "00000000-0000-0000-0000-000000000000",
+				"traceIndicator": "1",
+				"customerJourney": ""
+			},
+			{
+				"serverName": "MicroWaveDeviceGatekeeper+simu",
+				"server": "http://localhost:3000",
+				"pathToControlConstruct": "/core-model-1-4:network-control-domain=live/control-construct={mountName}",
+				"authorizationCode": "",
+				"operationKey": "Operation key not yet provided.",
+				"userName": "Thorsten Heinze",
+				"originator": "MicroWaveDeviceGatekeeper+test.completeness",
+				"xCorrelator": "00000000-0000-0000-0000-000000000000",
+				"traceIndicator": "1",
+				"customerJourney": ""
+			}
+		],
+		"collectionInputList": [
+			{
+				"collectionName": "mwdg:service",
+				"serverToBeApplied": "MicroWaveDeviceGatekeeper"
+			},
+			{
+				"collectionName": "mwdg:cc",
+				"serverToBeApplied": "MicroWaveDeviceGatekeeper",
+				"mountName": "305250001"
+			},
+			{
+				"collectionName": "mwdg:ltp",
+				"serverToBeApplied": "MicroWaveDeviceGatekeeper",
+				"mountName": "305250001",
+        "uuid": "ltp1"
+			},
+			{
+				"collectionName": "mwdg:airInt",
+				"serverToBeApplied": "MicroWaveDeviceGatekeeper",
+				"mountName": "305250001",
+        "uuid": "airInt1",
+        "localId": "1"
+			},
+			{
+				"collectionName": "mwdg:ethCont",
+				"serverToBeApplied": "MicroWaveDeviceGatekeeper",
+				"mountName": "305250001",
+        "uuid": "ethCont1",
+        "localId": "1"
+			},
+			{
+				"collectionName": "mwdg:hmStr",
+				"serverToBeApplied": "MicroWaveDeviceGatekeeper",
+				"mountName": "305250001",
+        "uuid": "hmStr1",
+        "localId": "1"
+			},
+			{
+				"collectionName": "mwdg:macFd",
+				"serverToBeApplied": "MicroWaveDeviceGatekeeper",
+				"mountName": "305250001"
+			},
+			{
+				"collectionName": "mwdg:peStr",
+				"serverToBeApplied": "MicroWaveDeviceGatekeeper",
+				"mountName": "305250001",
+        "uuid": "peStr1",
+        "localId": "1"
+			},
+			{
+				"collectionName": "mwdg:wireInt",
+				"serverToBeApplied": "MicroWaveDeviceGatekeeper",
+				"mountName": "305250001",
+        "uuid": "wireInt1",
+        "localId": "1"
+			}
+		]
+	}
+]

@@ -1,0 +1,99 @@
+@startuml mwdg-completeness-sequence-i
+skinparam responseMessageBelowArrow true
+
+title
+MicroWaveDeviceGatekeeper+test.completeness - Part I
+end title
+
+participant "Postman\n" as Postman #Orange 
+participant "Data\n" as Data
+participant "Collection\n" as Collection
+
+participant "/v1/regard-controller-attribute-value-change\n" as RCAVC #LightBlue
+participant "/v1/provide-list-of-connected-devices\n" as PLOCD #LightBlue
+participant "/...:control-construct-pac\n/external-label" as CcEl #LightBlue
+participant "/...:ltp-augment-pac\n/external-label" as LtpEl #LightBlue
+participant "/.../air-interface-configuration\n/transmitter-is-on" as AiTio #LightBlue
+participant "/.../air-interface-configuration\n/performance-monitoring-is-on" as AiPmio #LightBlue
+participant "/...:control-construct-pac\n/external-label" as SimuCcEl #Gray
+participant "/...:ltp-augment-pac\n/external-label" as SimuLtpEl #Gray
+participant "/.../air-interface-configuration\n/transmitter-is-on" as SimuAiTio #Gray
+participant "/.../air-interface-configuration\n/performance-monitoring-is-on" as SimuAiPmio #Gray
+
+group Preparation
+  Data --\\o Postman : {servers}
+  activate Postman
+  Postman --\\o Collection : {servers}
+end
+
+group /v1/regard-controller-attribute-value-change
+  Collection --\\o Postman : {servers}
+  Postman -> RCAVC
+  Postman <-- RCAVC : 204
+  note right Postman #Orange
+    Check for ResponseCode==204
+  end note
+end
+
+group /v1/provide-list-of-connected-devices
+  Collection --\\o Postman : {servers}
+  Postman -> PLOCD
+  Postman <-- PLOCD : 200 {mount-name-list}
+  note right Postman #Orange
+    validate ResponseBody against schema
+  end note
+end
+
+group /...:control-construct-pac/external-label
+  Collection --\\o Postman : {servers}
+  Postman -> CcEl : {equipment-augment-1-0:external-label}
+  activate CcEl
+  CcEl -> SimuCcEl : {equipment-augment-1-0:external-label}
+  CcEl <-- SimuCcEl : 204
+  Postman <-- CcEl : 200 {response-code}
+  deactivate CcEl
+  note right Postman #Orange
+    validate ResponseBody against schema
+  end note
+end
+
+group /...:ltp-augment-pac/external-label
+  Collection --\\o Postman : {servers}
+  Postman -> LtpEl : {ltp-augment-1-0:external-label}
+  activate LtpEl
+  LtpEl -> SimuLtpEl : {ltp-augment-1-0:external-label}
+  LtpEl <-- SimuLtpEl : 204
+  Postman <-- LtpEl : 200 {response-code}
+  deactivate LtpEl
+  note right Postman #Orange
+    validate ResponseBody against schema
+  end note
+end
+
+group /.../air-interface-configuration/transmitter-is-on
+  Collection --\\o Postman : {servers}
+  Postman -> AiTio : {air-interface-2-0:transmitter-is-on}
+  activate AiTio
+  AiTio -> SimuAiTio : {air-interface-2-0:transmitter-is-on}
+  AiTio <-- SimuAiTio : 204
+  Postman <-- AiTio : 200 {response-code}
+  deactivate AiTio
+  note right Postman #Orange
+    validate ResponseBody against schema
+  end note
+end
+
+group /.../air-interface-configuration/performance-monitoring-is-on
+  Collection --\\o Postman : {servers}
+  Postman -> AiPmio : {air-interface-2-0:performance-monitoring-is-on}
+  activate AiPmio
+  AiPmio -> SimuAiPmio : {air-interface-2-0:performance-monitoring-is-on}
+  AiPmio <-- SimuAiPmio : 204
+  Postman <-- AiPmio : 200 {response-code}
+  deactivate AiPmio
+  note right Postman #Orange
+    validate ResponseBody against schema
+  end note
+end
+
+@enduml

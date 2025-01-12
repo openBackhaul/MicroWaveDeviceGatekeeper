@@ -1,0 +1,381 @@
+openapi: 3.0.1
+info:
+  title: MicroWaveDeviceGatekeeper+simu.completeness
+  version: 1.0.2
+
+paths:
+########################################################################################################################
+#  MicroWaveDeviceGatekeeper+simu.completeness
+########################################################################################################################
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/equipment-augment-1-0:control-construct-pac/external-label:
+    put:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - equipment-augment-1-0:external-label
+              properties:
+                equipment-augment-1-0:external-label:
+                  type: string
+              example:
+                equipment-augment-1-0:external-label: '513250011'
+      responses:
+        '204':
+          description: 'OK'
+
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=ltp1/ltp-augment-1-0:ltp-augment-pac/external-label:
+    put:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - ltp-augment-1-0:external-label
+              properties:
+                ltp-augment-1-0:external-label:
+                  type: string
+              example:
+                ltp-augment-1-0:external-label: '305551234'
+      responses:
+        '204':
+          description: 'OK'
+
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=airInt1/layer-protocol=1/air-interface-2-0:air-interface-pac/air-interface-configuration/transmitter-is-on:
+    put:
+      operationId: putAirInterfaceConfigurationTransmitterIsOn
+      summary: 'Writes AirInterfaceConfiguration::transmitterIsOn'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - air-interface-2-0:transmitter-is-on
+              properties:
+                air-interface-2-0:transmitter-is-on:
+                  type: boolean
+              example:
+                air-interface-2-0:transmitter-is-on: true
+      responses:
+        '204':
+          description: 'OK'
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=airInt1/layer-protocol=1/air-interface-2-0:air-interface-pac/air-interface-configuration/performance-monitoring-is-on:
+    put:
+      operationId: putAirInterfaceConfigurationPerformanceMonitoringIsOn
+      summary: 'Writes AirInterfaceConfiguration::performanceMonitoringIsOn'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - air-interface-2-0:performance-monitoring-is-on
+              properties:
+                air-interface-2-0:performance-monitoring-is-on:
+                  type: boolean
+              example:
+                air-interface-2-0:performance-monitoring-is-on: true
+      responses:
+        '204':
+          description: 'OK'
+
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=ethCont1/ethernet-container-2-0:ethernet-container-pac/ethernet-container-configuration/performance-monitoring-is-on:
+    put:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - ethernet-container-2-0:performance-monitoring-is-on
+              properties:
+                ethernet-container-2-0:performance-monitoring-is-on:
+                  type: boolean
+              example:
+                ethernet-container-2-0:performance-monitoring-is-on: true
+      responses:
+        '204':
+          description: 'OK'
+
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=hmStr1/hybrid-mw-structure-2-0:hybrid-mw-structure-pac/hybrid-mw-structure-configuration/performance-monitoring-is-on:
+    put:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - hybrid-mw-structure-2-0:performance-monitoring-is-on
+              properties:
+                hybrid-mw-structure-2-0:performance-monitoring-is-on:
+                  type: boolean
+              example:
+                hybrid-mw-structure-2-0:performance-monitoring-is-on: true
+      responses:
+        '204':
+          description: 'OK'
+
+  /rests/operations/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/mac-fd-1-0:provide-learned-mac-addresses:
+    post:
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mac-fd-1-0:output:
+                    type: object
+                    properties:
+                      mac-fd-1-0:mac-table-entry-list:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            affected-mac-fd:
+                              type: string
+                              description: >
+                                'Reference to the MAC switch, which is holding the MAC address table that is containing this entry.'
+                            mac-address:
+                              type: string
+                              description: >
+                                'MAC address that can be reached on the referenced interface.'
+                            vlan-id:
+                              type: integer
+                              description: >
+                                'VLAN, in which the MAC address can be reached at the referenced interface. If VLAN bridging would be deactivated, this value should be 0.'
+                            egress-ltp:
+                              type: string
+                              description: >
+                                'MAC interface that connects the MAC address.'
+                example:
+                  mac-fd-1-0:output:
+                    mac-fd-1-0:mac-table-entry-list:
+                      - affected-mac-fd: 'mac-fd-001'
+                        mac-address: '11:22:5e:00:53:af'
+                        vlan-id: 17
+                        egress-ltp: 'mac-ltp-012'
+                      - affected-mac-fd: 'mac-fd-001'
+                        mac-address: '11:22:33:44:55:66'
+                        vlan-id: 34
+                        egress-ltp: 'mac-ltp-012'
+
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=peStr1/pure-ethernet-structure-2-0:pure-ethernet-structure-pac/pure-ethernet-structure-configuration/performance-monitoring-is-on:
+    put:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - pure-ethernet-structure-2-0:performance-monitoring-is-on
+              properties:
+                pure-ethernet-structure-2-0:performance-monitoring-is-on:
+                  type: boolean
+              example:
+                pure-ethernet-structure-2-0:performance-monitoring-is-on: true
+      responses:
+        '204':
+          description: 'OK'
+
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=wireInt1/wire-interface-2-0:wire-interface-pac/wire-interface-configuration/performance-monitoring-is-on:
+    put:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - wire-interface-2-0:performance-monitoring-is-on
+              properties:
+                wire-interface-2-0:performance-monitoring-is-on:
+                  type: boolean
+              example:
+                wire-interface-2-0:performance-monitoring-is-on: true
+      responses:
+        '204':
+          description: 'OK'
+
+
+########################################################################################################################
+#   Common Components
+########################################################################################################################
+components:
+  parameters:
+    user:
+      name: user
+      in: header
+      required: true
+      schema:
+        type: string
+        example: 'User Name'
+      description: 'User identifier from the system starting the service call'
+    originator:
+      name: originator
+      in: header
+      required: true
+      schema:
+        type: string
+        minLength: 3
+        example: 'Resolver'
+      description: >
+        'Identification for the system consuming the API, as defined in
+         [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
+    x-correlator:
+      name: x-correlator
+      in: header
+      required: true
+      schema:
+        type: string
+        pattern: '^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$'
+        description: 'Empty string accepted from external applications.'
+        example: '550e8400-e29b-11d4-a716-446655440000'
+      description: 'UUID for the service execution flow that allows to correlate requests and responses'
+    trace-indicator:
+      name: trace-indicator
+      in: header
+      required: true
+      schema:
+        type: string
+        pattern: '^([0-9]+)(\.([0-9]+))*$'
+        description: 'Empty string accepted from external applications.'
+        example: '1.3.1'
+      description: 'Sequence of request numbers along the flow'
+    customer-journey:
+      name: customer-journey
+      in: header
+      required: true
+      schema:
+        type: string
+        example: 'Unknown value'
+      description: 'Holds information supporting customer’s journey to which the execution applies'
+    mountName:
+      name: mountName
+      in: path
+      required: true
+      schema:
+        type: string
+        example: '222250001'
+      description: 'The mountName of the device that is addressed by the request'
+    uuid:
+      name: uuid
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LTP-MWPS-TTP-1-1'
+      description: 'Instance identifier that is unique within the device'
+    uuid1:
+      name: uuid1
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LTP-MWPS-TTP-1-1'
+      description: 'Another instance identifier that is unique within the device'
+    localId:
+      name: localId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LP-MWPS-TTP-1-1'
+      description: 'Instance identifier that is unique within its list'
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+        example: 'node(node-id;netconf-node-topology:connection-status)'
+      description: 'Query parameter to filter ressources according to RFC8040 fields filter spec'
+  responses:
+    responseForErroredServiceRequests:
+      description: 'Response in case of errored service requests'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/errorDescription'
+      headers:
+        x-correlator:
+          schema:
+            type: string
+            pattern: '^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$'
+            example: '550e8400-e29b-11d4-a716-446655440000'
+          description: 'UUID for the service execution flow that allows to correlate requests and responses. Its value must be identical at the response compared with its corresponding request'
+        exec-time:
+          schema:
+            type: integer
+            example: 1100
+          description: 'Value written by the service provider, reporting the total elapsed time for the execution, including all the additional processing needed to retrieve the data from the backend service. Expressed in milliseconds'
+        backend-time:
+          schema:
+            type: integer
+            example: 850
+          description: 'Value written by the service provider, reporting the elapsed time for data retrieval from the backend (service invocation, database access…). Expressed in milliseconds'
+    responseForErroredOamRequests:
+      description: 'Response in case of errored OaM requests'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/errorDescription'
+  headers:
+    x-correlator:
+      schema:
+        type: string
+        example: '550e8400-e29b-11d4-a716-446655440000'
+      description: 'UUID for the service execution flow that allows to correlate requests and responses. Its value must be identical at the response compared with its corresponding request'
+    exec-time:
+      schema:
+        type: integer
+        example: 1100
+      description: 'Value written by the service provider, reporting the total elapsed time for the execution, including all the additional processing needed to retrieve the data from the backend service. Expressed in milliseconds'
+    backend-time:
+      schema:
+        type: integer
+        example: 850
+      description: 'Value written by the service provider, reporting the elapsed time for data retrieval from the backend (service invocation, database access…). Expressed in milliseconds'
+    life-cycle-state:
+      schema:
+        type: string
+        enum:
+          - 'EXPERIMENTAL'
+          - 'OPERATIONAL'
+          - 'DEPRECATED'
+          - 'OBSOLETE'
+          - 'UNKNOWN'
+          - 'NOT_YET_DEFINED'
+        example: 'EXPERIMENTAL'
+  schemas:
+    errorDescription:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: operation-key
+    basicAuth:
+      type: http
+      scheme: basic
+

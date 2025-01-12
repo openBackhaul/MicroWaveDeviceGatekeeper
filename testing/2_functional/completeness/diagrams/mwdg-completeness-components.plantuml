@@ -1,0 +1,19 @@
+@startuml mwdg-completeness-components
+
+skinparam componentStyle rectangle
+
+title
+MicroWaveDeviceGatekeeper+test.functional.completeness
+end title
+
+package "completeness" {
+  component [<u>Postman</u>\n\nMicroWaveDeviceGatekeeper+test.completeness.json] as TCC #Orange 
+  component [<u>Application under Test</u>\n\nMicroWaveDeviceGatekeeper] as AUT #LightBlue 
+  component [<u>Mockoon</u>\n\nMicroWaveDeviceGatekeeper+simu.completeness.yaml] as Simu #Gray
+
+  TCC -> AUT
+  AUT -> Simu : Callbacks
+
+}
+
+@enduml

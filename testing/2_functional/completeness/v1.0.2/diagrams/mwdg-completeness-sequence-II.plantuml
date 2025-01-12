@@ -1,0 +1,93 @@
+@startuml mwdg-completeness-sequence-ii
+skinparam responseMessageBelowArrow true
+
+title
+MicroWaveDeviceGatekeeper+test.completeness - Part II
+end title
+
+participant "Postman\n" as Postman #Orange 
+participant "Data\n" as Data
+participant "Collection\n" as Collection
+
+participant "/.../ethernet-container-configuration\n/performance-monitoring-is-on" as EcPmio #LightBlue
+participant "/.../hybrid-mw-structure-configuration\n/performance-monitoring-is-on" as HmsPmio #LightBlue
+participant "/...:provide-learned-mac-addresses\n" as Plma #LightBlue
+participant "/.../pure-ethernet-structure-configuration\n/performance-monitoring-is-on" as PesPmio #LightBlue
+participant "/.../wire-interface-configuration\n/performance-monitoring-is-on" as WiPmoi #LightBlue
+
+participant "/.../ethernet-container-configuration\n/performance-monitoring-is-on" as SimuEcPmio #Gray
+participant "/.../hybrid-mw-structure-configuration\n/performance-monitoring-is-on" as SimuHmsPmio #Gray
+participant "/...:provide-learned-mac-addresses\n" as SimuPlma #Gray
+participant "/.../pure-ethernet-structure-configuration\n/performance-monitoring-is-on" as SimuPesPmio #Gray
+participant "/.../wire-interface-configuration\n/performance-monitoring-is-on" as SimuWiPmoi #Gray
+
+activate Postman
+
+group /.../ethernet-container-configuration/performance-monitoring-is-on
+  Collection --\\o Postman : {servers}
+  Postman -> EcPmio : {ethernet-container-2-0:performance-monitoring-is-on}
+  activate EcPmio
+  EcPmio -> SimuEcPmio : {air-interface-2-0:performance-monitoring-is-on}
+  EcPmio <-- SimuEcPmio : 204
+  Postman <-- EcPmio : 200 {response-code}
+  deactivate EcPmio
+  note right Postman #Orange
+    validate ResponseBody against schema
+  end note
+end
+
+group /.../hybrid-mw-structure-configuration/performance-monitoring-is-on
+  Collection --\\o Postman : {servers}
+  Postman -> HmsPmio : {hybrid-mw-structure-2-0:performance-monitoring-is-on}
+  activate HmsPmio
+  HmsPmio -> SimuHmsPmio : {air-interface-2-0:performance-monitoring-is-on}
+  HmsPmio <-- SimuHmsPmio : 204
+  Postman <-- HmsPmio : 200 {response-code}
+  deactivate HmsPmio
+  note right Postman #Orange
+    validate ResponseBody against schema
+  end note
+end
+
+group /...:provide-learned-mac-addresses
+  Collection --\\o Postman : {servers}
+  Postman -> Plma
+  activate Plma
+  Plma -> SimuPlma : {air-interface-2-0:performance-monitoring-is-on}
+  Plma <-- SimuPlma : 204
+  Postman <-- Plma : 200 {response-code}
+  deactivate Plma
+  note right Postman #Orange
+    validate ResponseBody against schema
+  end note
+end
+
+group /.../pure-ethernet-structure-configuration/performance-monitoring-is-on
+  Collection --\\o Postman : {servers}
+  Postman -> PesPmio : {pure-ethernet-structure-2-0:performance-monitoring-is-on}
+  activate PesPmio
+  PesPmio -> SimuPesPmio : {air-interface-2-0:performance-monitoring-is-on}
+  PesPmio <-- SimuPesPmio : 204
+  Postman <-- PesPmio : 200 {response-code}
+  deactivate PesPmio
+  note right Postman #Orange
+    validate ResponseBody against schema
+  end note
+end
+
+group /.../wire-interface-configuration/performance-monitoring-is-on
+  Collection --\\o Postman : {servers}
+  Postman -> WiPmoi : {wire-interface-2-0:performance-monitoring-is-on}
+  activate WiPmoi
+  WiPmoi -> SimuWiPmoi : {air-interface-2-0:performance-monitoring-is-on}
+  WiPmoi <-- SimuWiPmoi : 204
+  Postman <-- WiPmoi : 200 {response-code}
+  deactivate WiPmoi
+  note right Postman #Orange
+    validate ResponseBody against schema
+  end note
+end
+
+deactivate Postman
+
+@enduml

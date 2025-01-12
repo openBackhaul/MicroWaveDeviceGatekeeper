@@ -1,0 +1,140 @@
+{
+    "/v1/provide-list-of-connected-devices": {
+        "type": "object",
+        "required": [
+            "mount-name-list"
+        ],
+        "properties": {
+            "mount-name-list": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "/core-model-1-4:network-control-domain=live/control-construct={mountName}/equipment-augment-1-0:control-construct-pac/external-label": {
+        "type": "object",
+        "required": [
+            "response-code"
+        ],
+        "properties": {
+            "response-code": {
+                "type": "integer"
+            }
+        }
+    },
+    "/core-model-1-4:network-control-domain=live/control-construct={mountName}/logical-termination-point={uuid}/ltp-augment-1-0:ltp-augment-pac/external-label": {
+        "type": "object",
+        "required": [
+            "response-code"
+        ],
+        "properties": {
+            "response-code": {
+                "type": "integer"
+            }
+        }
+    },
+    "/core-model-1-4:network-control-domain=live/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/air-interface-2-0:air-interface-pac/air-interface-configuration/transmitter-is-on": {
+        "type": "object",
+        "required": [
+            "response-code"
+        ],
+        "properties": {
+            "response-code": {
+                "type": "integer"
+            }
+        }
+    },
+    "/core-model-1-4:network-control-domain=live/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/air-interface-2-0:air-interface-pac/air-interface-configuration/performance-monitoring-is-on": {
+        "type": "object",
+        "required": [
+            "response-code"
+        ],
+        "properties": {
+            "response-code": {
+                "type": "integer"
+            }
+        }
+    },
+    "/core-model-1-4:network-control-domain=live/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/ethernet-container-2-0:ethernet-container-pac/ethernet-container-configuration/performance-monitoring-is-on": {
+        "type": "object",
+        "required": [
+            "response-code"
+        ],
+        "properties": {
+            "response-code": {
+                "type": "integer"
+            }
+        }
+    },
+    "/core-model-1-4:network-control-domain=live/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/hybrid-mw-structure-2-0:hybrid-mw-structure-pac/hybrid-mw-structure-configuration/performance-monitoring-is-on": {
+        "type": "object",
+        "required": [
+            "response-code"
+        ],
+        "properties": {
+            "response-code": {
+                "type": "integer"
+            }
+        }
+    },
+    "/core-model-1-4:network-control-domain=live/control-construct={mountName}/mac-fd-1-0:provide-learned-mac-addresses": {
+        "type": "object",
+        "required": [
+            "response-code"
+        ],
+        "properties": {
+            "response-code": {
+                "type": "integer"
+            },
+            "mac-fd-1-0:output": {
+                "type": "object",
+                "properties": {
+                    "mac-fd-1-0:mac-table-entry-list": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "affected-mac-fd": {
+                                    "type": "string"
+                                },
+                                "mac-address": {
+                                    "type": "string"
+                                },
+                                "vlan-id": {
+                                    "type": "integer"
+                                },
+                                "egress-ltp": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "/core-model-1-4:network-control-domain=live/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/pure-ethernet-structure-2-0:pure-ethernet-structure-pac/pure-ethernet-structure-configuration/performance-monitoring-is-on": {
+        "type": "object",
+        "required": [
+            "response-code"
+        ],
+        "properties": {
+            "response-code": {
+                "type": "integer"
+            }
+        }
+    },
+    "/core-model-1-4:network-control-domain=live/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/wire-interface-2-0:wire-interface-pac/wire-interface-configuration/performance-monitoring-is-on": {
+        "type": "object",
+        "required": [
+            "response-code"
+        ],
+        "properties": {
+            "response-code": {
+                "type": "integer"
+            }
+        }
+    }
+}
