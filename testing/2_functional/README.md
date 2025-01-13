@@ -1,7 +1,7 @@
 # Functional Testing 
 
-#### The following commonly required tests are supported:
-- [Completeness](./completeness/)  
+#### The content of the Functional Testing is summarized in the following index file:
+- [Index](./MicroWaveDeviceGatekeeper+test.functional.index.yaml)
 
-#### The following application specific tests are supported:  
-- ./.
+#### Details on the individual testcases can be found here:
+- [Completeness](./completeness/)  
